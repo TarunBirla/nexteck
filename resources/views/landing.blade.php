@@ -718,24 +718,7 @@
 </head>
 
 <body>
-    <div class="topbar">Q4 2026 — <b>only 4 audit slots left this quarter.</b> Every week you wait, manual work costs
-        you roughly 10+ owner-hours. &nbsp;<span class="cd">Ends in <span id="cd-d">--</span>d <span
-                id="cd-h">--</span>h <span id="cd-m">--</span>m <span id="cd-s">--</span>s</span></div>
-
-    <nav>
-        <div class="wrap nav-in">
-            <a class="logo" href="{{ route('home') }}">Nexte<span>c</span>k<small>STRATEGY &amp; TECHNOLOGY</small></a>
-            <div class="nav-links">
-                <a href="{{ route('home') }}#audit">The Audit</a>
-                <a href="{{ route('home') }}#method">Methodology</a>
-                <a href="{{ route('home') }}#nasar">About Nasar</a>
-                <a href="{{ route('home') }}#industries">Industries</a>
-                <a class="btn btn-gold nav-cta" href="#book">Book Strategy Call</a>
-            </div>
-            <button class="burger"
-                onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex';document.querySelector('.nav-links').style.position='absolute';document.querySelector('.nav-links').style.top='74px';document.querySelector('.nav-links').style.left='0';document.querySelector('.nav-links').style.right='0';document.querySelector('.nav-links').style.background='#fff';document.querySelector('.nav-links').style.flexDirection='column';document.querySelector('.nav-links').style.padding='1.2rem';document.querySelector('.nav-links').style.borderBottom='1px solid var(--line)';">☰</button>
-        </div>
-    </nav>
+    @include('partials.header')
 
     <style>
         /* ================= LANDING PAGE v2 ================= */
@@ -1988,47 +1971,7 @@
         <span class="when2" id="toastWhen">2 min ago</span>
     </div>
 
-    <footer>
-        <div class="wrap">
-            <div class="foot-grid">
-                <div>
-                    <a class="logo" href="{{ route('home') }}" style="color:#fff">Nexte<span>c</span>k<small
-                            style="color:#8E99AD">STRATEGY &amp; TECHNOLOGY</small></a>
-                    <p style="margin-top:1rem;max-width:34ch">End-to-end business, IT strategy and AI readiness audits
-                        for founders and business owners who want growth without chaos.</p>
-                </div>
-                <div>
-                    <h4>Explore</h4>
-                    <div class="foot-links">
-                        <a href="{{ route('home') }}#audit">The Audit</a><a href="{{ route('home') }}#method">Methodology</a><a
-                            href="{{ route('home') }}#nasar">About Nasar</a><a href="{{ route('home') }}#industries">Industries</a>
-                    </div>
-                </div>
-                <div>
-                    <h4>Toolkit</h4>
-                    <div class="foot-links">
-                        <a href="{{ route('home') }}#method">Client Diagnostic</a><a href="{{ route('home') }}#method">Industry
-                            Benchmark</a><a href="{{ route('home') }}#method">Competitor Tracker</a><a
-                            href="{{ route('home') }}#method">AI Opportunity Log</a><a href="{{ route('home') }}#method">KPI Dashboard</a>
-                    </div>
-                </div>
-                <div>
-                    <h4>Start now</h4>
-                    <div class="foot-links">
-                        <a href="#book">Book a free strategy call</a>
-                        <a href="mailto:hello@nexteck.co.uk">hello@nexteck.co.uk</a>
-                        <a href="#">+44 (0)20 7946 0000</a>
-                    </div>
-                </div>
-            </div>
-            <div class="foot-bottom">
-                <span>© 2026 Nexteck Consulting Ltd. All rights reserved.</span>
-                <span>Built on the Nexteck SME Strategy &amp; Tracking Toolkit™</span>
-            </div>
-        </div>
-    </footer>
-    <div class="sticky-cta"><span><b>4 slots left</b> — Q4 audit closes soon</span><a class="btn btn-gold"
-            href="#book">Book Free Call</a></div>
+    @include('partials.footer')
     <script>
         const target = new Date("2026-12-31T23:59:59+00:00").getTime();
         function tick() {
