@@ -72,7 +72,15 @@
         .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(184,147,63,0.15); }
         textarea.form-control { min-height: 140px; resize: vertical; }
 
-        .pagination-container { margin-top: 1.5rem; display: flex; justify-content: flex-end; }
+        /* ADMIN CUSTOM PAGINATION STYLES */
+        .pagination-container { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .custom-pagination { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; width: 100%; }
+        .pagination-info { font-size: 0.88rem; color: var(--muted); }
+        .pagination-list { display: flex; gap: 0.35rem; list-style: none; padding: 0; margin: 0; align-items: center; }
+        .page-item .page-link { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 34px; padding: 0 0.7rem; border: 1px solid var(--border); border-radius: 6px; color: var(--text); text-decoration: none; font-size: 0.85rem; font-weight: 600; background: #fff; transition: all 0.2s; }
+        .page-item .page-link:hover { border-color: var(--primary); color: var(--primary); }
+        .page-item.active .page-link { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .page-item.disabled .page-link { opacity: 0.5; cursor: not-allowed; background: #F8FAFC; border-color: var(--border); color: var(--muted); }
 
         @media (max-width: 768px) {
             body { flex-direction: column; }

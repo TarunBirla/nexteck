@@ -41,7 +41,7 @@
         </div>
 
         <div class="pagination-container">
-            {{ $leads->links() }}
+            {{ $leads->links('partials.pagination') }}
         </div>
     @else
         <p style="color: var(--muted); text-align: center; padding: 2rem 0;">No strategy call lead forms submitted yet.</p>

@@ -64,7 +64,7 @@
         </div>
 
         <div class="pagination-container">
-            {{ $blogs->links() }}
+            {{ $blogs->links('partials.pagination') }}
         </div>
     @else
         <p style="color: var(--muted); text-align: center; padding: 2rem 0;">No blog posts available. Click "+ Create New Blog" to write your first post.</p>
