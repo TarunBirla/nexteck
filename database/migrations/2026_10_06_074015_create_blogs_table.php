@@ -17,4 +17,16 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->longText('description');
             $table->string('image')->nullable();
-          
+            $table->boolean('is_active')->default(true);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('blogs');
+    }
+};

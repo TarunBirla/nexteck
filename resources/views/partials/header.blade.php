@@ -10,6 +10,7 @@
             <a href="{{ route('home') }}#method">Methodology</a>
             <a href="{{ route('home') }}#nasar">About Nasar</a>
             <a href="{{ route('home') }}#industries">Industries</a>
+            <a href="{{ route('blogs.index') }}">Blogs</a>
             @if(Route::currentRouteName() === 'home')
                 <a href="#urgency">Why Now</a>
             @endif
