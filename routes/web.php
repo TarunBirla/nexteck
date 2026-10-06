@@ -17,6 +17,20 @@ use App\Models\Blog;
 |--------------------------------------------------------------------------
 */
 
+
+
+Route::get('/clear-cache', function () {
+
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+
+    return response()->json([
+        'success' => true,
+        'message' => 'Config and cache cleared successfully.',
+    ]);
+});
+
 // Home Page Route
 Route::get('/', function () {
     return view('home');
