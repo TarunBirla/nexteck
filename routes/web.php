@@ -17,20 +17,6 @@ use App\Models\Blog;
 |--------------------------------------------------------------------------
 */
 
-
-
-Route::get('/clear-cache', function () {
-
-    Artisan::call('config:clear');
-    Artisan::call('cache:clear');
-    Artisan::call('config:cache');
-
-    return response()->json([
-        'success' => true,
-        'message' => 'Config and cache cleared successfully.',
-    ]);
-});
-
 // Home Page Route
 Route::get('/', function () {
     return view('home');
@@ -71,6 +57,13 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Lead Form Submissions
     Route::get('/leads', [AdminDashboardController::class, 'leads'])->name('leads.index');
+});
+
+// Dynamic XML Sitemap Route for SEO
+Route::get('/sitemap.xml', function () {
+    $blogs = Blog::where('is_active', true)->latest()->get();
+    $content = view('sitemap', compact('blogs'));
+    return response($content, 200)->header('Content-Type', 'text/xml');
 });
 
 // Temporary Setup Route (hit via browser after server start to setup DB tables & Admin user)

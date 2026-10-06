@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $blog->title }} — Nexteck Insights</title>
     <meta name="description" content="{{ Str::limit(strip_tags($blog->description), 160) }}">
+    <link rel="canonical" href="{{ url('/blogs/' . $blog->slug) }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url('/blogs/' . $blog->slug) }}">
+    <meta property="og:title" content="{{ $blog->title }} — Nexteck Insights">
+    <meta property="og:description" content="{{ Str::limit(strip_tags($blog->description), 160) }}">
+    @if($blog->image)
+    <meta property="og:image" content="{{ asset($blog->image) }}">
+    @endif
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $blog->title }} — Nexteck Insights">
+    <meta name="twitter:description" content="{{ Str::limit(strip_tags($blog->description), 160) }}">
+
+    <!-- Schema.org Article Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{ addslashes($blog->title) }}",
+      "description": "{{ addslashes(Str::limit(strip_tags($blog->description), 160)) }}",
+      "datePublished": "{{ $blog->created_at->toIso8601String() }}",
+      "author": {
+        "@type": "Person",
+        "name": "Mohammed Nasar",
+        "jobTitle": "Principal Consultant"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Nexteck Consulting",
+        "url": "{{ url('/') }}"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
