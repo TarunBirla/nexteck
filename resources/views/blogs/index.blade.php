@@ -17,47 +17,55 @@
             --cream: #F7F5F0;
             --gold: #B8933F;
             --gold-2: #D9BC7A;
+            --red: #C0392B;
+            --green: #1E7F4F;
             --shadow: 0 18px 50px -18px rgba(12, 27, 51, .22);
-            --radius: 14px;
+            --radius: 18px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-        .topbar { background: var(--ink); color: #fff; text-align: center; padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 500; }
+        h1, h2, h3, .serif { font-family: 'Fraunces', Georgia, serif; font-weight: 600; line-height: 1.12; letter-spacing: -.01em; }
+        a { color: inherit; text-decoration: none; }
+        .wrap { width: min(1180px, 92%); margin: 0 auto; }
+
+        /* ---------- announcement + nav ---------- */
+        .topbar { background: var(--ink); color: #fff; font-size: .82rem; text-align: center; padding: .55rem 1rem; position: relative; z-index: 60; }
         .topbar b { color: var(--gold-2); }
-        nav { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
-        .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .topbar .cd { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--gold-2); }
+        nav { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, .92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
         .nav-in { display: flex; align-items: center; justify-content: space-between; height: 74px; }
-        .logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+        .logo { font-family: 'Fraunces', serif; font-size: 1.55rem; font-weight: 700; letter-spacing: -.02em; }
         .logo span { color: var(--gold); }
-        .logo small { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 1.5px; color: var(--muted); margin-top: 2px; }
-        .nav-links { display: flex; align-items: center; gap: 1.8rem; }
-        .nav-links a { text-decoration: none; color: var(--ink); font-weight: 500; font-size: 0.92rem; transition: color .2s; }
+        .logo small { display: block; font-family: 'Inter'; font-size: .58rem; letter-spacing: .34em; color: var(--muted); font-weight: 600; margin-top: -4px; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; font-size: .92rem; font-weight: 500; }
+        .nav-links a { color: var(--ink-2); position: relative; }
         .nav-links a:hover { color: var(--gold); }
-        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.4rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all .2s; border: none; cursor: pointer; }
-        .btn-gold { background: var(--gold); color: #fff; }
-        .btn-gold:hover { background: #a38135; }
-        .burger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+        .btn { display: inline-flex; align-items: center; gap: .6rem; font-weight: 600; font-size: .95rem; padding: .95rem 1.7rem; border-radius: 999px; cursor: pointer; border: 1.5px solid transparent; transition: .25s; }
+        .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 12px 28px -10px rgba(184, 147, 63, .55); }
+        .btn-gold:hover { background: #000; transform: translateY(-2px); }
+        .nav-cta { padding: .68rem 1.35rem; }
+        .burger { display: none; background: none; border: 0; font-size: 1.5rem; cursor: pointer; }
 
         /* BLOG SECTION STYLES */
         .blogs-hero { background: var(--cream); padding: 4.5rem 0 3.5rem; text-align: center; border-bottom: 1px solid var(--line); }
         .blogs-hero h1 { font-family: 'Fraunces', serif; font-size: 2.8rem; color: var(--ink); margin-bottom: 1rem; }
-        .blogs-hero p { max-width: 650px; margin: 0 auto; color: var(--muted); font-size: 1.1rem; }
+        .blogs-hero p { max-width: 650px; margin: 0 auto; color: var(--muted); font-size: 1.06rem; }
 
         .blogs-container { padding: 4rem 0 6rem; }
         .blogs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 
-        .blog-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
-        .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+        .blog-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s; }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
         .blog-img-wrap { height: 210px; width: 100%; background: var(--cream); overflow: hidden; position: relative; }
         .blog-img { width: 100%; height: 100%; object-fit: cover; }
         .blog-content { padding: 1.6rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .blog-date { font-size: 0.8rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+        .blog-date { font-size: 0.8rem; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
         .blog-title { font-family: 'Fraunces', serif; font-size: 1.35rem; color: var(--ink); margin-bottom: 0.8rem; line-height: 1.35; text-decoration: none; }
         .blog-title:hover { color: var(--gold); }
-        .blog-excerpt { color: var(--muted); font-size: 0.94rem; margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.55; }
+        .blog-excerpt { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.55; }
         .blog-link { font-weight: 600; font-size: 0.9rem; color: var(--gold); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
         .blog-link:hover { text-decoration: underline; }
 

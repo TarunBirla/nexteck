@@ -117,7 +117,7 @@ Discover the top 5 operational bottlenecks we uncover during Nexteck business au
             'status'      => 'success',
             'message'     => 'Setup completed successfully!',
             'admin_email' => 'admin@nexteck.co.uk',
-            'admin_pass'  => 'password123',
+            'admin_pass'  => 'nexteck@123',
             'note'        => 'Please change the default password after logging into /admin/login'
         ]);
     } catch (\Throwable $e) {
