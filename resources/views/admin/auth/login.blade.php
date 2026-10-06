@@ -28,7 +28,12 @@
         .form-control { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--line); border-radius: 8px; font-size: 0.95rem; }
         .form-control:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,147,63,0.15); }
 
-        .btn-login { width: 100%; padding: 0.85rem; background: var(--ink); color: #fff; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+        .password-wrapper { position: relative; display: flex; align-items: center; }
+        .password-wrapper .form-control { padding-right: 2.8rem; }
+        .eye-btn { position: absolute; right: 0.8rem; background: none; border: none; cursor: pointer; color: #64748B; padding: 0.2rem; display: flex; align-items: center; justify-content: center; transition: color 0.2s; }
+        .eye-btn:hover { color: var(--ink); }
+
+        .btn-login { width: 100%; padding: 0.85rem; background: var(--ink); color: #fff; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; }
         .btn-login:hover { background: #1E2D4A; }
 
         .alert-error { background: #FEE2E2; color: #991B1B; border: 1px solid #FECACA; padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.88rem; margin-bottom: 1.2rem; }
@@ -56,11 +61,41 @@
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" class="form-control" required placeholder="••••••••">
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" class="form-control" required placeholder="••••••••">
+                    <button type="button" class="eye-btn" id="togglePasswordBtn" aria-label="Toggle password visibility" title="Show / Hide Password">
+                        <svg id="eyeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <svg id="eyeOffIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                            <line x1="1" y1="1" x2="23" y2="23"></line>
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             <button type="submit" class="btn-login">Sign in to Dashboard</button>
         </form>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleBtn = document.getElementById("togglePasswordBtn");
+            const passwordInput = document.getElementById("password");
+            const eyeIcon = document.getElementById("eyeIcon");
+            const eyeOffIcon = document.getElementById("eyeOffIcon");
+
+            if (toggleBtn && passwordInput) {
+                toggleBtn.addEventListener("click", function() {
+                    const isPassword = passwordInput.type === "password";
+                    passwordInput.type = isPassword ? "text" : "password";
+                    eyeIcon.style.display = isPassword ? "none" : "block";
+                    eyeOffIcon.style.display = isPassword ? "block" : "none";
+                });
+            }
+        });
+    </script>
 </body>
 </html>
