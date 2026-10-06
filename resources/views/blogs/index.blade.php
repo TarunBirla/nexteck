@@ -71,10 +71,15 @@
 
         .no-blogs { text-align: center; padding: 4rem 0; color: var(--muted); font-size: 1.1rem; }
 
-        .pagination-wrap { margin-top: 3.5rem; display: flex; justify-content: center; }
-        .pagination-wrap .pagination { display: flex; gap: 0.5rem; list-style: none; }
-        .pagination-wrap .page-item .page-link { padding: 0.5rem 1rem; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); text-decoration: none; }
-        .pagination-wrap .page-item.active .page-link { background: var(--gold); color: #fff; border-color: var(--gold); }
+        /* CUSTOM PAGINATION STYLES */
+        .pagination-wrap { margin-top: 3.5rem; }
+        .custom-pagination { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+        .pagination-info { font-size: 0.9rem; color: var(--muted); }
+        .pagination-list { display: flex; gap: 0.4rem; list-style: none; padding: 0; margin: 0; align-items: center; }
+        .page-item .page-link { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 0.8rem; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 0.9rem; font-weight: 600; background: #fff; transition: all 0.2s; }
+        .page-item .page-link:hover { border-color: var(--gold); color: var(--gold); }
+        .page-item.active .page-link { background: var(--gold); color: #fff; border-color: var(--gold); }
+        .page-item.disabled .page-link { opacity: 0.5; cursor: not-allowed; background: #F7F5F0; border-color: var(--line); color: var(--muted); }
 
         footer { background: var(--ink); color: #fff; padding: 4rem 0 2rem; }
         .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 2rem; margin-bottom: 3rem; }
@@ -139,7 +144,7 @@
                 </div>
 
                 <div class="pagination-wrap">
-                    {{ $blogs->links() }}
+                    {{ $blogs->links('partials.pagination') }}
                 </div>
             @else
                 <div class="no-blogs">
