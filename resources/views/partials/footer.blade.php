@@ -37,5 +37,5 @@
         </div>
     </div>
 </footer>
-<div class="sticky-cta"><span><b>4 slots left</b> — Q4 audit closes soon</span><a class="btn btn-gold"
+<div class="sticky-cta"><a class="btn btn-gold"
         href="{{ route('landing') }}#book">Book Free Call</a></div>
