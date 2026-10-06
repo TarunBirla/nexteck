@@ -12,7 +12,7 @@ class AdminBlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::latest()->paginate(10);
+        $blogs = Blog::orderBy('sort_order', 'asc')->latest()->paginate(10);
         return view('admin.blogs.index', compact('blogs'));
     }
 
@@ -27,6 +27,7 @@ class AdminBlogController extends Controller
             'title'       => 'required|string|max:255',
             'description' => 'required|string',
             'image'       => 'nullable|image|mimes:jpeg,jpg,png,webp|max:4096',
+            'sort_order'  => 'nullable|integer',
             'is_active'   => 'nullable|boolean',
         ]);
 
@@ -53,6 +54,7 @@ class AdminBlogController extends Controller
             'slug'        => $slug,
             'description' => $request->description,
             'image'       => $imagePath,
+            'sort_order'  => $request->filled('sort_order') ? (int)$request->sort_order : 1,
             'is_active'   => $request->has('is_active') ? (bool)$request->is_active : true,
         ]);
 
@@ -73,6 +75,7 @@ class AdminBlogController extends Controller
             'title'       => 'required|string|max:255',
             'description' => 'required|string',
             'image'       => 'nullable|image|mimes:jpeg,jpg,png,webp|max:4096',
+            'sort_order'  => 'nullable|integer',
             'is_active'   => 'nullable|boolean',
         ]);
 
@@ -86,7 +89,6 @@ class AdminBlogController extends Controller
         }
 
         if ($request->hasFile('image')) {
-            // Delete old image if exists
             if ($blog->image && File::exists(public_path($blog->image))) {
                 File::delete(public_path($blog->image));
             }
@@ -103,6 +105,7 @@ class AdminBlogController extends Controller
 
         $blog->title = $request->title;
         $blog->description = $request->description;
+        $blog->sort_order = $request->filled('sort_order') ? (int)$request->sort_order : 1;
         $blog->is_active = $request->has('is_active') ? (bool)$request->is_active : false;
         $blog->save();
 

@@ -14,10 +14,12 @@ class Blog extends Model
         'slug',
         'description',
         'image',
+        'sort_order',
         'is_active',
     ];
 
     protected $casts = [
-        'is_active' => 'boolean',
+        'is_active'  => 'boolean',
+        'sort_order' => 'integer',
     ];
 }

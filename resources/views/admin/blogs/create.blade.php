@@ -38,6 +38,12 @@
             <small style="color: var(--muted);">Supported formats: JPG, PNG, WEBP (Max 4MB)</small>
         </div>
 
+        <div class="form-group">
+            <label for="sort_order">Sort Order (Default is 1)</label>
+            <input type="number" id="sort_order" name="sort_order" class="form-control" value="{{ old('sort_order', 1) }}" min="1" placeholder="1">
+            <small style="color: var(--muted);">Blogs display in ascending order (1, 2, 3...)</small>
+        </div>
+
         <div class="form-group" style="margin-top: 1.5rem;">
             <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer;">
                 <input type="checkbox" name="is_active" value="1" {{ old('is_active', 1) ? 'checked' : '' }} style="width: 18px; height: 18px; accent-color: var(--primary);">

@@ -99,6 +99,7 @@ Route::get('/setup-admin-blog', function () {
 
 In this article, Mohammed Nasar outlines how a costed, 90-day IT and AI readiness audit helps business owners eliminate manual bottlenecks, scale operations, and compound response speed.",
                 'image'       => null,
+                'sort_order'  => 1,
                 'is_active'   => true,
             ]);
 
@@ -109,6 +110,7 @@ In this article, Mohammed Nasar outlines how a costed, 90-day IT and AI readines
 
 Discover the top 5 operational bottlenecks we uncover during Nexteck business audits and how simple integrations return 12+ hours to SME owners every week.",
                 'image'       => null,
+                'sort_order'  => 2,
                 'is_active'   => true,
             ]);
         }
