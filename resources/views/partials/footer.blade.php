@@ -26,7 +26,7 @@
                 <h4>Start now</h4>
                 <div class="foot-links">
                     <a href="{{ route('landing') }}#book">Book a free strategy call</a>
-                    <a href="mailto:hello@nexteck.co.uk">hello@nexteck.co.uk</a>
+                    <a href="mailto:nasar@nexteck.co.uk">nasar@nexteck.co.uk</a>
                     <a href="#">+44 (0)78 7917 5585</a>
                 </div>
             </div>

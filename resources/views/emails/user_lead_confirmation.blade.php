@@ -19,7 +19,7 @@
         </ul>
     </div>
 
-    <p>If you have any urgent questions prior to our call, feel free to reply directly to this email or reach us at <a href="mailto:hello@nexteck.co.uk">hello@nexteck.co.uk</a>.</p>
+    <p>If you have any urgent questions prior to our call, feel free to reply directly to this email or reach us at <a href="mailto:nasar@nexteck.co.uk">nasar@nexteck.co.uk</a>.</p>
 
     <p>Best regards,<br>
     <strong>Mohammed Nasar</strong><br>
