@@ -38,7 +38,7 @@
                                 <br><small style="color: var(--muted);">/blogs/{{ $blog->slug }}</small>
                             </td>
                             <td>
-                                <span class="badge badge-secondary" style="font-size: 0.85rem; padding: 0.3rem 0.6rem;">Order: {{ $blog->sort_order ?? 1 }}</span>
+                                <span class="badge badge-secondary" style="font-size: 0.85rem; padding: 0.3rem 0.6rem;"> {{ $blog->sort_order ?? 1 }}</span>
                             </td>
                             <td>
                                 @if($blog->is_active)
