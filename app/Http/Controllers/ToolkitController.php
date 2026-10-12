@@ -477,6 +477,12 @@ class ToolkitController extends Controller
         self::ensureTableExists();
         $toolkit = SmeToolkit::create($validated);
 
+        \App\Models\Visitor::recordFormSubmission($request, 'SME Strategy & Tracking Toolkit', [
+            'name'    => $toolkit->client_name,
+            'email'   => $toolkit->client_email,
+            'company' => $toolkit->company_name,
+        ]);
+
         return redirect()
             ->route('toolkit.index')
             ->with('success', 'Thank you, ' . $toolkit->client_name . '! Your SME Strategy & Tracking Toolkit for ' . $toolkit->company_name . ' has been saved and submitted to the Nexteck team.');

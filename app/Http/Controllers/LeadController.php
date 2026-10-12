@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LeadRequest;
+use App\Models\Visitor;
 use App\Mail\AdminLeadNotificationMail;
 use App\Mail\UserLeadConfirmationMail;
 use Illuminate\Http\Request;
@@ -22,6 +23,12 @@ class LeadController extends Controller
         ]);
 
         $lead = LeadRequest::create($validated);
+
+        Visitor::recordFormSubmission($request, 'Strategy Call Lead Form', [
+            'name'    => $lead->full_name,
+            'email'   => $lead->work_email,
+            'company' => $lead->company,
+        ]);
 
         try {
             $adminEmail = env('ADMIN_MAIL', 'nasar@nexteck.co.uk');

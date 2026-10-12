@@ -36,6 +36,14 @@
         </div>
         <div class="stat-icon">🧰</div>
     </div>
+
+    <a href="{{ route('admin.analytics.index') }}" class="stat-card" style="text-decoration: none; color: inherit;">
+        <div>
+            <div class="stat-number">{{ $totalVisitors ?? 0 }}</div>
+            <div class="stat-label">Unique Visitors (IP)</div>
+        </div>
+        <div class="stat-icon">📈</div>
+    </a>
 </div>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">

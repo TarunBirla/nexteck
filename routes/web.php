@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Controllers\Admin\AdminToolkitController;
+use App\Http\Controllers\Admin\AdminAnalyticsController;
 use App\Models\User;
 use App\Models\Blog;
 
@@ -69,6 +70,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/toolkits/{id}', [AdminToolkitController::class, 'show'])->name('toolkits.show');
     Route::put('/toolkits/{id}', [AdminToolkitController::class, 'update'])->name('toolkits.update');
     Route::delete('/toolkits/{id}', [AdminToolkitController::class, 'destroy'])->name('toolkits.destroy');
+
+    // Website Visitor Analytics & IP Tracker
+    Route::get('/analytics', [AdminAnalyticsController::class, 'index'])->name('analytics.index');
+    Route::delete('/analytics/{id}', [AdminAnalyticsController::class, 'destroy'])->name('analytics.destroy');
 });
 
 // Dynamic XML Sitemap Route for SEO
@@ -196,4 +201,21 @@ Route::get('/setup-toolkit-table', function () {
         ], 500);
     }
 });
+
+// Live Server Route to Create Visitors Analytics Table Directly
+Route::get('/setup-analytics-table', function () {
+    try {
+        \App\Models\Visitor::ensureTableExists();
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'visitors analytics table created/verified successfully on live server!'
+        ]);
+    } catch (\Throwable $e) {
+        return response()->json([
+            'status'  => 'error',
+            'message' => 'Failed to create visitors table: ' . $e->getMessage()
+        ], 500);
+    }
+});
+
 

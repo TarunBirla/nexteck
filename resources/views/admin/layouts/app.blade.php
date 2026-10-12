@@ -107,6 +107,9 @@
             <a href="{{ route('admin.toolkits.index') }}" class="nav-item {{ request()->routeIs('admin.toolkits.*') ? 'active' : '' }}">
                 🧰 SME Toolkits
             </a>
+            <a href="{{ route('admin.analytics.index') }}" class="nav-item {{ request()->routeIs('admin.analytics.*') ? 'active' : '' }}">
+                📈 Visitor Analytics
+            </a>
             <a href="{{ route('home') }}" target="_blank" class="nav-item">
                 🌐 Visit Website &rarr;
             </a>
