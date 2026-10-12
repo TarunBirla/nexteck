@@ -78,6 +78,15 @@ Route::get('/sitemap.xml', function () {
     return response($content, 200)->header('Content-Type', 'text/xml');
 });
 
+// LLM / AI Search Discovery File (ChatGPT, Perplexity, Claude, Gemini)
+Route::get('/llms.txt', function () {
+    $path = public_path('llms.txt');
+    if (file_exists($path)) {
+        return response(file_get_contents($path), 200)->header('Content-Type', 'text/plain; charset=UTF-8');
+    }
+    return abort(404);
+});
+
 // Temporary Setup Route (hit via browser after server start to setup DB tables & Admin user)
 Route::get('/run-migrations', function () {
     try {

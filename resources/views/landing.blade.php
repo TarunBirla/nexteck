@@ -4,19 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Free Business & AI Audit Strategy Call | Nexteck</title>
-    <meta name="description"
-        content="Claim one of 6 quarterly slots for Nexteck's end-to-end business and AI audit. Costed, prioritised, 90-day roadmap — built by 25-year IT strategist Mohammed Nasar.">
+    <title>Book Software &amp; AI Strategy Call London | Nexteck Solutions</title>
+    <meta name="description" content="Book a free 30-min Software Development &amp; AI Strategy Call with Nexteck London. Get a costed 90-day custom software &amp; IT roadmap for your SME.">
+    <meta name="keywords" content="Software Development Company London, Custom Software Solutions London, Book IT Strategy Call UK, AI Audit London, Nexteck">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="{{ url('/landing') }}">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nexteck">
+    <meta property="og:title" content="Book Software &amp; AI Strategy Call London | Nexteck Solutions">
+    <meta property="og:description" content="Book a free 30-min Software Development &amp; AI Strategy Call with Nexteck London. Get a costed 90-day custom software &amp; IT roadmap for your SME.">
+    <meta property="og:url" content="{{ url('/landing') }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book Software &amp; AI Strategy Call London | Nexteck Solutions">
+    <meta name="twitter:description" content="Book a free 30-min Software Development &amp; AI Strategy Call with Nexteck London. Get a costed 90-day custom software &amp; IT roadmap for your SME.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nexteck Consulting",
-"description":"End-to-end business, IT strategy and AI readiness audits for SMEs.",
-"founder":{"@type":"Person","name":"Mohammed Nasar","jobTitle":"Principal Consultant"},
-"areaServed":"United Kingdom"}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Nexteck — Software Development Company London",
+      "url": "{{ url('/landing') }}",
+      "description": "End-to-end business, custom software development, IT strategy and AI readiness audits for SMEs in London & UK.",
+      "founder": {
+        "@type": "Person",
+        "name": "Mohammed Nasar",
+        "jobTitle": "Principal Consultant"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      },
+      "areaServed": ["London", "United Kingdom"]
+    }
+    </script>
     <style>
         :root {
             --ink: #0C1B33;

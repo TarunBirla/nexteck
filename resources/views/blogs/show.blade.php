@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $blog->title }} — Nexteck Insights</title>
-    <meta name="description" content="{{ Str::limit(strip_tags($blog->description), 160) }}">
+    <title>{{ Str::limit($blog->title, 52, '') }} | Nexteck London</title>
+    <meta name="description" content="{{ Str::limit(strip_tags($blog->description), 155) }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="{{ url('/blogs/' . $blog->slug) }}">
 
     <!-- Open Graph / Facebook -->

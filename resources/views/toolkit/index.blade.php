@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexteck SME Strategy &amp; Tracking Toolkit — Interactive Business &amp; AI Audit</title>
-    <meta name="description" content="Complete the Nexteck SME Strategy & Tracking Toolkit: Client Diagnostic, Industry Benchmark, Competitor Tracker, AI & IT Opportunity Log, SOP Register, and KPI Dashboard.">
+    <title>SME Strategy &amp; AI Audit Toolkit London | Nexteck Solutions</title>
+    <meta name="description" content="Free interactive SME Strategy, AI Audit &amp; Custom Software Toolkit by Nexteck London. Benchmark competitors, plan automation &amp; track KPIs.">
+    <meta name="keywords" content="SME Strategy Toolkit, AI Audit London, Custom Software Solutions London, Business Process Automation UK, Nexteck Toolkit">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="{{ url('/toolkit') }}">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nexteck">
+    <meta property="og:title" content="SME Strategy &amp; AI Audit Toolkit London | Nexteck Solutions">
+    <meta property="og:description" content="Free interactive SME Strategy, AI Audit &amp; Custom Software Toolkit by Nexteck London. Benchmark competitors, plan automation &amp; track KPIs.">
+    <meta property="og:url" content="{{ url('/toolkit') }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SME Strategy &amp; AI Audit Toolkit London | Nexteck Solutions">
+    <meta name="twitter:description" content="Free interactive SME Strategy, AI Audit &amp; Custom Software Toolkit by Nexteck London. Benchmark competitors, plan automation &amp; track KPIs.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Nexteck SME Strategy & Tracking Toolkit",
+      "url": "{{ url('/toolkit') }}",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "description": "Interactive 7-stage SME Strategy, Competitor Benchmarking, AI/IT Opportunity & Custom Software Planning Toolkit by Nexteck London.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Nexteck — Software Development Company London",
+        "url": "{{ url('/') }}",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      }
+    }
+    </script>
     <style>
         :root {
             --ink: #0C1B33;

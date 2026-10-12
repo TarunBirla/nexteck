@@ -3,10 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexteck Insights — Strategy, Technology & AI Audits for SMEs</title>
-    <meta name="description" content="Expert insights on IT strategy, AI readiness, process automation, and business growth for SMEs.">
+    <title>Software Development, AI &amp; IT Strategy Blog | Nexteck London</title>
+    <meta name="description" content="Expert insights on custom software development in London, web solutions, AI readiness, workflow automation, and SME growth by Nexteck.">
+    <meta name="keywords" content="Software Development Blog London, Custom Software Insights UK, AI Readiness SMEs, Web Development London, Nexteck Blog">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="{{ url('/blogs') }}">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nexteck">
+    <meta property="og:title" content="Software Development, AI &amp; IT Strategy Blog | Nexteck London">
+    <meta property="og:description" content="Expert insights on custom software development in London, web solutions, AI readiness, workflow automation, and SME growth by Nexteck.">
+    <meta property="og:url" content="{{ url('/blogs') }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Software Development, AI &amp; IT Strategy Blog | Nexteck London">
+    <meta name="twitter:description" content="Expert insights on custom software development in London, web solutions, AI readiness, workflow automation, and SME growth by Nexteck.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Nexteck Insights — Software Development & AI Strategy Blog London",
+      "url": "{{ url('/blogs') }}",
+      "description": "Expert articles on custom software development, web applications, IT strategy, and AI automation for SMEs in London and the UK.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Nexteck — Software Development Company London",
+        "url": "{{ url('/') }}"
+      }
+    }
+    </script>
     <style>
         :root {
             --ink: #0C1B33;

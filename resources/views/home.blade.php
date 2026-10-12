@@ -4,19 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexteck — Business & AI Strategy Audits for SMEs | IT Roadmaps That Deliver</title>
-    <meta name="description"
-        content="Nexteck performs end-to-end business audits and builds costed IT & AI roadmaps for SME owners. 25+ years of enterprise IT strategy experience.">
+    <title>Software Development Company London | Web &amp; Custom Software</title>
+    <meta name="description" content="Nexteck is a leading Software Development Company in London delivering custom software solutions, web development, IT strategy &amp; AI audits for UK SMEs.">
+    <meta name="keywords" content="Software Development Company London, Custom Software Solutions London, Web Development Company London, Bespoke Software Development UK, AI Strategy Consultant London, IT Strategy Audit SMEs, Nexteck">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Mohammed Nasar — Nexteck Consulting">
+    <meta name="geo.region" content="GB-LND">
+    <meta name="geo.placename" content="London">
+    <link rel="canonical" href="{{ url('/') }}">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nexteck">
+    <meta property="og:title" content="Software Development Company London | Web &amp; Custom Software">
+    <meta property="og:description" content="Nexteck is a leading Software Development Company in London delivering custom software solutions, web development, IT strategy &amp; AI audits for UK SMEs.">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Software Development Company London | Web &amp; Custom Software">
+    <meta name="twitter:description" content="Nexteck is a leading Software Development Company in London delivering custom software solutions, web development, IT strategy &amp; AI audits for UK SMEs.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nexteck Consulting",
-"description":"End-to-end business, IT strategy and AI readiness audits for SMEs.",
-"founder":{"@type":"Person","name":"Mohammed Nasar","jobTitle":"Principal Consultant"},
-"areaServed":"United Kingdom"}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "{{ url('/') }}#organization",
+          "name": "Nexteck — Software Development Company London",
+          "url": "{{ url('/') }}",
+          "description": "Leading Software Development Company in London providing web & custom software solutions, end-to-end business audits, IT strategy and AI readiness roadmaps for UK SMEs.",
+          "founder": {
+            "@type": "Person",
+            "name": "Mohammed Nasar",
+            "jobTitle": "Principal Consultant & Software Architect"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressCountry": "GB"
+          },
+          "areaServed": ["London", "United Kingdom"],
+          "knowsAbout": [
+            "Custom Software Development London",
+            "Web Application Development",
+            "Bespoke SaaS & CRM Solutions",
+            "AI Strategy & Workflow Automation",
+            "SME IT Roadmaps & Business Audits"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "{{ url('/') }}#website",
+          "url": "{{ url('/') }}",
+          "name": "Nexteck — Software Development Company London",
+          "publisher": { "@id": "{{ url('/') }}#organization" }
+        }
+      ]
+    }
+    </script>
     <style>
         :root {
             --ink: #0C1B33;

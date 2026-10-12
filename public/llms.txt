@@ -1,0 +1,22 @@
+# Nexteck — Software Development Company London | Web, Custom Software & AI Strategy
+
+> Nexteck (https://www.thenexteck.com) is a premier Software Development Company in London, UK, founded by Principal Consultant & Software Architect Mohammed Nasar (25+ years of enterprise IT & software experience across Banking, Insurance, Manufacturing, Education, and E-commerce). We deliver bespoke web & custom software solutions, end-to-end business process audits, workflow automation, and costed 90-day IT & AI roadmaps for UK SMEs.
+
+## Core Services & Solutions
+- **Custom Software Development London**: Bespoke web applications, internal business portals, custom booking/member engines, and SaaS platforms when off-the-shelf software falls short.
+- **Web Development & System Integration**: High-converting web platforms, CRM/ERP unification, API integrations (Zapier, Make, custom REST APIs), and real-time BI dashboards.
+- **SME Business & AI Strategy Audits**: Rigorous 4-stage engagement covering Client Diagnostic, Industry Benchmarking, Competitor Analysis, AI/IT Opportunity Scoring, SOP Delegation, and KPI Governance.
+- **AI Readiness & Workflow Automation**: Practical, ROI-driven AI implementation (lead qualification chatbots, automated invoicing, AI-assisted document drafting) that saves SME owners 10+ hours every week.
+
+## Key Website Pages
+- [Home — Software Development Company London | Web & Custom Software](https://www.thenexteck.com/): Main overview of Nexteck's bespoke software, IT audit, and AI roadmap services in London & across the UK.
+- [SME Strategy & AI Audit Toolkit](https://www.thenexteck.com/toolkit): Free interactive 7-tab SME Strategy & Tracking Toolkit (Diagnostic, Industry Benchmark, Competitor Tracker, AI & IT Opportunity Log, SOP Register, KPI Dashboard, Tool Stack).
+- [Book a Free 30-Minute Strategy Call](https://www.thenexteck.com/landing): Claim one of 6 quarterly engagement slots with Mohammed Nasar for a custom software & AI readiness consultation.
+- [Nexteck Insights & Software Strategy Blog](https://www.thenexteck.com/blogs): Practical guides on custom software development, eliminating IT bottlenecks, and AI roadmaps for UK SME directors.
+- [XML Sitemap](https://www.thenexteck.com/sitemap.xml): Complete index of public pages and articles.
+
+## Contact & Location
+- **Company**: Nexteck Consulting
+- **Principal Consultant**: Mohammed Nasar
+- **Location**: London, United Kingdom (Serving SMEs across London & the UK)
+- **Website**: https://www.thenexteck.com/
