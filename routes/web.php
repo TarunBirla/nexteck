@@ -5,9 +5,11 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ToolkitController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\AdminBlogController;
+use App\Http\Controllers\Admin\AdminToolkitController;
 use App\Models\User;
 use App\Models\Blog;
 
@@ -38,6 +40,10 @@ Route::post('/submit-strategy-call', [LeadController::class, 'submitStrategyCall
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
 
+// Frontend SME Strategy & Tracking Toolkit Routes
+Route::get('/toolkit', [ToolkitController::class, 'index'])->name('toolkit.index');
+Route::post('/toolkit', [ToolkitController::class, 'store'])->name('toolkit.store');
+
 // Admin Guest Routes
 Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
@@ -57,6 +63,12 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Lead Form Submissions
     Route::get('/leads', [AdminDashboardController::class, 'leads'])->name('leads.index');
+
+    // SME Strategy & Tracking Toolkit Submissions
+    Route::get('/toolkits', [AdminToolkitController::class, 'index'])->name('toolkits.index');
+    Route::get('/toolkits/{id}', [AdminToolkitController::class, 'show'])->name('toolkits.show');
+    Route::put('/toolkits/{id}', [AdminToolkitController::class, 'update'])->name('toolkits.update');
+    Route::delete('/toolkits/{id}', [AdminToolkitController::class, 'destroy'])->name('toolkits.destroy');
 });
 
 // Dynamic XML Sitemap Route for SEO
@@ -136,3 +148,43 @@ Discover the top 5 operational bottlenecks we uncover during Nexteck business au
         ], 500);
     }
 });
+
+// Live Server Route to Create SME Toolkits Table Directly
+Route::get('/setup-toolkit-table', function () {
+    try {
+        if (!\Illuminate\Support\Facades\Schema::hasTable('sme_toolkits')) {
+            \Illuminate\Support\Facades\Schema::create('sme_toolkits', function (\Illuminate\Database\Schema\Blueprint $table) {
+                $table->id();
+                $table->string('client_name');
+                $table->string('company_name');
+                $table->string('client_email');
+                $table->string('phone')->nullable();
+                $table->json('diagnostic_data')->nullable();
+                $table->json('benchmark_data')->nullable();
+                $table->json('competitor_data')->nullable();
+                $table->json('opportunity_data')->nullable();
+                $table->json('sop_data')->nullable();
+                $table->json('kpi_data')->nullable();
+                $table->string('status')->default('Submitted');
+                $table->text('admin_notes')->nullable();
+                $table->timestamps();
+            });
+
+            return response()->json([
+                'status'  => 'success',
+                'message' => 'sme_toolkits table created successfully on live server!'
+            ]);
+        }
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'sme_toolkits table already exists!'
+        ]);
+    } catch (\Throwable $e) {
+        return response()->json([
+            'status'  => 'error',
+            'message' => 'Failed to create sme_toolkits table: ' . $e->getMessage()
+        ], 500);
+    }
+});
+

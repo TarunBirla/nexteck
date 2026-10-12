@@ -28,9 +28,17 @@
         </div>
         <div class="stat-icon">📬</div>
     </div>
+
+    <div class="stat-card">
+        <div>
+            <div class="stat-number">{{ $totalToolkits ?? 0 }}</div>
+            <div class="stat-label">SME Toolkits Saved</div>
+        </div>
+        <div class="stat-icon">🧰</div>
+    </div>
 </div>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
     <div class="card">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
             <h3 style="font-size: 1.1rem; font-weight: 700;">Recent Blogs</h3>
@@ -90,5 +98,42 @@
             <p style="color: var(--muted); font-size: 0.9rem;">No lead requests received yet.</p>
         @endif
     </div>
+</div>
+
+<div class="card">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+        <h3 style="font-size: 1.1rem; font-weight: 700;">Recent SME Strategy Toolkit Submissions</h3>
+        <a href="{{ route('admin.toolkits.index') }}" class="btn-sm btn-secondary">View All</a>
+    </div>
+    @if(isset($recentToolkits) && $recentToolkits->count() > 0)
+        <table>
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Company</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Submitted</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($recentToolkits as $tk)
+                    <tr>
+                        <td><strong>{{ $tk->client_name }}</strong></td>
+                        <td>{{ $tk->company_name }}</td>
+                        <td>{{ $tk->client_email }}</td>
+                        <td><span class="badge badge-success">{{ $tk->status }}</span></td>
+                        <td>{{ $tk->created_at->format('M d, Y') }}</td>
+                        <td>
+                            <a href="{{ route('admin.toolkits.show', $tk->id) }}" class="btn-sm btn-primary">View / Edit</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @else
+        <p style="color: var(--muted); font-size: 0.9rem;">No SME Toolkit submissions received yet.</p>
+    @endif
 </div>
 @endsection
