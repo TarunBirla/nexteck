@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,9 +23,9 @@
     <meta name="twitter:description" content="Nexteck is a leading Software Development Company in London delivering custom software solutions, web development, IT strategy &amp; AI audits for UK SMEs.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{ asset('css/editorial.css') }}">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -67,1713 +66,773 @@
     }
     </script>
     <style>
-        :root {
-            --ink: #0C1B33;
-            --ink-2: #1E2D4A;
-            --muted: #5A6478;
-            --line: #E7E4DC;
-            --paper: #FFFFFF;
-            --cream: #F7F5F0;
-            --gold: #B8933F;
-            --gold-2: #D9BC7A;
-            --red: #C0392B;
-            --green: #1E7F4F;
-            --shadow: 0 18px 50px -18px rgba(12, 27, 51, .22);
-            --radius: 18px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
-        }
-
-        html {
-            scroll-behavior: smooth
-        }
-
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            color: var(--ink);
-            background: var(--paper);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden
-        }
-
-        h1,
-        h2,
-        h3,
-        .serif {
-            font-family: 'Fraunces', Georgia, serif;
-            font-weight: 600;
-            line-height: 1.12;
-            letter-spacing: -.01em
-        }
-
-        img {
-            max-width: 100%;
-            display: block
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none
-        }
-
-        .wrap {
-            width: min(1180px, 92%);
-            margin: 0 auto
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: .55rem;
-            font-size: .72rem;
-            font-weight: 700;
-            letter-spacing: .16em;
-            text-transform: uppercase;
-            color: var(--gold)
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 26px;
-            height: 2px;
-            background: var(--gold)
-        }
-
-        .sec {
-            padding: 96px 0
-        }
-
-        .sec-head {
-            max-width: 760px;
-            margin: 0 auto 56px;
-            text-align: center
-        }
-
-        .sec-head h2 {
-            font-size: clamp(1.9rem, 3.6vw, 2.9rem);
-            margin: .9rem 0 1rem
-        }
-
-        .sec-head p {
-            color: var(--muted);
-            font-size: 1.06rem
-        }
-
-        .grid {
-            display: grid;
-            gap: 24px
-        }
-
-        .g2 {
-            grid-template-columns: repeat(2, 1fr)
-        }
-
-        .g3 {
-            grid-template-columns: repeat(3, 1fr)
-        }
-
-        .g4 {
-            grid-template-columns: repeat(4, 1fr)
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: .6rem;
-            font-weight: 600;
-            font-size: .95rem;
-            padding: .95rem 1.7rem;
-            border-radius: 999px;
-            cursor: pointer;
-            border: 1.5px solid transparent;
-            transition: .25s
-        }
-
-        .btn-gold {
-            background: var(--gold);
-            color: #fff;
-            box-shadow: 0 12px 28px -10px rgba(184, 147, 63, .55)
-        }
-
-        .btn-gold:hover {
-            background: #000;
-            transform: translateY(-2px)
-        }
-
-        .btn-ghost {
-            border-color: var(--ink);
-            color: var(--ink);
-            background: transparent
-        }
-
-        .btn-ghost:hover {
-            background: var(--ink);
-            color: #fff
-        }
-
-        .btn-white {
-            background: #fff;
-            color: var(--ink)
-        }
-
-        .card {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            overflow: hidden;
-            transition: .3s
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow)
-        }
-
-        .tag {
-            display: inline-block;
-            font-size: .7rem;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            padding: .32rem .7rem;
-            border-radius: 999px
-        }
-
-        /* ---------- announcement + nav ---------- */
-        .topbar {
-            background: var(--ink);
-            color: #fff;
-            font-size: .82rem;
-            text-align: center;
-            padding: .55rem 1rem;
-            position: relative;
-            z-index: 60
-        }
-
-        .topbar b {
-            color: var(--gold-2)
-        }
-
-        .topbar .cd {
-            font-variant-numeric: tabular-nums;
-            font-weight: 700;
-            color: var(--gold-2)
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: rgba(255, 255, 255, .92);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--line)
-        }
-
-        .nav-in {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 74px
-        }
-
-        .logo {
-            font-family: 'Fraunces', serif;
-            font-size: 1.55rem;
-            font-weight: 700;
-            letter-spacing: -.02em
-        }
-
-        .logo span {
-            color: var(--gold)
-        }
-
-        .logo small {
-            display: block;
-            font-family: 'Inter';
-            font-size: .58rem;
-            letter-spacing: .34em;
-            color: var(--muted);
-            font-weight: 600;
-            margin-top: -4px
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            font-size: .92rem;
-            font-weight: 500
-        }
-
-        .nav-links a {
-            color: var(--ink-2);
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold)
-        }
-
-        .nav-cta {
-            padding: .68rem 1.35rem
-        }
-
-        .burger {
-            display: none;
-            background: none;
-            border: 0;
-            font-size: 1.5rem;
-            cursor: pointer
-        }
-
-        /* ---------- hero ---------- */
-        .hero {
-            position: relative;
-            min-height: 92vh;
-            display: flex;
-            align-items: center;
-            color: #fff;
-            overflow: hidden;
-            background: var(--ink)
-        }
-
-        .hero-media,
-        .hero-media video,
-        .hero-media .kb {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover
-        }
-
-        .hero-media .kb {
-            background: url("assets/img/hero-poster.jpg") center/cover;
-            animation: kb 26s ease-in-out infinite alternate
-        }
-
-        @keyframes kb {
-            from {
-                transform: scale(1) translateY(0)
-            }
-
-            to {
-                transform: scale(1.12) translateY(-2%)
-            }
-        }
-
-        .hero-media video {
-            opacity: 0;
-            transition: opacity 1.2s
-        }
-
-        .hero-media video.on {
-            opacity: 1
-        }
-
-        .hero-media::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(105deg, rgba(8, 17, 34, .93) 0%, rgba(8, 17, 34, .72) 45%, rgba(8, 17, 34, .35) 100%)
-        }
-
-        .hero-in {
-            position: relative;
-            z-index: 2;
-            padding: 120px 0 90px
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-            background: rgba(192, 57, 43, .16);
-            border: 1px solid rgba(255, 120, 105, .5);
-            color: #FFD9D3;
-            font-size: .78rem;
-            font-weight: 600;
-            padding: .45rem 1rem;
-            border-radius: 999px;
-            margin-bottom: 1.6rem
-        }
-
-        .pulse {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #FF6B5B;
-            animation: pl 1.6s infinite
-        }
-
-        @keyframes pl {
-
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 107, 91, .7)
-            }
-
-            55% {
-                box-shadow: 0 0 0 9px rgba(255, 107, 91, 0)
-            }
-        }
-
-        .hero h1 {
-            font-size: clamp(2.4rem, 5.4vw, 4.3rem);
-            max-width: 16ch;
-            margin-bottom: 1.4rem
-        }
-
-        .hero h1 em {
-            font-style: italic;
-            color: var(--gold-2)
-        }
-
-        .hero p.lead {
-            max-width: 56ch;
-            font-size: 1.12rem;
-            color: #D9DEE8;
-            margin-bottom: 2.2rem
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 3rem
-        }
-
-        .hero-chips {
-            display: flex;
-            gap: 1.6rem;
-            flex-wrap: wrap;
-            font-size: .85rem;
-            color: #C6CDDA
-        }
-
-        .hero-chips span {
-            display: flex;
-            align-items: center;
-            gap: .5rem
-        }
-
-        .hero-chips svg {
-            color: var(--gold-2);
-            flex: none
-        }
-
-        .hero-scroll {
-            position: absolute;
-            bottom: 26px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            font-size: .72rem;
-            letter-spacing: .3em;
-            text-transform: uppercase;
-            color: #B8C0CF;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: .5rem
-        }
-
-        .hero-scroll::after {
-            content: "";
-            width: 1px;
-            height: 38px;
-            background: linear-gradient(#B8C0CF, transparent);
-            animation: drop 1.8s infinite
-        }
-
-        @keyframes drop {
-            from {
-                transform: scaleY(0);
-                transform-origin: top
-            }
-
-            to {
-                transform: scaleY(1);
-                transform-origin: top
-            }
-        }
-
-        /* ---------- stats ---------- */
-        .stats {
-            background: var(--cream);
-            border-block: 1px solid var(--line)
-        }
-
-        .stats .grid {
-            gap: 0
-        }
-
-        .stat {
-            padding: 44px 28px;
-            text-align: center;
-            border-left: 1px solid var(--line)
-        }
-
-        .stat:first-child {
-            border-left: 0
-        }
-
-        .stat b {
-            font-family: 'Fraunces', serif;
-            font-size: clamp(2rem, 3.4vw, 2.9rem);
-            color: var(--ink);
-            display: block
-        }
-
-        .stat b i {
-            color: var(--gold);
-            font-style: normal
-        }
-
-        .stat span {
-            font-size: .85rem;
-            color: var(--muted)
-        }
-
-        /* ---------- pain points ---------- */
-        .pain-card {
-            padding: 30px 26px;
-            display: flex;
-            flex-direction: column;
-            gap: .7rem
-        }
-
-        .pain-card .num {
-            font-family: 'Fraunces', serif;
-            font-size: .95rem;
-            color: var(--gold);
-            font-weight: 700
-        }
-
-        .pain-card h3 {
-            font-size: 1.08rem;
-            font-family: 'Inter';
-            font-weight: 700;
-            letter-spacing: -.01em
-        }
-
-        .pain-card p {
-            font-size: .9rem;
-            color: var(--muted)
-        }
-
-        .pain-card.hot {
-            border-color: #F0C6BF;
-            background: linear-gradient(180deg, #FFF7F5, #fff)
-        }
-
-        .pain-card .tag {
-            align-self: flex-start;
-            background: #FBE9E5;
-            color: var(--red)
-        }
-
-        .pain-card .tag.calm {
-            background: #EEF3EE;
-            color: var(--green)
-        }
-
-        /* ---------- methodology ---------- */
-        .method {
-            background: var(--ink);
-            color: #fff;
-            position: relative;
-            overflow: hidden
-        }
-
-        .method::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: url("assets/img/analytics.jpg") center/cover;
-            opacity: .14
-        }
-
-        .method .wrap {
-            position: relative
-        }
-
-        .method .sec-head p {
-            color: #B9C2D2
-        }
-
-        .stage {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            background: rgba(255, 255, 255, .05);
-            border: 1px solid rgba(255, 255, 255, .12);
-            border-radius: var(--radius);
-            padding: 32px 28px;
-            backdrop-filter: blur(6px)
-        }
-
-        .stage .n {
-            font-family: 'Fraunces', serif;
-            font-size: 2.6rem;
-            color: var(--gold-2);
-            line-height: 1
-        }
-
-        .stage h3 {
-            font-size: 1.25rem
-        }
-
-        .stage p {
-            font-size: .92rem;
-            color: #C2CAD8
-        }
-
-        .stage .feed {
-            font-size: .76rem;
-            color: #8E99AD;
-            margin-top: auto;
-            border-top: 1px dashed rgba(255, 255, 255, .18);
-            padding-top: .9rem
-        }
-
-        .stage .feed b {
-            color: var(--gold-2);
-            font-weight: 600
-        }
-
-        /* ---------- opportunity table ---------- */
-        .opp {
-            background: var(--cream)
-        }
-
-        .table-card {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow)
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: .88rem
-        }
-
-        th {
-            background: var(--ink);
-            color: #fff;
-            text-align: left;
-            padding: .95rem 1.1rem;
-            font-size: .72rem;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            font-weight: 600
-        }
-
-        td {
-            padding: .95rem 1.1rem;
+        /* Hero & Home specific editorial layout */
+        .home-hero {
+            padding: clamp(3.5rem, 6vw, 6rem) 0 clamp(3rem, 5vw, 5rem);
             border-bottom: 1px solid var(--line);
-            vertical-align: top
+            background-color: var(--paper);
+            position: relative;
         }
-
-        tr:last-child td {
-            border-bottom: 0
-        }
-
-        tbody tr:hover {
-            background: #FBFAF7
-        }
-
-        .score {
-            display: inline-block;
-            min-width: 34px;
-            text-align: center;
-            font-weight: 700;
-            border-radius: 8px;
-            padding: .15rem .4rem
-        }
-
-        .s-hi {
-            background: #FBE9E5;
-            color: var(--red)
-        }
-
-        .s-md {
-            background: #FBF3E0;
-            color: #9A6B12
-        }
-
-        .s-lo {
-            background: #EAF3ED;
-            color: var(--green)
-        }
-
-        .pill {
-            display: inline-block;
-            font-size: .7rem;
-            font-weight: 700;
-            padding: .2rem .65rem;
-            border-radius: 999px;
-            background: #EEF1F6;
-            color: var(--ink-2)
-        }
-
-        /* ---------- about ---------- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 64px;
-            align-items: center
-        }
-
-        .portrait {
-            position: relative
-        }
-
-        .portrait img {
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            width: 100%
-        }
-
-        .portrait::after {
-            content: "";
-            position: absolute;
-            inset: -18px auto auto -18px;
-            width: 64%;
-            height: 64%;
-            border: 2px solid var(--gold-2);
-            border-radius: var(--radius);
-            z-index: -1
-        }
-
-        .exp-badge {
-            position: absolute;
-            bottom: -22px;
-            right: -14px;
-            background: var(--ink);
-            color: #fff;
-            border-radius: var(--radius);
-            padding: 1.1rem 1.4rem;
-            text-align: center;
-            box-shadow: var(--shadow)
-        }
-
-        .exp-badge b {
-            font-family: 'Fraunces', serif;
-            font-size: 1.9rem;
-            color: var(--gold-2);
-            display: block;
-            line-height: 1
-        }
-
-        .exp-badge span {
-            font-size: .7rem;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            color: #B9C2D2
-        }
-
-        .about-copy h2 {
-            font-size: clamp(1.9rem, 3.4vw, 2.7rem);
-            margin: .9rem 0 1.2rem
-        }
-
-        .about-copy p {
-            color: var(--muted);
-            margin-bottom: 1rem
-        }
-
-        .quote {
-            border-left: 3px solid var(--gold);
-            padding: .4rem 0 .4rem 1.2rem;
-            font-family: 'Fraunces', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--ink);
-            margin: 1.6rem 0
-        }
-
-        .creds {
-            display: flex;
-            flex-wrap: wrap;
-            gap: .6rem;
-            margin-top: 1.4rem
-        }
-
-        .creds span {
+        .hero-docket {
+            background-color: var(--paper-warm);
             border: 1px solid var(--line);
-            border-radius: 999px;
-            padding: .42rem 1rem;
-            font-size: .82rem;
-            font-weight: 600;
-            color: var(--ink-2)
-        }
-
-        /* ---------- industries ---------- */
-        .ind-card {
-            overflow: hidden;
-        }
-
-        .ind-card img {
-            width: 100%;
-            height: 220px;
-            display: block;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        @media (max-width: 768px) {
-            .ind-card img {
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .ind-card img {
-                height: 180px;
-            }
-        }
-
-        .ind-card {
+            padding: 2rem;
+            border-radius: var(--radius-sm);
             position: relative;
-            height: 340px;
-            border-radius: var(--radius);
-            overflow: hidden
         }
-
-        .ind-card img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .8s
-        }
-
-        .ind-card:hover img {
-            transform: scale(1.07)
-        }
-
-        .ind-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(8, 17, 34, 0) 30%, rgba(8, 17, 34, .88))
-        }
-
-        .ind-meta {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 22px;
-            color: #fff;
-            z-index: 2
-        }
-
-        .ind-meta h3 {
-            font-size: 1.15rem;
-            margin-bottom: .3rem
-        }
-
-        .ind-meta p {
-            font-size: .82rem;
-            color: #C9D1DE
-        }
-
-        .ind-meta .tag {
-            background: rgba(217, 188, 122, .2);
-            color: var(--gold-2);
-            margin-bottom: .6rem
-        }
-
-        /* ---------- risk reversal / why ---------- */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px
-        }
-
-        .why-card {
-            padding: 34px 28px;
-            text-align: left
-        }
-
-        .why-card .ic {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: #F5EFE0;
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.1rem
-        }
-
-        .why-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: .5rem
-        }
-
-        .why-card p {
-            font-size: .9rem;
-            color: var(--muted)
-        }
-
-        /* ---------- urgency ---------- */
-        .urgency {
-            background: linear-gradient(120deg, #14100A, #2A1E0C 55%, #14100A);
-            color: #fff;
-            position: relative;
-            overflow: hidden
-        }
-
-        .urgency::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: url("assets/img/team-meeting.jpg") center/cover;
-            opacity: .1
-        }
-
-        .urgency .wrap {
-            position: relative;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 56px;
-            align-items: center
-        }
-
-        .urgency h2 {
-            font-size: clamp(1.9rem, 3.4vw, 2.7rem);
-            margin: .9rem 0 1.1rem
-        }
-
-        .urgency h2 em {
-            color: var(--gold-2);
-            font-style: italic
-        }
-
-        .urgency p {
-            color: #CBBFA8;
-            margin-bottom: 1.6rem
-        }
-
-        .cost-list {
-            display: grid;
-            gap: .8rem;
-            margin-bottom: 2rem
-        }
-
-        .cost-list div {
-            display: flex;
-            gap: .8rem;
-            align-items: flex-start;
-            font-size: .95rem;
-            color: #E8E0CE
-        }
-
-        .cost-list b {
-            color: #FF9A8A
-        }
-
-        .timer-card {
-            background: rgba(255, 255, 255, .06);
-            border: 1px solid rgba(217, 188, 122, .35);
-            border-radius: var(--radius);
-            padding: 36px;
-            text-align: center;
-            backdrop-filter: blur(6px)
-        }
-
-        .timer-card h3 {
-            font-size: 1rem;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            color: var(--gold-2);
-            margin-bottom: 1.4rem
-        }
-
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 12px
-        }
-
-        .timer div {
-            background: #0C1B33;
-            border: 1px solid rgba(255, 255, 255, .12);
-            border-radius: 14px;
-            padding: 14px 8px;
-            min-width: 74px
-        }
-
-        .timer b {
-            font-family: 'Fraunces', serif;
-            font-size: 2rem;
-            display: block;
-            line-height: 1;
-            font-variant-numeric: tabular-nums
-        }
-
-        .timer span {
-            font-size: .62rem;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: #9AA5B8
-        }
-
-        .slots {
-            margin-top: 1.6rem;
-            font-size: .9rem;
-            color: #CBBFA8
-        }
-
-        .slots .bar {
-            height: 8px;
-            background: rgba(255, 255, 255, .12);
-            border-radius: 99px;
-            margin: .6rem auto .4rem;
-            max-width: 280px;
-            overflow: hidden
-        }
-
-        .slots .bar i {
-            display: block;
-            height: 100%;
-            width: 17%;
-            background: linear-gradient(90deg, var(--gold-2), #F0D9A0);
-            border-radius: 99px
-        }
-
-        .slots b {
-            color: var(--gold-2)
-        }
-
-        /* ---------- final CTA ---------- */
-        .final {
-            position: relative;
-            color: #fff;
-            overflow: hidden
-        }
-
-        .final img.bg {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover
-        }
-
-        .final::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(100deg, rgba(8, 17, 34, .95), rgba(8, 17, 34, .65))
-        }
-
-        .final .wrap {
-            position: relative;
-            z-index: 2;
-            padding: 110px 0;
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 56px;
-            align-items: center
-        }
-
-        .final h2 {
-            font-size: clamp(2rem, 4vw, 3.1rem);
-            margin-bottom: 1.1rem
-        }
-
-        .final h2 em {
-            color: var(--gold-2);
-            font-style: italic
-        }
-
-        .final p {
-            color: #C9D1DE;
-            margin-bottom: 2rem;
-            max-width: 52ch
-        }
-
-        /* ---------- footer ---------- */
-        footer {
-            background: var(--ink);
-            color: #9AA5B8;
-            font-size: .88rem;
-            padding: 64px 0 0
-        }
-
-        .foot-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.3fr;
-            gap: 40px;
-            padding-bottom: 48px
-        }
-
-        footer h4 {
-            color: #fff;
-            font-size: .85rem;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            margin-bottom: 1.1rem
-        }
-
-        footer a:hover {
-            color: var(--gold-2)
-        }
-
-        .foot-links {
-            display: grid;
-            gap: .6rem
-        }
-
-        .foot-bottom {
-            border-top: 1px solid rgba(255, 255, 255, .1);
-            padding: 1.3rem 0;
+        .docket-head {
             display: flex;
             justify-content: space-between;
-            gap: 1rem;
-            flex-wrap: wrap;
-            font-size: .78rem
-        }
-
-        /* ---------- sticky mobile cta ---------- */
-        .sticky-cta {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 70;
-            display: none;
-            background: rgba(12, 27, 51, .97);
-            backdrop-filter: blur(8px);
-            padding: .7rem 1rem;
-            gap: .8rem;
             align-items: center;
-            justify-content: space-between
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            color: var(--ink-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .docket-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.65rem 0;
+            border-bottom: 1px dashed var(--line);
+            font-size: 0.88rem;
+        }
+        .docket-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .docket-row span:first-child {
+            color: var(--ink-muted);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+        }
+        .docket-row span:last-child {
+            font-weight: 600;
+            color: var(--ink);
         }
 
-        .sticky-cta span {
-            color: #fff;
-            font-size: .8rem
+        /* Stats Ledger */
+        .stats-ledger {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-bottom: 1px solid var(--line);
+            background-color: var(--paper-warm);
+        }
+        .ledger-cell {
+            padding: 2.2rem 1.8rem;
+            border-right: 1px solid var(--line);
+        }
+        .ledger-cell:last-child {
+            border-right: none;
+        }
+        .ledger-val {
+            font-family: var(--font-mono);
+            font-size: clamp(2rem, 3.2vw, 2.75rem);
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .ledger-val sup {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-left: 2px;
+        }
+        .ledger-label {
+            font-size: 0.88rem;
+            color: var(--ink-muted);
+            line-height: 1.4;
         }
 
-        .sticky-cta .btn {
-            padding: .6rem 1.2rem;
-            font-size: .85rem
+        /* Steps Timeline */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+        .timeline-step {
+            border: 1px solid var(--line);
+            background-color: var(--paper-card);
+            padding: 1.8rem 1.5rem;
+            border-radius: var(--radius-sm);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .timeline-num {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .timeline-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+        .timeline-step p {
+            font-size: 0.92rem;
+            color: var(--ink-muted);
+            line-height: 1.55;
+            flex-grow: 1;
+            margin-bottom: 1.2rem;
+        }
+        .timeline-tag {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            background-color: var(--paper-warm);
+            padding: 0.4rem 0.65rem;
+            border: 1px solid var(--line-subtle);
+            color: var(--ink);
         }
 
-        /* reveal */
-        .rv {
-            opacity: 0;
-            transform: translateY(26px);
-            transition: opacity .8s ease, transform .8s ease
+        /* Nasar Portrait Frame */
+        .portrait-frame {
+            border: 1px solid var(--line);
+            padding: 10px;
+            background-color: var(--paper-card);
+            box-shadow: 6px 6px 0px rgba(24, 23, 20, 0.06);
+            position: relative;
+        }
+        .portrait-frame img {
+            width: 100%;
+            height: auto;
+            filter: contrast(1.04) brightness(0.98);
         }
 
-        .rv.in {
-            opacity: 1;
-            transform: none
+        /* Industry Cards in Editorial Style */
+        .ind-item-card {
+            border: 1px solid var(--line);
+            background-color: var(--paper-card);
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.18s ease;
+            position: relative;
+        }
+        .ind-item-card:hover {
+            border-color: var(--ink);
+        }
+        .ind-item-badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+        .ind-item-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+        }
+        .ind-item-card p {
+            font-size: 0.9rem;
+            color: var(--ink-muted);
+            line-height: 1.55;
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
         }
 
-        @media(max-width:960px) {
-            .g4 {
-                grid-template-columns: repeat(2, 1fr)
+        @media (max-width: 960px) {
+            .stats-ledger {
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            .g3 {
-                grid-template-columns: repeat(2, 1fr)
+            .ledger-cell:nth-child(2) {
+                border-right: none;
             }
-
-            .about-grid,
-            .urgency .wrap,
-            .final .wrap {
-                grid-template-columns: 1fr
+            .ledger-cell:nth-child(1), .ledger-cell:nth-child(2) {
+                border-bottom: 1px solid var(--line);
             }
-
-            .why-grid {
-                grid-template-columns: 1fr 1fr
-            }
-
-            .nav-links {
-                display: none
-            }
-
-            .burger {
-                display: block
-            }
-
-            .foot-grid {
-                grid-template-columns: 1fr 1fr
-            }
-
-            .sticky-cta {
-                display: flex
-            }
-
-            .stat {
-                border-left: 0;
-                border-top: 1px solid var(--line)
+            .timeline-grid {
+                grid-template-columns: 1fr;
             }
         }
-
-        @media(max-width:640px) {
-
-            .g2,
-            .g3,
-            .g4,
-            .why-grid {
-                grid-template-columns: 1fr
+        @media (max-width: 600px) {
+            .stats-ledger {
+                grid-template-columns: 1fr;
             }
-
-            .sec {
-                padding: 64px 0
+            .ledger-cell {
+                border-right: none;
+                border-bottom: 1px solid var(--line);
             }
-
-            .hero-in {
-                padding: 100px 0 80px
-            }
-
-            th:nth-child(4),
-            td:nth-child(4),
-            th:nth-child(6),
-            td:nth-child(6) {
-                display: none
+            .ledger-cell:last-child {
+                border-bottom: none;
             }
         }
     </style>
 </head>
-
 <body>
     @include('partials.header')
 
-    <header class="hero">
-        <div class="hero-media">
-            <div class="kb"></div>
-
-            <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
-                <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4"
-                    type="video/mp4">
-                <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4"
-                    type="video/mp4">
-                <source src="https://videos.pexels.com/video-files/7255750/7255750-hd_1920_1080_25fps.mp4"
-                    type="video/mp4">
-            </video>
-
-        </div>
-        <div class="wrap hero-in">
-            <div class="hero-badge"><span class="pulse"></span> Now accepting Q4 2026 engagements — 4 of 6 slots
-                remaining</div>
-            <h1>Everyone's talking about <em>AI</em>. But is your business actually running on the <em>right
-                    technology?</em></h1>
-            <p class="lead">Nexteck performs a rigorous, end-to-end business audit — processes, systems, data and people
-                — then hands you a costed, prioritised IT &amp; AI roadmap built to hit your business targets. No hype.
-                No vendor fluff. Just what works.</p>
-            <div class="hero-ctas">
-                <a class="btn btn-gold" href="{{ route('landing') }}#book">Book Your Free Strategy Call →</a>
-                <a class="btn btn-ghost" style="border-color:rgba(255,255,255,.5);color:#fff" href="#audit">See How the
-                    Audit Works</a>
-            </div>
-            <div class="hero-chips">
-                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.4">
-                        <path d="M20 6L9 17l-5-5" />
-                    </svg>25+ years IT strategy experience</span>
-                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.4">
-                        <path d="M20 6L9 17l-5-5" />
-                    </svg>Banking · Insurance · Manufacturing · Education · E-commerce</span>
-                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.4">
-                        <path d="M20 6L9 17l-5-5" />
-                    </svg>Nexteck SME Strategy Toolkit™</span>
-            </div>
-        </div>
-        <div class="hero-scroll">Scroll</div>
-    </header>
-
-    <section class="stats">
-        <div class="wrap grid g4">
-            <div class="stat rv"><b><span data-count="25">0</span><i>+</i></b><span>Years defining IT strategy &amp;
-                    roadmaps</span></div>
-            <div class="stat rv"><b><span data-count="5">0</span></b><span>Industries — banking to e-commerce</span>
-            </div>
-            <div class="stat rv"><b><span data-count="40">0</span><i>+</i></b><span>Transformation programmes
-                    delivered</span></div>
-            <div class="stat rv"><b><span data-count="60">0</span><i>%</i></b><span>Avg. admin hours cut in first 90
-                    days</span></div>
-        </div>
-    </section>
-
-    <section class="sec" id="audit">
+    <!-- HERO SECTION -->
+    <header class="home-hero">
         <div class="wrap">
-            <div class="sec-head rv">
-                <span class="eyebrow">The uncomfortable question</span>
-                <h2>Which of these is quietly costing you growth?</h2>
-                <p>These are the eight pain points that show up in almost every SME we audit. On our first call we score
-                    each one for severity — anything rated 4–5 becomes a line item in your action plan. Be honest with
-                    yourself:</p>
-            </div>
-            <div class="grid g4">
-                <div class="card pain-card hot rv"><span class="tag">Most common</span><span class="num">01</span>
-                    <h3>Manual processes eating your week</h3>
-                    <p>Data entry, invoicing, scheduling — the same steps done by hand, every single week, by people who
-                        should be doing higher-value work.</p>
-                </div>
-                <div class="card pain-card hot rv"><span class="tag">Most common</span><span class="num">02</span>
-                    <h3>Disconnected systems &amp; data</h3>
-                    <p>The same customer re-typed into four tools. No single source of truth. Reports built by hand from
-                        exports at 9pm.</p>
-                </div>
-                <div class="card pain-card rv"><span class="tag calm">Growth blocker</span><span class="num">03</span>
-                    <h3>Operations that won't scale</h3>
-                    <p>Quality drops or you become the bottleneck the moment volume doubles. Hiring more people doesn't
-                        fix it.</p>
-                </div>
-                <div class="card pain-card rv"><span class="tag calm">Time drain</span><span class="num">04</span>
-                    <h3>Repetitive admin work</h3>
-                    <p>Invoices, follow-ups, scheduling — none of it needs your judgement, all of it lands on your desk.
+            <div class="grid-12" style="align-items: center;">
+                <div class="col-7">
+                    <div class="stamp-badge accent" style="margin-bottom: 1.4rem;">
+                        <span>&bull;</span> Advisory Practice &middot; London
+                    </div>
+                    <h1 style="margin-bottom: 1.4rem;">
+                        Most businesses are investing in technology. Very few are running on the <em>right architecture.</em>
+                    </h1>
+                    <p class="lead" style="margin-bottom: 2rem;">
+                        Nexteck performs an exhaustive, end-to-end business audit &mdash; processes, software systems, data integrity and team capacity &mdash; then delivers a costed, prioritised IT &amp; AI roadmap calibrated to hit your actual commercial targets. No vendor hype. Pure engineering discipline.
                     </p>
-                </div>
-                <div class="card pain-card hot rv"><span class="tag">Right now</span><span class="num">05</span>
-                    <h3>AI uncertainty</h3>
-                    <p>You've heard AI could help but can't tell what's genuine value for your business versus hype with
-                        no return.</p>
-                </div>
-                <div class="card pain-card rv"><span class="num">06</span>
-                    <h3>Outdated technology</h3>
-                    <p>Legacy software, security risk, and staff quietly building workarounds instead of using the tool
-                        properly.</p>
-                </div>
-                <div class="card pain-card rv"><span class="num">07</span>
-                    <h3>Systems that don't talk</h3>
-                    <p>Manual exports between tools, duplicate records, errors from keying the same data twice. Sound
-                        familiar?</p>
-                </div>
-                <div class="card pain-card rv"><span class="num">08</span>
-                    <h3>Software that can't deliver your idea</h3>
-                    <p>Your business model doesn't fit any off-the-shelf tool — growth is capped by what the tools
-                        allow.</p>
-                </div>
-            </div>
-            <div class="sec-head rv" style="margin:56px auto 0">
-                <p><b>If two or more of these felt familiar, the audit will pay for itself.</b></p>
-                <a class="btn btn-gold" href="{{ route('landing') }}#book" style="margin-top:1.2rem">Get Your Business Audited
-                    →</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec method" id="method">
-        <div class="wrap">
-            <div class="sec-head rv">
-                <span class="eyebrow">The Nexteck Method</span>
-                <h2 style="color:#fff">One engagement. Four stages. Zero guesswork.</h2>
-                <p>Every engagement runs through the Nexteck SME Strategy &amp; Tracking Toolkit™ — the same diagnostic
-                    framework used to define IT strategy for banks, insurers, manufacturers, educators and e-commerce
-                    platforms.</p>
-            </div>
-            <div class="grid g4">
-                <div class="stage rv"><span class="n">01</span>
-                    <h3>Industry Benchmarking</h3>
-                    <p>We score your business against 3–5 recognised leaders in your sector across five lenses: customer
-                        experience, technology, marketing, operations and talent — then stage the actions to close each
-                        gap.</p>
-                    <div class="feed">Toolkit: <b>Industry Benchmark</b> tab — gap scores, staged actions, owners,
-                        dates.</div>
-                </div>
-                <div class="stage rv"><span class="n">02</span>
-                    <h3>Competitor Analysis</h3>
-                    <p>We map your direct competitors to separate category norms from genuine whitespace — so you
-                        differentiate where it actually wins customers, not where everyone else already is.</p>
-                    <div class="feed">Toolkit: <b>Competitor Tracker</b> — positioning, pricing, strengths, whitespace.
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 2.2rem;">
+                        <a class="btn btn-primary" href="{{ route('landing') }}#book">Book Diagnostic Strategy Call</a>
+                        <a class="btn btn-secondary" href="#audit">Review Audit Scope</a>
+                    </div>
+                    <div style="display: flex; gap: 1.6rem; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-muted); letter-spacing: 0.04em;">
+                        <span>[x] 25+ Years Advisory Record</span>
+                        <span>[x] SME Strategy Toolkit&trade;</span>
+                        <span>[x] Enterprise Rigour at SME Scale</span>
                     </div>
                 </div>
-                <div class="stage rv"><span class="n">03</span>
-                    <h3>AI, IT &amp; Autonomy Planning</h3>
-                    <p>Every owner-dependent process becomes a scored opportunity: impact × urgency, costed per month,
-                        sequenced into a 90-day roadmap. You stop doing the work that shouldn't need you.</p>
-                    <div class="feed">Toolkit: <b>AI &amp; IT Opportunity Log</b> + <b>SOP &amp; Delegation
-                            Register</b>.</div>
+
+                <div class="col-5">
+                    <div class="hero-docket">
+                        <span class="crosshair crosshair-tl">+</span>
+                        <span class="crosshair crosshair-tr">+</span>
+                        <div class="docket-head">
+                            <span>Engagement Docket</span>
+                            <span>Ref: NX-2026</span>
+                        </div>
+                        <div class="docket-row">
+                            <span>Principal</span>
+                            <span>Mohammed Nasar</span>
+                        </div>
+                        <div class="docket-row">
+                            <span>Scope</span>
+                            <span>Full Process &amp; IT Audit</span>
+                        </div>
+                        <div class="docket-row">
+                            <span>Cadence</span>
+                            <span>6 Engagements / Quarter</span>
+                        </div>
+                        <div class="docket-row">
+                            <span>Deliverable</span>
+                            <span>90-Day Costed Roadmap</span>
+                        </div>
+                        <div class="docket-row">
+                            <span>Diagnostic</span>
+                            <span>Live 45-Min Call</span>
+                        </div>
+                        <div style="margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--ink-muted); line-height: 1.5;">
+                            Every finding is scored for commercial leverage before you invest in a single line of software code or automation.
+                        </div>
+                        <a href="{{ route('landing') }}#book" class="btn btn-ghost" style="width: 100%; margin-top: 1.2rem; font-size: 0.84rem; justify-content: center;">
+                            Apply for an Advisory Slot
+                        </a>
+                    </div>
                 </div>
-                <div class="stage rv"><span class="n">04</span>
-                    <h3>KPI Governance</h3>
-                    <p>Monthly targets vs. actuals across sales, marketing, finance, operations and customer service —
-                        reviewed in under 60 minutes a week. Management by exception, not by stress.</p>
-                    <div class="feed">Toolkit: <b>KPI Dashboard</b> — weekly review, red flags only.</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- STATS LEDGER -->
+    <section class="stats-ledger">
+        <div class="ledger-cell">
+            <div class="ledger-val">25<sup>+</sup></div>
+            <div class="ledger-label">Years directing IT architecture, enterprise strategy &amp; software roadmaps</div>
+        </div>
+        <div class="ledger-cell">
+            <div class="ledger-val">15<sup>+</sup></div>
+            <div class="ledger-label">Target sectors spanning banking, rail, manufacturing &amp; e-commerce</div>
+        </div>
+        <div class="ledger-cell">
+            <div class="ledger-val">40<sup>+</sup></div>
+            <div class="ledger-label">Digital transformation programmes delivered on time and within scope</div>
+        </div>
+        <div class="ledger-cell">
+            <div class="ledger-val">60<sup>%</sup></div>
+            <div class="ledger-label">Average reduction in manual admin overhead within the initial 90 days</div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS: EDITORIAL NUMBERED LIST -->
+    <section class="sec" id="audit">
+        <div class="wrap">
+            <div style="max-width: 720px; margin-bottom: 2.5rem;">
+                <span class="eyebrow">The Diagnostic Assessment</span>
+                <h2>Which of these operational bottlenecks is quietly suppressing your margins?</h2>
+                <p class="lead">
+                    These are the recurring vulnerabilities uncovered in almost every growing firm we audit. On our initial call we score each on a 1&ndash;5 severity scale; anything reaching 4 or 5 becomes an immediate action item in your roadmap.
+                </p>
+            </div>
+
+            <ul class="editorial-list">
+                <li class="editorial-list-item">
+                    <div class="editorial-num">01</div>
+                    <div>
+                        <div class="editorial-item-title">Manual processes consuming executive hours</div>
+                        <div class="stamp-badge terracotta" style="margin-top: 0.5rem;">Highest Frequency</div>
+                    </div>
+                    <p class="editorial-item-desc">
+                        Order reconciliations, manual invoicing, and ad-hoc scheduling handled by hand each week by key personnel who should be generating commercial growth.
+                    </p>
+                </li>
+                <li class="editorial-list-item">
+                    <div class="editorial-num">02</div>
+                    <div>
+                        <div class="editorial-item-title">Fragmented systems and siloed data</div>
+                        <div class="stamp-badge terracotta" style="margin-top: 0.5rem;">Critical Risk</div>
+                    </div>
+                    <p class="editorial-item-desc">
+                        Client records re-typed across multiple disconnected tools. No singular source of truth. Weekly reporting compiled manually from disparate spreadsheets at night.
+                    </p>
+                </li>
+                <li class="editorial-list-item">
+                    <div class="editorial-num">03</div>
+                    <div>
+                        <div class="editorial-item-title">Operations unable to scale with volume</div>
+                        <div class="stamp-badge" style="margin-top: 0.5rem;">Capacity Ceiling</div>
+                    </div>
+                    <p class="editorial-item-desc">
+                        Quality slips and founders become the sole operational bottleneck the moment client order volume doubles. Hiring additional head-count merely increases overhead.
+                    </p>
+                </li>
+                <li class="editorial-list-item">
+                    <div class="editorial-num">04</div>
+                    <div>
+                        <div class="editorial-item-title">Repetitive administrative drag</div>
+                        <div class="stamp-badge" style="margin-top: 0.5rem;">Time Drain</div>
+                    </div>
+                    <p class="editorial-item-desc">
+                        Payment chasing, routine client status updates, and dispatch confirmations &mdash; none require senior executive judgment, yet all consume owner attention.
+                    </p>
+                </li>
+                <li class="editorial-list-item">
+                    <div class="editorial-num">05</div>
+                    <div>
+                        <div class="editorial-item-title">AI uncertainty and vendor hype</div>
+                        <div class="stamp-badge terracotta" style="margin-top: 0.5rem;">Strategic Hazard</div>
+                    </div>
+                    <p class="editorial-item-desc">
+                        Hearing that artificial intelligence must be adopted, but lacking the architecture to distinguish genuine ROI from expensive, non-functional vendor tools.
+                    </p>
+                </li>
+                <li class="editorial-list-item">
+                    <div class="editorial-num">06</div>
+                    <div>
+                        <div class="editorial-item-title">Legacy software and technical debt</div>
+                        <div class="stamp-badge" style="margin-top: 0.5rem;">Security Vulnerability</div>
+                    </div>
+                    <p class="editorial-item-desc">
+                        Outdated database infrastructure, unpatched security liabilities, and employees quietly building unmanaged local workarounds rather than using the tools properly.
+                    </p>
+                </li>
+                <li class="editorial-list-item">
+                    <div class="editorial-num">07</div>
+                    <div>
+                        <div class="editorial-item-title">Zero automated system integration</div>
+                        <div class="stamp-badge" style="margin-top: 0.5rem;">Data Leakage</div>
+                    </div>
+                    <p class="editorial-item-desc">
+                        Reliance on manual CSV exports, duplicate database entries, and human entry error from re-keying customer orders between booking, warehouse and CRM.
+                    </p>
+                </li>
+                <li class="editorial-list-item">
+                    <div class="editorial-num">08</div>
+                    <div>
+                        <div class="editorial-item-title">Off-the-shelf software limiting the business model</div>
+                        <div class="stamp-badge" style="margin-top: 0.5rem;">Growth Blocker</div>
+                    </div>
+                    <p class="editorial-item-desc">
+                        Your unique competitive advantage doesn't conform to standard SaaS products &mdash; future expansion is capped by what generic vendor software permits.
+                    </p>
+                </li>
+            </ul>
+
+            <div style="margin-top: 3.5rem; padding: 2rem; border: 1px solid var(--line); background-color: var(--paper-warm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+                <div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Recognise two or more of these symptoms?</h3>
+                    <p style="margin: 0; color: var(--ink-muted); font-size: 0.94rem;">An executive audit pays for itself by eliminating hours of wasted labour and clarifying your digital roadmap.</p>
+                </div>
+                <a class="btn btn-primary" href="{{ route('landing') }}#book">Request Diagnostic Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHODOLOGY: 4-STAGE TIMELINE -->
+    <section class="sec sec-dark" id="method">
+        <div class="wrap">
+            <div style="max-width: 720px; margin-bottom: 2.5rem;">
+                <span class="eyebrow" style="color: #9D9688;">The Nexteck Framework</span>
+                <h2>One structured engagement. Four stages. Clear commercial outcomes.</h2>
+                <p class="lead" style="color: #C5BFB3;">
+                    Every engagement runs through the Nexteck SME Strategy &amp; Tracking Toolkit&trade; &mdash; the same battle-tested framework used to architect IT roadmaps across institutional finance, logistics, and industrial supply.
+                </p>
+            </div>
+
+            <div class="timeline-grid">
+                <div class="timeline-step" style="background: #22201C; border-color: #38342D; color: #F6F3EC;">
+                    <div class="timeline-num" style="color: #83B89E;">
+                        <span>PHASE 01</span>
+                        <span>DIAGNOSTIC</span>
+                    </div>
+                    <h3 style="color: #FFFFFF;">Industry Benchmarking</h3>
+                    <p style="color: #B5AFA2;">
+                        We score your firm against 3&ndash;5 recognised market leaders across five distinct dimensions: customer journey, technology stack, marketing efficiency, operations, and talent governance.
+                    </p>
+                    <div class="timeline-tag" style="background: #181714; border-color: #2D2B26; color: #DCD6C8;">
+                        Tab: Industry Benchmark
+                    </div>
+                </div>
+
+                <div class="timeline-step" style="background: #22201C; border-color: #38342D; color: #F6F3EC;">
+                    <div class="timeline-num" style="color: #83B89E;">
+                        <span>PHASE 02</span>
+                        <span>MAPPING</span>
+                    </div>
+                    <h3 style="color: #FFFFFF;">Competitor Analysis</h3>
+                    <p style="color: #B5AFA2;">
+                        We map your direct rivals to separate category standards from genuine market whitespace &mdash; positioning your company where it commands premium margin rather than competing on price.
+                    </p>
+                    <div class="timeline-tag" style="background: #181714; border-color: #2D2B26; color: #DCD6C8;">
+                        Tab: Competitor Tracker
+                    </div>
+                </div>
+
+                <div class="timeline-step" style="background: #22201C; border-color: #38342D; color: #F6F3EC;">
+                    <div class="timeline-num" style="color: #83B89E;">
+                        <span>PHASE 03</span>
+                        <span>ARCHITECTURE</span>
+                    </div>
+                    <h3 style="color: #FFFFFF;">AI &amp; IT Roadmap</h3>
+                    <p style="color: #B5AFA2;">
+                        Every bottleneck becomes a scored opportunity: Impact &times; Urgency, costed per month, and sequenced into an actionable 90-day execution plan.
+                    </p>
+                    <div class="timeline-tag" style="background: #181714; border-color: #2D2B26; color: #DCD6C8;">
+                        Tab: AI &amp; IT Opportunity Log
+                    </div>
+                </div>
+
+                <div class="timeline-step" style="background: #22201C; border-color: #38342D; color: #F6F3EC;">
+                    <div class="timeline-num" style="color: #83B89E;">
+                        <span>PHASE 04</span>
+                        <span>GOVERNANCE</span>
+                    </div>
+                    <h3 style="color: #FFFFFF;">KPI Oversight</h3>
+                    <p style="color: #B5AFA2;">
+                        Monthly targets versus actuals across sales, marketing, cashflow, and customer fulfilment &mdash; designed to be reviewed in under 60 minutes per week.
+                    </p>
+                    <div class="timeline-tag" style="background: #181714; border-color: #2D2B26; color: #DCD6C8;">
+                        Tab: KPI Dashboard
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="sec opp">
+    <!-- SAMPLE OUTPUT: ROADMAP LEDGER TABLE -->
+    <section class="sec sec-warm">
         <div class="wrap">
-            <div class="sec-head rv">
-                <span class="eyebrow">Sample output</span>
-                <h2>This is what your roadmap looks like</h2>
-                <p>A real excerpt from a client AI &amp; IT Opportunity Log. Every opportunity is scored <b>Impact ×
-                        Urgency</b> and sorted — we tackle the 9–25 band first, so the highest-leverage fixes land in
-                    the first 90 days.</p>
+            <div style="max-width: 760px; margin-bottom: 2.2rem;">
+                <span class="eyebrow">Exemplar Deliverable</span>
+                <h2>What your prioritised roadmap looks like</h2>
+                <p class="lead">
+                    An authentic extract from a client AI &amp; IT Opportunity Log. Opportunities are scored on a deliberate <b>Impact &times; Urgency</b> formula. We execute the highest scores in the first 90 days.
+                </p>
             </div>
-            <div class="table-card rv">
-                <table>
+
+            <div class="dossier-table-wrap">
+                <table class="dossier-table">
                     <thead>
                         <tr>
-                            <th>Business process</th>
-                            <th>Manual effort</th>
-                            <th>Proposed AI / IT solution</th>
-                            <th>Impact × Urgency</th>
-                            <th>Priority</th>
+                            <th style="width: 25%;">Business Process</th>
+                            <th style="width: 15%;">Manual Load</th>
+                            <th style="width: 35%;">Engineered AI / IT Solution</th>
+                            <th style="width: 12%;">Score Formula</th>
+                            <th style="width: 13%;">Sequencing</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><b>Answering sales enquiries</b><br><span style="color:var(--muted);font-size:.8rem">8
-                                    hrs/wk · owner heavily involved</span></td>
-                            <td>8 hrs/wk</td>
-                            <td>CRM + AI lead-qualification chatbot — owner only handles qualified, high-value leads
+                            <td>
+                                <b>Sales Inquiries Triage</b><br>
+                                <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-faint);">8 hrs/wk &middot; Senior bottleneck</span>
                             </td>
-                            <td>5 × 4 = <span class="score s-hi">20</span></td>
-                            <td><span class="pill">Tackle first</span></td>
+                            <td style="font-family: var(--font-mono); font-size: 0.84rem;">8 hrs/wk</td>
+                            <td>CRM integration + AI lead-qualification chatbot &mdash; owner only handles verified, high-value briefs</td>
+                            <td style="font-family: var(--font-mono); font-weight: 700; color: var(--accent);">5 &times; 4 = 20</td>
+                            <td><span class="stamp-badge terracotta" style="transform:none; font-size:0.68rem;">Phase 1 (Days 1&ndash;30)</span></td>
                         </tr>
                         <tr>
-                            <td><b>Re-keying data between booking &amp; accounting</b><br><span
-                                    style="color:var(--muted);font-size:.8rem">5 hrs/wk · medium involvement</span></td>
-                            <td>5 hrs/wk</td>
-                            <td>Zapier/Make integration linking both systems — no one re-types orders into the ledger
+                            <td>
+                                <b>Re-keying Order Data to Ledger</b><br>
+                                <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-faint);">5 hrs/wk &middot; Human error risk</span>
                             </td>
-                            <td>4 × 5 = <span class="score s-hi">20</span></td>
-                            <td><span class="pill">Tackle first</span></td>
+                            <td style="font-family: var(--font-mono); font-size: 0.84rem;">5 hrs/wk</td>
+                            <td>Direct API webhook bridging booking system into accounting ledger automatically</td>
+                            <td style="font-family: var(--font-mono); font-weight: 700; color: var(--accent);">4 &times; 5 = 20</td>
+                            <td><span class="stamp-badge terracotta" style="transform:none; font-size:0.68rem;">Phase 1 (Days 1&ndash;30)</span></td>
                         </tr>
                         <tr>
-                            <td><b>Workflow no off-the-shelf tool supports</b><br><span
-                                    style="color:var(--muted);font-size:.8rem">10 hrs/wk · owner bottleneck</span></td>
-                            <td>10 hrs/wk</td>
-                            <td>Custom-built module — owner stops managing it manually in spreadsheets</td>
-                            <td>5 × 3 = <span class="score s-md">15</span></td>
-                            <td><span class="pill">Quarter 2</span></td>
+                            <td>
+                                <b>Proprietary Workflow Operations</b><br>
+                                <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-faint);">10 hrs/wk &middot; Spreadsheet chaos</span>
+                            </td>
+                            <td style="font-family: var(--font-mono); font-size: 0.84rem;">10 hrs/wk</td>
+                            <td>Custom database module replacing manual spreadsheets with multi-user permissions</td>
+                            <td style="font-family: var(--font-mono); font-weight: 700; color: var(--ink);">5 &times; 3 = 15</td>
+                            <td><span class="stamp-badge" style="transform:none; font-size:0.68rem;">Phase 2 (Days 31&ndash;60)</span></td>
                         </tr>
                         <tr>
-                            <td><b>Weekly invoicing &amp; payment chasing</b><br><span
-                                    style="color:var(--muted);font-size:.8rem">4 hrs/wk · bookkeeper</span></td>
-                            <td>4 hrs/wk</td>
-                            <td>Automated invoicing + reminder sequences, human-approved before sending</td>
-                            <td>4 × 3 = <span class="score s-md">12</span></td>
-                            <td><span class="pill">Quarter 2</span></td>
+                            <td>
+                                <b>Weekly Invoicing &amp; Chasing</b><br>
+                                <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-faint);">4 hrs/wk &middot; Bookkeeping load</span>
+                            </td>
+                            <td style="font-family: var(--font-mono); font-size: 0.84rem;">4 hrs/wk</td>
+                            <td>Automated billing schedule with human approval checkpoint prior to customer dispatch</td>
+                            <td style="font-family: var(--font-mono); font-weight: 700; color: var(--ink);">4 &times; 3 = 12</td>
+                            <td><span class="stamp-badge" style="transform:none; font-size:0.68rem;">Phase 2 (Days 31&ndash;60)</span></td>
                         </tr>
                         <tr>
-                            <td><b>Monthly KPI reporting</b><br><span style="color:var(--muted);font-size:.8rem">6
-                                    hrs/mo · owner compiles by hand</span></td>
-                            <td>6 hrs/mo</td>
-                            <td>Live dashboard fed automatically from CRM &amp; finance — reviewed in 60 min/week</td>
-                            <td>3 × 2 = <span class="score s-lo">6</span></td>
-                            <td><span class="pill">Quarter 3</span></td>
+                            <td>
+                                <b>Monthly Executive KPI Reporting</b><br>
+                                <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-faint);">6 hrs/mo &middot; Assembled manually</span>
+                            </td>
+                            <td style="font-family: var(--font-mono); font-size: 0.84rem;">6 hrs/mo</td>
+                            <td>Live KPI dashboard synchronised from CRM and finance &mdash; reviewed in 45 min/week</td>
+                            <td style="font-family: var(--font-mono); font-weight: 700; color: var(--ink-faint);">3 &times; 2 = 6</td>
+                            <td><span class="stamp-badge" style="transform:none; font-size:0.68rem;">Phase 3 (Days 61&ndash;90)</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="rv" style="text-align:center;color:var(--muted);margin-top:1.6rem;font-size:.92rem">Plus: an SOP
-                &amp; Delegation Register, a KPI Dashboard, and a Tool Stack recommendation at Starter / Growth /
-                Established tiers — all yours to keep.</p>
+
+            <div style="margin-top: 1.5rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-muted); text-align: right;">
+                Every roadmap includes the complete SOP register, governance dashboard, and tool stack specifications.
+            </div>
         </div>
     </section>
 
+    <!-- PRINCIPAL: MOHAMMED NASAR -->
     <section class="sec" id="nasar">
-        <div class="wrap about-grid">
-            <div class="portrait rv">
-                <img src=".\images\nasar1.jpeg" alt="Mohammed Nasar — Principal Consultant, Nexteck">
-                <div class="exp-badge"><b>25</b><span>Years<br>Experience</span></div>
-            </div>
-            <div class="about-copy rv">
-                <span class="eyebrow">Your strategist</span>
-                <h2>Meet Mohammed Nasar</h2>
-                <p>For 25 years, Mohammed has worked inside some of the world's most demanding organisations — top-tier
-                    <b>banks, insurance firms, manufacturers, education institutions and e-commerce platforms</b> —
-                    defining the IT strategy and roadmaps that hit real business targets, on budget, in defined process.
-                </p>
-                <p>Today he brings that enterprise discipline to business owners and founders through the Nexteck SME
-                    Strategy Toolkit™ — so you get boardroom-grade strategy at SME-scale cost.</p>
-                <div class="quote">"Technology should buy you time and growth — not eat both. My job is to find the
-                    shortest, cheapest, safest route from where your business is to where you dream it to be."</div>
-                <div class="creds">
-                    <span>IT Strategy &amp; Roadmaps</span><span>AI Readiness Audits</span><span>Systems
-                        Integration</span><span>Custom Development</span><span>Process Automation</span><span>KPI
-                        Governance</span>
+        <div class="wrap">
+            <div class="grid-12" style="align-items: center;">
+                <div class="col-5">
+                    <div class="portrait-frame">
+                        <img src="{{ asset('images/nasar1.jpeg') }}" alt="Mohammed Nasar &mdash; Principal Consultant, Nexteck">
+                        <div style="margin-top: 0.8rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-muted);">
+                            <span>PRINCIPAL CONSULTANT</span>
+                            <span>25 YEARS PRACTICE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-7">
+                    <span class="eyebrow">Leadership &amp; Architecture</span>
+                    <h2>Meet Mohammed Nasar</h2>
+                    <p class="lead">
+                        Over 25 years, Mohammed has advised inside tier-one global financial institutions, insurers, complex manufacturing networks, and e-commerce companies &mdash; architecting digital infrastructure that delivers reliable commercial performance.
+                    </p>
+                    <p>
+                        Today, through Nexteck, he provides business founders and owner-managers with the exact same strategic discipline used by multinational enterprises &mdash; scaled appropriately to SME operations and budgets.
+                    </p>
+                    
+                    <blockquote style="margin: 1.8rem 0; padding: 1.2rem 1.6rem; border-left: 3px solid var(--accent); background-color: var(--paper-warm); font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; color: var(--ink); line-height: 1.55;">
+                        &ldquo;Technology should buy a business founder time and margin &mdash; never consume both. My role is to locate the shortest, most cost-effective path from where your operations are today to where they need to be.&rdquo;
+                    </blockquote>
+
+                    <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                        <span class="stamp-badge">IT Strategy &amp; Roadmaps</span>
+                        <span class="stamp-badge">AI Readiness Audits</span>
+                        <span class="stamp-badge">Systems Integration</span>
+                        <span class="stamp-badge">Custom Software Architecture</span>
+                        <span class="stamp-badge">Process Automation</span>
+                        <span class="stamp-badge">KPI Governance</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="sec" style="background:var(--cream);border-block:1px solid var(--line)" id="industries">
+    <!-- SECTOR DEPTH & INDUSTRIES -->
+    <section class="sec sec-warm" id="industries">
         <div class="wrap">
-            <div class="sec-head rv">
-                <span class="eyebrow">Sector depth &amp; Enterprise IT</span>
-                <h2>Industry Experience. One Standard: Results.</h2>
-                <p>Enterprise-grade strategy isn't just for enterprises. Nexteck translates two and a half decades of sector experience into practical, affordable moves for growing businesses.</p>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.8rem;">
+                <div style="max-width: 680px;">
+                    <span class="eyebrow">Enterprise Sector Depth</span>
+                    <h2>Sector Intelligence. One Standard: Commercial Return.</h2>
+                    <p style="margin-bottom: 0; color: var(--ink-muted);">
+                        Enterprise discipline translated into affordable, highly leveraged operational moves for growing UK businesses.
+                    </p>
+                </div>
+                <a href="{{ route('industries.index') }}" class="btn btn-secondary">
+                    View All 15 Sectors &rarr;
+                </a>
             </div>
-            <div class="grid g3">
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
                 @if(isset($homeIndustries) && $homeIndustries->count() > 0)
                     @foreach($homeIndustries as $ind)
-                        <a href="{{ route('industries.show', $ind->slug) }}" style="text-decoration:none; color:inherit; display:block;">
-                            <div class="card ind-card rv"><img src="{{ $ind->image_url }}" alt="{{ $ind->title }}">
-                                <div class="ind-meta"><span class="tag">{{ $ind->title }}</span>
-                                    <h3>{{ Str::limit($ind->tagline ?: $ind->title, 45) }}</h3>
-                                    <p>{{ Str::limit($ind->short_desc ?: strip_tags($ind->description), 75) }}</p>
-                                    <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
-                                </div>
-                            </div>
-                        </a>
+                        <article class="ind-item-card">
+                            <span class="crosshair crosshair-tr">+</span>
+                            <div class="ind-item-badge">{{ $ind->title }}</div>
+                            <h3>{{ Str::limit($ind->tagline ?: $ind->title, 48) }}</h3>
+                            <p>{{ Str::limit($ind->short_desc ?: strip_tags($ind->description), 110) }}</p>
+                            <a href="{{ route('industries.show', $ind->slug) }}" class="btn-link">
+                                Sector Briefing &rarr;
+                            </a>
+                        </article>
                     @endforeach
                 @else
-                    <a href="{{ route('industries.show', 'banking-fintech') }}" style="text-decoration:none; color:inherit; display:block;">
-                        <div class="card ind-card rv"><img src=".\images\A3.png" alt="Banking and fintech">
-                            <div class="ind-meta"><span class="tag">Banking &amp; Fintech</span>
-                                <h3>Secure, compliant, automated</h3>
-                                <p>Customer onboarding, fraud-aware workflows, reporting automation.</p>
-                                <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="{{ route('industries.show', 'insurance') }}" style="text-decoration:none; color:inherit; display:block;">
-                        <div class="card ind-card rv"><img src=".\images\A4.png" alt="Insurance advisory">
-                            <div class="ind-meta"><span class="tag">Insurance</span>
-                                <h3>From paper to pipeline</h3>
-                                <p>Claims triage, broker systems, document intelligence with AI.</p>
-                                <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="{{ route('industries.show', 'manufacturing') }}" style="text-decoration:none; color:inherit; display:block;">
-                        <div class="card ind-card rv"><img src=".\images\A5.png" alt="Manufacturing automation">
-                            <div class="ind-meta"><span class="tag">Manufacturing</span>
-                                <h3>Connected operations</h3>
-                                <p>Production data, inventory sync, quality tracking on one dashboard.</p>
-                                <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="{{ route('industries.show', 'education') }}" style="text-decoration:none; color:inherit; display:block;">
-                        <div class="card ind-card rv"><img src=".\images\A6.png" alt="Education campus">
-                            <div class="ind-meta"><span class="tag">Education</span>
-                                <h3>Learning that scales</h3>
-                                <p>Student journeys, admin automation, LMS and knowledge systems.</p>
-                                <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="{{ route('industries.show', 'e-commerce') }}" style="text-decoration:none; color:inherit; display:block;">
-                        <div class="card ind-card rv"><img src=".\images\A7.png" alt="E-commerce fulfilment">
-                            <div class="ind-meta"><span class="tag">E-commerce</span>
-                                <h3>Fulfilment without chaos</h3>
-                                <p>Order-to-ledger automation, stock sync, customer service AI.</p>
-                                <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="{{ route('industries.show', 'professional-services') }}" style="text-decoration:none; color:inherit; display:block;">
-                        <div class="card ind-card rv"><img src=".\images\A8.png" alt="Customer service team">
-                            <div class="ind-meta"><span class="tag">Professional Services</span>
-                                <h3>Clients served brilliantly</h3>
-                                <p>Response-time SLAs, AI-drafted replies, escalation-only inboxes.</p>
-                                <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
+                    <article class="ind-item-card">
+                        <span class="crosshair crosshair-tr">+</span>
+                        <div class="ind-item-badge">Banking &amp; Fintech</div>
+                        <h3>Secure, compliant, automated</h3>
+                        <p>Customer onboarding, fraud-aware workflows, compliance triage, and automated regulatory reporting.</p>
+                        <a href="{{ route('industries.show', 'banking-fintech') }}" class="btn-link">Sector Briefing &rarr;</a>
+                    </article>
+                    <article class="ind-item-card">
+                        <span class="crosshair crosshair-tr">+</span>
+                        <div class="ind-item-badge">Insurance</div>
+                        <h3>From paper documents to digital pipeline</h3>
+                        <p>Claims intake automation, broker portal synchronization, and automated policy documentation.</p>
+                        <a href="{{ route('industries.show', 'insurance') }}" class="btn-link">Sector Briefing &rarr;</a>
+                    </article>
+                    <article class="ind-item-card">
+                        <span class="crosshair crosshair-tr">+</span>
+                        <div class="ind-item-badge">Manufacturing</div>
+                        <h3>Synchronised factory operations</h3>
+                        <p>Real-time machine throughput, automated inventory tracking, and unified production dashboards.</p>
+                        <a href="{{ route('industries.show', 'manufacturing') }}" class="btn-link">Sector Briefing &rarr;</a>
+                    </article>
+                    <article class="ind-item-card">
+                        <span class="crosshair crosshair-tr">+</span>
+                        <div class="ind-item-badge">Education</div>
+                        <h3>Scalable digital learning systems</h3>
+                        <p>Automated admissions workflows, LMS integration, and automated student feedback loops.</p>
+                        <a href="{{ route('industries.show', 'education') }}" class="btn-link">Sector Briefing &rarr;</a>
+                    </article>
+                    <article class="ind-item-card">
+                        <span class="crosshair crosshair-tr">+</span>
+                        <div class="ind-item-badge">E-commerce</div>
+                        <h3>Fulfillment without operational chaos</h3>
+                        <p>Omnichannel stock sync, automated customer service routing, and order-to-ledger automation.</p>
+                        <a href="{{ route('industries.show', 'e-commerce') }}" class="btn-link">Sector Briefing &rarr;</a>
+                    </article>
+                    <article class="ind-item-card">
+                        <span class="crosshair crosshair-tr">+</span>
+                        <div class="ind-item-badge">Professional Services</div>
+                        <h3>Client delivery with guaranteed SLAs</h3>
+                        <p>Automated billing sequences, executive time-tracking, and priority inbox triage.</p>
+                        <a href="{{ route('industries.show', 'professional-services') }}" class="btn-link">Sector Briefing &rarr;</a>
+                    </article>
                 @endif
             </div>
 
-            <!-- Engineering Sourcing & Supply Chain Sectors Banner -->
-            <div class="rv" style="margin-top:3.5rem; background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:2rem 2.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; box-shadow:var(--shadow);">
-                <div style="max-width:700px;">
-                    <span class="tag" style="margin-bottom:.5rem; display:inline-block;">Engineering Supply &amp; OEM Sourcing</span>
-                    <h3 style="font-family:'Fraunces',serif; font-size:1.45rem; color:var(--ink); margin-bottom:.4rem;">Looking for Industrial OEM Spares, Rail &amp; Plant Equipment?</h3>
-                    <p style="color:var(--muted); font-size:.92rem; margin:0;">Explore our 9 specialized engineering procurement sectors: Oil &amp; Gas, Mining, Rail (pearlconrail.co.uk), Water Treatment, Chemicals, Factory Machinery &amp; Low Cost Global Sourcing.</p>
+            <!-- Engineering Sourcing Docket Box -->
+            <div style="margin-top: 2.5rem; padding: 2rem 2.2rem; border: 1px solid var(--line); background-color: var(--paper-card); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+                <div style="max-width: 720px;">
+                    <div class="stamp-badge accent" style="margin-bottom: 0.6rem;">Specialist Practice</div>
+                    <h3 style="font-size: 1.35rem; margin-bottom: 0.4rem;">Looking for Industrial OEM Spares, Rail &amp; Plant Equipment?</h3>
+                    <p style="font-size: 0.92rem; color: var(--ink-muted); margin: 0;">
+                        Nexteck maintains specialized engineering sourcing bridges across Oil &amp; Gas, Mining, Rail (<a href="https://pearlconrail.co.uk" target="_blank" style="text-decoration: underline; color: var(--ink);">pearlconrail.co.uk</a>), Water Treatment, and Low-Cost Global Sourcing.
+                    </p>
                 </div>
-                <a href="{{ route('industries.index') }}" class="btn btn-gold" style="white-space:nowrap;">Explore 9 Sourcing Sectors &rarr;</a>
+                <a href="{{ route('industries.index') }}" class="btn btn-secondary">
+                    Explore Sourcing Practice
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- RISK REVERSAL & COMMITMENTS -->
     <section class="sec">
         <div class="wrap">
-            <div class="sec-head rv">
-                <span class="eyebrow">Risk reversal</span>
-                <h2>Why owners trust Nexteck with the keys</h2>
-                <p>You're handing someone your processes, your data and your plans. Here's exactly how we make that
-                    safe.</p>
-            </div>
-            <div class="why-grid">
-                <div class="card why-card rv">
-                    <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M9 12l2 2 4-4" />
-                            <circle cx="12" cy="12" r="10" />
-                        </svg></div>
-                    <h3>You own everything</h3>
-                    <p>The full toolkit, the roadmap, the dashboards and the documentation are yours to keep — no
-                        lock-in, no licences held hostage, ever.</p>
-                </div>
-                <div class="card why-card rv">
-                    <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="3" y="11" width="18" height="10" rx="2" />
-                            <path d="M7 11V7a5 5 0 0110 0v4" />
-                        </svg></div>
-                    <h3>NDA before we talk numbers</h3>
-                    <p>Everything you share on the discovery call is confidential, and we can sign your NDA or ours —
-                        before any detail is exchanged.</p>
-                </div>
-                <div class="card why-card rv">
-                    <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-                        </svg></div>
-                    <h3>Costed before you commit</h3>
-                    <p>Every recommendation carries a monthly cost estimate and an impact score. You approve the spend;
-                        nothing runs away.</p>
-                </div>
-                <div class="card why-card rv">
-                    <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 20V10M18 20V4M6 20v-4" />
-                        </svg></div>
-                    <h3>Enterprise rigour, SME prices</h3>
-                    <p>The same frameworks used for banks and insurers, right-sized for founder-led budgets — phased so
-                        you never over-spend ahead of value.</p>
-                </div>
-                <div class="card why-card rv">
-                    <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
-                        </svg></div>
-                    <h3>Built for your team</h3>
-                    <p>SOPs, delegation registers and training are part of the deliverable — so the system outlives any
-                        single person, including us.</p>
-                </div>
-                <div class="card why-card rv">
-                    <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 6v6l4 2" />
-                        </svg></div>
-                    <h3>60-minute weekly reviews</h3>
-                    <p>KPI governance by exception: you review red flags in under an hour a week — not buried in reports
-                        nobody reads.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sec urgency" id="urgency">
-        <div class="wrap">
-            <div class="rv">
-                <span class="eyebrow">The cost of waiting</span>
-                <h2>Every month you delay, <em>someone faster is taking your customers.</em></h2>
-                <p>AI adoption among SMEs has crossed the early-adopter phase. The gap between businesses running
-                    connected, automated operations and those running on spreadsheets compounds every quarter. Here's
-                    what delay looks like in numbers:</p>
-                <div class="cost-list">
-                    <div><b>▸</b><span><b>10+ hours/week</b> of owner time still spent on admin that software should do
-                            — roughly £500/week at founder rates.</span></div>
-                    <div><b>▸</b><span><b>2× the errors</b> from re-keying data between disconnected systems — and every
-                            error costs a customer conversation.</span></div>
-                    <div><b>▸</b><span><b>Missed AI leverage</b> your competitors are compounding now — response speed,
-                            lead qualification, service quality.</span></div>
-                </div>
-                <a class="btn btn-gold" href="{{ route('landing') }}#book">Claim a Q4 Audit Slot →</a>
-            </div>
-            <div class="timer-card rv">
-                <h3>Q4 2026 slots close in</h3>
-                <div class="timer">
-                    <div><b id="cd2-d">--</b><span>Days</span></div>
-                    <div><b id="cd2-h">--</b><span>Hours</span></div>
-                    <div><b id="cd2-m">--</b><span>Min</span></div>
-                    <div><b id="cd2-s">--</b><span>Sec</span></div>
-                </div>
-                <div class="slots">
-                    <div class="bar"><i></i></div>
-                    <b>4 of 6</b> audit slots remaining this quarter
-                    <div style="margin-top:.8rem;font-size:.78rem">Nexteck takes a maximum of 6 engagements per quarter
-                        to protect delivery quality.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="final">
-        <img class="bg" src="assets/img/handshake-close.jpg" alt="Partnership handshake">
-        <div class="wrap">
-            <div class="rv">
-                <span class="eyebrow">Your move</span>
-                <h2>Let's find out — <em>in one call</em> — what's really holding your business back.</h2>
-                <p>A free 45-minute strategy call. We run the diagnostic live, score your pain points, and tell you
-                    honestly whether an audit makes sense — including if it doesn't. No pitch theatre, no obligation.
+            <div style="max-width: 700px; margin-bottom: 2.8rem;">
+                <span class="eyebrow">Risk Governance</span>
+                <h2>Why founders entrust Nexteck with their operational core</h2>
+                <p class="lead">
+                    You are sharing your commercial workflows, customer records, and internal plans. Here is our governance framework.
                 </p>
-                <div class="hero-ctas" style="margin-bottom:0">
-                    <a class="btn btn-gold" href="{{ route('landing') }}#book">Book My Free Strategy Call →</a>
-                    <a class="btn btn-white" href="#method">Review the Methodology</a>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem;">
+                <div style="border-top: 2px solid var(--line-dark); padding-top: 1.2rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent); margin-bottom: 0.5rem;">01 &middot; INTELLECTUAL PROPERTY</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">You own every asset</h3>
+                    <p style="font-size: 0.9rem; color: var(--ink-muted); margin: 0;">The entire toolkit, roadmap, dashboards, and documentation remain 100% your property. Zero software lock-in, ever.</p>
+                </div>
+                <div style="border-top: 2px solid var(--line-dark); padding-top: 1.2rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent); margin-bottom: 0.5rem;">02 &middot; CONFIDENTIALITY</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">NDA prior to disclosure</h3>
+                    <p style="font-size: 0.9rem; color: var(--ink-muted); margin: 0;">All initial conversations are confidential. We sign your NDA or ours before any business details or financials are exchanged.</p>
+                </div>
+                <div style="border-top: 2px solid var(--line-dark); padding-top: 1.2rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent); margin-bottom: 0.5rem;">03 &middot; CAPITAL CONTROL</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Costed before commitment</h3>
+                    <p style="font-size: 0.9rem; color: var(--ink-muted); margin: 0;">Every software line item carries a transparent budget estimate and impact score. You authorize every spend in advance.</p>
+                </div>
+                <div style="border-top: 2px solid var(--line-dark); padding-top: 1.2rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent); margin-bottom: 0.5rem;">04 &middot; VALUE PROPORTION</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Enterprise rigour at SME scale</h3>
+                    <p style="font-size: 0.9rem; color: var(--ink-muted); margin: 0;">Institutional methodologies right-sized for founder budgets &mdash; sequenced so investment never outpaces realized savings.</p>
+                </div>
+                <div style="border-top: 2px solid var(--line-dark); padding-top: 1.2rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent); margin-bottom: 0.5rem;">05 &middot; TEAM CONTINUITY</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Engineered for internal teams</h3>
+                    <p style="font-size: 0.9rem; color: var(--ink-muted); margin: 0;">SOP registers, delegation logs, and staff guidance are built-in &mdash; ensuring procedures endure independently of any single person.</p>
+                </div>
+                <div style="border-top: 2px solid var(--line-dark); padding-top: 1.2rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent); margin-bottom: 0.5rem;">06 &middot; TIME EFFICIENCY</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">60-minute weekly reviews</h3>
+                    <p style="font-size: 0.9rem; color: var(--ink-muted); margin: 0;">Management by exception: monitor key red flags in under an hour per week without wading through unnecessary reports.</p>
                 </div>
             </div>
-            <div></div>
+        </div>
+    </section>
+
+    <!-- CALM ADVISORY CLOSING -->
+    <section class="sec sec-dark" id="urgency" style="border-top: 1px solid #2D2B26;">
+        <div class="wrap">
+            <div class="grid-12" style="align-items: center;">
+                <div class="col-7">
+                    <span class="eyebrow" style="color: #9D9688;">Next Step</span>
+                    <h2>Let us identify &mdash; in one conversation &mdash; what is holding your business back.</h2>
+                    <p class="lead" style="color: #C5BFB3;">
+                        A free 45-minute discovery consultation with principal architect Mohammed Nasar. We run the diagnostic framework live, benchmark your pain points, and provide an honest assessment of whether an audit makes commercial sense.
+                    </p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+                        <a class="btn btn-primary" href="{{ route('landing') }}#book" style="background-color: #FFFFFF; color: var(--ink); border-color: #FFFFFF;">
+                            Book Discovery Call
+                        </a>
+                        <a class="btn btn-ghost" href="#method" style="color: #DCD6C8; border-color: #4D483F;">
+                            Review Methodology
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-5">
+                    <div style="border: 1px solid #38342D; background-color: #22201C; padding: 2.2rem; border-radius: var(--radius-sm);">
+                        <div style="font-family: var(--font-mono); font-size: 0.74rem; color: #83B89E; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.8rem;">
+                            Direct Engagement
+                        </div>
+                        <h3 style="color: #FFFFFF; font-size: 1.35rem; margin-bottom: 0.8rem;">
+                            Strict Quarterly Engagement Limit
+                        </h3>
+                        <p style="font-size: 0.92rem; color: #B5AFA2; line-height: 1.6; margin-bottom: 1.4rem;">
+                            To maintain direct, principal-led advisory depth, Nexteck accepts a maximum of six engagements per calendar quarter.
+                        </p>
+                        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #9D9688; border-top: 1px solid #332F27; padding-top: 1rem;">
+                            Direct Telephone: <a href="tel:+447879175585" style="color: #F6F3EC; text-decoration: underline;">+44 (0)78 7917 5585</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     @include('partials.footer')
-    <script>
-        // ---- countdown to end of Q4 2026 ----
-        const target = new Date("2026-12-31T23:59:59+00:00").getTime();
-        function tick() {
-            let d = target - Date.now(); if (d < 0) d = 0;
-            const dd = Math.floor(d / 864e5), hh = Math.floor(d / 36e5) % 24, mm = Math.floor(d / 6e4) % 60, ss = Math.floor(d / 1e3) % 60;
-            const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = String(v).padStart(2, "0"); };
-            set("cd-d", dd); set("cd-h", hh); set("cd-m", mm); set("cd-s", ss);
-            set("cd2-d", dd); set("cd2-h", hh); set("cd2-m", mm); set("cd2-s", ss);
-        }
-        tick(); setInterval(tick, 1000);
-
-        // ---- hero video: fade in when playable, gracefully fall back to Ken Burns image ----
-        const v = document.getElementById("heroVideo");
-        if (v) {
-            v.addEventListener("playing", () => v.classList.add("on"));
-            v.addEventListener("error", () => v.remove(), true);
-            const p = v.play ? v.play() : null;
-            if (p && p.catch) p.catch(() => { });
-        }
-
-        // ---- reveal on scroll ----
-        const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
-        document.querySelectorAll(".rv").forEach(el => io.observe(el));
-
-        // ---- animated counters ----
-        const co = new IntersectionObserver(es => es.forEach(e => {
-            if (!e.isIntersecting) return; co.unobserve(e.target);
-            const el = e.target, end = +el.dataset.count, suf = el.dataset.suffix || "";
-            const t0 = performance.now(), dur = 1600;
-            (function step(t) {
-                const p = Math.min((t - t0) / dur, 1), ease = 1 - Math.pow(1 - p, 3);
-                el.textContent = Math.round(end * ease) + suf; if (p < 1) requestAnimationFrame(step);
-            })(t0);
-        }), { threshold: .6 });
-        document.querySelectorAll("[data-count]").forEach(el => co.observe(el));
-    </script>
 </body>
-
 </html>

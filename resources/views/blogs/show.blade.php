@@ -11,7 +11,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ url('/blogs/' . $blog->slug) }}">
-    <meta property="og:title" content="{{ $blog->title }} — Nexteck Insights">
+    <meta property="og:title" content="{{ $blog->title }} — Nexteck Journal">
     <meta property="og:description" content="{{ Str::limit(strip_tags($blog->description), 160) }}">
     @if($blog->image)
     <meta property="og:image" content="{{ asset($blog->image) }}">
@@ -19,7 +19,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $blog->title }} — Nexteck Insights">
+    <meta name="twitter:title" content="{{ $blog->title }} — Nexteck Journal">
     <meta name="twitter:description" content="{{ Str::limit(strip_tags($blog->description), 160) }}">
 
     <!-- Schema.org Article Structured Data -->
@@ -44,170 +44,158 @@
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{{ asset('css/editorial.css') }}">
     <style>
-        :root {
-            --ink: #0C1B33;
-            --ink-2: #1E2D4A;
-            --muted: #5A6478;
-            --line: #E7E4DC;
-            --paper: #FFFFFF;
-            --cream: #F7F5F0;
-            --gold: #B8933F;
-            --gold-2: #D9BC7A;
-            --red: #C0392B;
-            --green: #1E7F4F;
-            --shadow: 0 18px 50px -18px rgba(12, 27, 51, .22);
-            --radius: 18px;
+        .essay-container {
+            max-width: 760px;
+            margin: 3.5rem auto 6rem;
+            padding: 0 1.5rem;
+        }
+        .essay-header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 1px solid var(--line);
+        }
+        .essay-meta {
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            color: var(--ink-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+        .essay-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+            color: var(--ink);
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+        }
+        .essay-cover-frame {
+            border: 1px solid var(--line);
+            padding: 8px;
+            background-color: var(--paper-card);
+            margin-bottom: 3rem;
+        }
+        .essay-cover {
+            width: 100%;
+            max-height: 440px;
+            object-fit: cover;
+            display: block;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.75; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-
-        h1, h2, h3, .serif { font-family: 'Fraunces', Georgia, serif; font-weight: 600; line-height: 1.15; letter-spacing: -.01em; }
-        a { color: inherit; text-decoration: none; }
-        .wrap { width: min(1180px, 92%); margin: 0 auto; }
-
-        /* ---------- announcement + nav ---------- */
-        .topbar { background: var(--ink); color: #fff; font-size: .82rem; text-align: center; padding: .55rem 1rem; position: relative; z-index: 60; }
-        .topbar b { color: var(--gold-2); }
-        .topbar .cd { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--gold-2); }
-        nav { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, .92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
-        .nav-in { display: flex; align-items: center; justify-content: space-between; height: 74px; }
-        .logo { font-family: 'Fraunces', serif; font-size: 1.55rem; font-weight: 700; letter-spacing: -.02em; }
-        .logo span { color: var(--gold); }
-        .logo small { display: block; font-family: 'Inter'; font-size: .58rem; letter-spacing: .34em; color: var(--muted); font-weight: 600; margin-top: -4px; }
-        .nav-links { display: flex; gap: 2rem; align-items: center; font-size: .92rem; font-weight: 500; }
-        .nav-links a { color: var(--ink-2); position: relative; }
-        .nav-links a:hover { color: var(--gold); }
-        .btn { display: inline-flex; align-items: center; gap: .6rem; font-weight: 600; font-size: .95rem; padding: .95rem 1.7rem; border-radius: 999px; cursor: pointer; border: 1.5px solid transparent; transition: .25s; }
-        .btn-gold { background: var(--gold); color: #fff; box-shadow: 0 12px 28px -10px rgba(184, 147, 63, .55); }
-        .btn-gold:hover { background: #000; transform: translateY(-2px); }
-        .nav-cta { padding: .68rem 1.35rem; }
-        .burger { display: none; background: none; border: 0; font-size: 1.5rem; cursor: pointer; }
-
-        .blog-detail-container { max-width: 820px; margin: 3rem auto 6rem; padding: 0 1.5rem; }
-        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; color: var(--gold); text-decoration: none; margin-bottom: 2rem; font-size: 0.92rem; transition: transform 0.2s; }
-        .back-link:hover { color: var(--ink); transform: translateX(-4px); }
-
-        .blog-header { margin-bottom: 2rem; }
-        .blog-meta { font-size: 0.85rem; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
-        .blog-title { font-family: 'Fraunces', serif; font-size: 2.5rem; color: var(--ink); line-height: 1.22; margin-bottom: 1.2rem; }
-
-        .blog-cover { width: 100%; max-height: 420px; object-fit: cover; border-radius: var(--radius); margin-bottom: 2.5rem; border: 1px solid var(--line); box-shadow: var(--shadow); }
-
-        /* ---------- BLOG CONTENT STYLES WITH HIGHLIGHTING ---------- */
-        .blog-body { font-size: 1.1rem; color: #334155; line-height: 1.85; }
-        .blog-body p { margin-bottom: 1.6rem; }
-        .blog-body h2, .blog-body .blog-heading { font-family: 'Fraunces', serif; color: var(--ink); margin: 2.2rem 0 1rem; font-size: 1.7rem; line-height: 1.3; }
-        .blog-body h3 { font-family: 'Fraunces', serif; color: var(--ink); margin: 1.8rem 0 0.8rem; font-size: 1.35rem; }
+        /* Editorial Essay Body Typography */
+        .essay-body {
+            font-family: var(--font-sans);
+            font-size: 1.08rem;
+            color: var(--ink-light);
+            line-height: 1.8;
+        }
+        .essay-body p {
+            margin-bottom: 1.8rem;
+            max-width: none;
+        }
+        .essay-body h2, .essay-body .blog-heading {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            color: var(--ink);
+            margin: 2.8rem 0 1.2rem;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+        .essay-body h3 {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            color: var(--ink);
+            margin: 2.2rem 0 0.9rem;
+            line-height: 1.3;
+        }
 
         /* Highlighted Word Styling */
-        .blog-body strong, .blog-body b, .highlight-word {
+        .essay-body strong, .essay-body b, .highlight-word {
             color: var(--ink);
             font-weight: 700;
-            background: linear-gradient(120deg, rgba(217, 188, 122, 0.22) 0%, rgba(184, 147, 63, 0.26) 100%);
-            padding: 0.12rem 0.45rem;
-            border-radius: 4px;
-            border-bottom: 2px solid var(--gold);
+            background: var(--paper-warm);
+            padding: 0.1rem 0.4rem;
+            border-bottom: 1.5px solid var(--accent);
+            border-radius: var(--radius-sm);
         }
 
-        .blog-body mark {
-            background: rgba(245, 158, 11, 0.2);
-            color: var(--ink);
-            padding: 0.15rem 0.45rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        /* Highlighted Tagline / Quote Box */
-        .blog-tagline, .blog-body blockquote {
-            background: linear-gradient(135deg, #FFFDF8 0%, #FBF6EB 100%);
-            border-left: 4px solid var(--gold);
-            padding: 1.3rem 1.8rem;
-            border-radius: 0 14px 14px 0;
-            margin: 2rem 0;
-            font-family: 'Fraunces', Georgia, serif;
-            font-size: 1.24rem;
+        /* Tagline / Pull Quote */
+        .blog-tagline, .essay-body blockquote {
+            background-color: var(--paper-warm);
+            border-left: 3px solid var(--accent);
+            padding: 1.4rem 1.8rem;
+            margin: 2.5rem 0;
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
             font-style: italic;
             color: var(--ink);
-            box-shadow: 0 6px 20px rgba(12, 27, 51, 0.04);
             line-height: 1.6;
         }
 
-        /* Clickable Highlighted Links with New Tab indicator */
-        .blog-body a, .blog-ext-link {
-            color: var(--gold) !important;
-            font-weight: 700 !important;
+        /* External & highlighted links */
+        .essay-body a, .blog-ext-link {
+            color: var(--accent) !important;
+            font-weight: 600 !important;
             text-decoration: underline !important;
             text-underline-offset: 4px !important;
-            text-decoration-thickness: 1.8px !important;
-            transition: all 0.2s ease !important;
-            padding: 0.1rem 0.3rem !important;
-            border-radius: 4px !important;
-            background: rgba(184, 147, 63, 0.08) !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 0.25rem !important;
-            word-break: break-all;
+            text-decoration-thickness: 1px !important;
+            transition: all 0.18s ease !important;
         }
-        .blog-body a:hover, .blog-ext-link:hover {
-            color: #fff !important;
-            background: var(--gold) !important;
-            text-decoration: none !important;
-            box-shadow: 0 4px 12px rgba(184, 147, 63, 0.35) !important;
-            transform: translateY(-1px) !important;
+        .essay-body a:hover, .blog-ext-link:hover {
+            color: var(--accent-hover) !important;
+            text-decoration-thickness: 2px !important;
         }
 
-        /* Lists */
-        .blog-body ul.blog-list, .blog-body ol.blog-list {
-            margin: 1.2rem 0 1.8rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.65rem;
-        }
-        .blog-body ul.blog-list li, .blog-body ol.blog-list li {
-            padding-left: 0.3rem;
-            color: #334155;
-        }
-
-        .cta-banner { background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius); padding: 2.5rem; margin-top: 4rem; text-align: center; }
-        .cta-banner h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--ink); margin-bottom: 0.8rem; }
-        .cta-banner p { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.98rem; }
-
-        @media (max-width: 768px) {
-            .blog-title { font-size: 1.9rem; }
-            .burger { display: block; }
-            .nav-links { display: none; }
+        /* Editorial Closing Banner */
+        .docket-cta {
+            background-color: var(--paper-warm);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            padding: 2.5rem 2.2rem;
+            margin-top: 4.5rem;
+            position: relative;
         }
     </style>
 </head>
 <body>
     @include('partials.header')
 
-    <main class="blog-detail-container">
-        <a href="{{ route('blogs.index') }}" class="back-link">&larr; Back to all articles</a>
+    <main class="essay-container">
+        <a href="{{ route('blogs.index') }}" class="btn-link" style="margin-bottom: 2.2rem; display: inline-flex;">
+            &larr; Return to Journal
+        </a>
 
         <article>
-            <header class="blog-header">
-                <div class="blog-meta">Published on {{ $blog->created_at->format('F d, Y') }}</div>
-                <h1 class="blog-title">{{ $blog->title }}</h1>
+            <header class="essay-header">
+                <div class="essay-meta">
+                    PERSPECTIVE &middot; PUBLISHED {{ $blog->created_at->format('d F Y') }} &middot; BY MOHAMMED NASAR
+                </div>
+                <h1 class="essay-title">{{ $blog->title }}</h1>
             </header>
 
             @if($blog->image)
-                <img class="blog-cover" src="{{ asset($blog->image) }}" alt="{{ $blog->title }}">
+                <div class="essay-cover-frame">
+                    <img class="essay-cover" src="{{ asset($blog->image) }}" alt="{{ $blog->title }}">
+                </div>
             @endif
 
-            <div class="blog-body">
+            <div class="essay-body">
                 {!! $blog->rendered_content !!}
             </div>
 
-            <div class="cta-banner">
-                <h3>Ready to Audit Your Business &amp; AI Readiness?</h3>
-                <p>Book a free 45-minute live strategy session with Principal Consultant Mohammed Nasar.</p>
-                <a href="{{ route('landing') }}#book" class="btn btn-gold">Book Your Free Strategy Call &rarr;</a>
+            <div class="docket-cta">
+                <span class="crosshair crosshair-tr">+</span>
+                <div class="meta-tag">ADVISORY INQUIRY</div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.6rem;">Ready to Audit Your Process &amp; AI Readiness?</h3>
+                <p style="color: var(--ink-muted); margin-bottom: 1.8rem; font-size: 0.96rem;">
+                    Schedule a confidential 45-minute live diagnostic session directly with Principal Consultant Mohammed Nasar.
+                </p>
+                <a href="{{ route('landing') }}#book" class="btn btn-primary">
+                    Book Discovery Call &rarr;
+                </a>
             </div>
         </article>
     </main>
@@ -216,8 +204,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Ensure every link in the blog body opens in a new tab with noopener
-            const links = document.querySelectorAll('.blog-body a');
+            const links = document.querySelectorAll('.essay-body a');
             links.forEach(function (link) {
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
