@@ -3,8 +3,19 @@
 @section('title', 'Edit Blog')
 @section('page_header', 'Edit Blog Post')
 
+@section('styles')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" rel="stylesheet">
+<style>
+    .note-editor.note-frame { border: 1px solid var(--border); border-radius: 8px; font-family: inherit; }
+    .note-toolbar { background: #F8FAFC !important; border-bottom: 1px solid var(--border) !important; border-radius: 8px 8px 0 0 !important; }
+    .note-btn { border-radius: 4px !important; }
+    .btn-custom-tagline { background: #FFFDF5 !important; border: 1.5px solid #FCD34D !important; color: #92400E !important; font-weight: 700 !important; }
+    .btn-custom-highlight { background: #FEF3C7 !important; border: 1.5px solid #F59E0B !important; color: #78350F !important; font-weight: 700 !important; }
+</style>
+@endsection
+
 @section('content')
-<div class="card" style="max-width: 800px; margin: 0 auto;">
+<div class="card" style="max-width: 900px; margin: 0 auto;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
         <h2 style="font-size: 1.2rem; font-weight: 700;">Edit Post #{{ $blog->id }}</h2>
         <a href="{{ route('admin.blogs.index') }}" class="btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i> Back to List</a>
@@ -30,9 +41,11 @@
         </div>
 
         <div class="form-group">
-            <label for="description">Content / Description *</label>
-            <textarea id="description" name="description" class="form-control" rows="8" required>{{ old('description', $blog->description) }}</textarea>
-            <small style="color: var(--muted); display: block; margin-top: 0.4rem;">✨ <strong>Formatting &amp; Link Highlights:</strong> URLs like <code>https://example.com</code> or <code>&lt;a href="..."&gt;Link&lt;/a&gt;</code> automatically open in a new tab. Taglines like <code>&gt; Your Tagline</code> and <code>**words**</code> are highlighted automatically on the blog page.</small>
+            <label for="description">Content / Description (Rich Text Editor) *</label>
+            <textarea id="description" name="description" class="form-control" rows="12" required>{{ old('description', $blog->description) }}</textarea>
+            <small style="color: var(--muted); display: block; margin-top: 0.5rem;">
+                💡 <strong>Toolbar Guide:</strong> Click <strong style="color:#92400E;">[Tagline Box]</strong> to create a prominent quote box, <strong style="color:#78350F;">[Highlight Word]</strong> to highlight selected words, or <strong>[Link]</strong> to add URLs (all links automatically open in a new tab).
+            </small>
         </div>
 
         <div class="form-group">
@@ -66,4 +79,73 @@
         </div>
     </form>
 </div>
+@endsection
+
+@section('scripts')
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Custom Tagline Box Button
+        var TaglineButton = function (context) {
+            var ui = $.summernote.ui;
+            var button = ui.button({
+                className: 'btn-custom-tagline',
+                contents: '<i class="fa-solid fa-quote-left"></i> Tagline Box',
+                tooltip: 'Insert Highlighted Tagline / Quote Box',
+                click: function () {
+                    var selected = context.invoke('editor.getSelectedText') || 'Enter your key tagline or strategic quote here...';
+                    var node = $('<blockquote class="blog-tagline">“' + selected + '”</blockquote>')[0];
+                    context.invoke('editor.insertNode', node);
+                }
+            });
+            return button.render();
+        };
+
+        // Custom Highlight Word Button
+        var HighlightButton = function (context) {
+            var ui = $.summernote.ui;
+            var button = ui.button({
+                className: 'btn-custom-highlight',
+                contents: '<i class="fa-solid fa-highlighter"></i> Highlight Word',
+                tooltip: 'Highlight Selected Words in Gold Accent',
+                click: function () {
+                    var selected = context.invoke('editor.getSelectedText');
+                    if (selected) {
+                        var node = $('<mark class="highlight-word">' + selected + '</mark>')[0];
+                        context.invoke('editor.insertNode', node);
+                    } else {
+                        var node = $('<mark class="highlight-word">highlighted phrase</mark>')[0];
+                        context.invoke('editor.insertNode', node);
+                    }
+                }
+            });
+            return button.render();
+        };
+
+        $('#description').summernote({
+            placeholder: 'Write your full blog post content here... Use [Tagline Box] for quotes, [Highlight Word] for keywords, and [Link] to insert URLs.',
+            tabsize: 2,
+            height: 380,
+            buttons: {
+                taglineBox: TaglineButton,
+                highlightWord: HighlightButton
+            },
+            toolbar: [
+                ['custom', ['taglineBox', 'highlightWord']],
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['insert', ['link', 'hr']],
+                ['view', ['codeview', 'fullscreen']]
+            ],
+            styleTags: [
+                'p',
+                { title: 'Tagline Box', tag: 'blockquote', className: 'blog-tagline', value: 'blockquote' },
+                'h2', 'h3', 'h4'
+            ]
+        });
+    });
+</script>
 @endsection
