@@ -25,7 +25,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{{ asset('css/editorial.css') }}">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/nx2-base.css') }}">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -299,7 +300,7 @@
     @include('partials.header')
 
     <!-- HERO SECTION -->
-    <header class="home-hero">
+    <!-- <header class="home-hero">
         <div class="wrap">
             <div class="grid-12" style="align-items: center;">
                 <div class="col-7">
@@ -361,7 +362,37 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
+
+    <section class="nx2-sec nx2-hero" id="nx2-hero">
+  <div class="nx2-wrap">
+    <div class="nx2-hero__word">Nexteck</div>
+    <h2 class="nx2-hero__title">Consulting. <span class="nx2-v">AI.</span> Digital<br>Products.</h2>
+    <p class="nx2-lead">From business strategy to intelligent technology, we make transformation real.</p>
+    <p class="nx2-hero__tag">Strategy first. Intelligence built in. Results by design.</p>
+  </div>
+  <img class="nx2-hero__logo" src="{{ asset('images/nx2/logo-ai.png') }}" alt="" loading="lazy">
+</section>
+
+<section class="nx2-sec nx2-cta" id="nx2-cta">
+  <div class="nx2-wrap nx2-cta__row">
+    <div>
+      <div class="nx2-eyebrow">For SME business owners</div>
+      <h2 class="nx2-h">Before you read further, complete your Business <span class="nx2-v">AI Assessment</span> Toolkit</h2>
+      <p class="nx2-lead">Find out where your business stands, which processes to automate and what to prioritise. Then every decision that follows is based on your own facts.</p>
+    </div>
+    <div class="nx2-cta__steps">
+      <div class="nx2-card nx2-cta__s1">
+        <small>STEP 1</small><h3>Complete the toolkit</h3>
+        <a href="{{ url('/toolkit') }}">www.thenexteck.com/toolkit</a>
+      </div>
+      <div class="nx2-cta__s2">
+        <small>STEP 2: NEED HELP?</small><h3>Call us now</h3>
+        <a href="tel:+447879175585">+44 7879 175585</a>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- STATS LEDGER -->
     <section class="stats-ledger">

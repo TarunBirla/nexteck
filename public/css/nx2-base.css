@@ -1,0 +1,185 @@
+.nx2-sec {
+    --nx2-bg: #080b14;
+    --nx2-card: #111732;
+    --nx2-teal: #2be6d6;
+    --nx2-violet: #7b68ff;
+    --nx2-text: #eef0ff;
+    --nx2-muted: #9aa3c7;
+    --nx2-ink: #0b1020;
+    position: relative;
+    overflow: hidden;
+    padding: 96px 0;
+    color: var(--nx2-text);
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    line-height: 1.55;
+    background-color: var(--nx2-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.nx2-sec *,
+.nx2-sec *::before,
+.nx2-sec *::after {
+    box-sizing: border-box;
+}
+.nx2-sec::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: max(24px, calc(50% - 566px));
+    width: 72px;
+    height: 5px;
+    background: var(--nx2-teal);
+    z-index: 2;
+}
+.nx2-wrap {
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.nx2-eyebrow {
+    color: var(--nx2-teal);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+.nx2-h {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+    margin: 0 0 18px;
+    color: var(--nx2-text);
+}
+.nx2-v {
+    color: var(--nx2-violet);
+}
+.nx2-lead {
+    color: var(--nx2-muted);
+    font-size: 1.1rem;
+    max-width: 640px;
+    margin: 0 0 30px;
+}
+.nx2-btn {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    background: var(--nx2-violet);
+    color: #fff;
+    border: 1px solid var(--nx2-violet);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.nx2-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(123, 104, 255, 0.4);
+    color: #fff;
+}
+.nx2-btn--o {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.nx2-grid {
+    display: grid;
+    gap: 20px;
+}
+.nx2-g2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.nx2-g3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.nx2-g4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+.nx2-card {
+    background: var(--nx2-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 28px;
+}
+.nx2-card--w {
+    background: #fff;
+    border: 0;
+    color: var(--nx2-ink);
+}
+.nx2-card--w h3 {
+    color: var(--nx2-violet);
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 0 0 12px;
+}
+.nx2-card--w p,
+.nx2-card--w li {
+    color: #2a3150;
+    margin: 0;
+}
+.nx2-card--w ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nx2-card--w li {
+    padding: 3px 0;
+}
+.nx2-person {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 90%;
+    max-height: 720px;
+    width: auto;
+    object-fit: contain;
+    z-index: 1;
+    pointer-events: none;
+}
+.nx2-foot {
+    margin-top: 50px;
+    font-size: 0.85rem;
+    color: var(--nx2-muted);
+}
+@media (max-width: 960px) {
+    .nx2-g3,
+    .nx2-g4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nx2-person {
+        opacity: 0.22;
+    }
+}
+@media (max-width: 640px) {
+    .nx2-sec {
+        padding: 70px 0;
+    }
+    .nx2-g2,
+    .nx2-g3,
+    .nx2-g4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.nx2-hero{min-height:90vh;display:flex;align-items:center;
+background-image:linear-gradient(90deg,rgba(5,7,12,.85),rgba(5,7,12,.45)),url('/images/nx2/hero-bg.jpg')}
+.nx2-hero__word{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;color:var(--nx2-teal);letter-spacing:.3em;margin-bottom:24px}
+.nx2-hero__title{font-size:clamp(2.2rem,5.2vw,4.2rem);font-weight:800;line-height:1.1;margin:0 0 22px;color:var(--nx2-text)}
+.nx2-hero__tag{color:var(--nx2-teal);margin:0}
+.nx2-hero__logo{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:min(34vw,420px);z-index:1}
+@media(max-width:960px){.nx2-hero__logo{opacity:.15;width:70vw}}
+
+.nx2-cta{background-image:linear-gradient(90deg,rgba(4,8,20,.9),rgba(4,8,20,.35)),url('/images/nx2/cta-chip-bg.jpg')}
+.nx2-cta__row{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.nx2-cta__steps{max-width:480px}
+.nx2-cta__s1,.nx2-cta__s2{border-radius:18px;padding:26px 28px}
+.nx2-cta__s2{background:var(--nx2-violet);color:var(--nx2-ink);margin-top:16px}
+.nx2-cta__steps small{display:block;letter-spacing:.3em;font-weight:700;font-size:.75rem}
+.nx2-cta__s1 small{color:var(--nx2-violet)}
+.nx2-cta__steps h3{font-size:1.4rem;font-weight:800;margin:8px 0}
+.nx2-cta__s1 a{color:var(--nx2-teal);font-weight:700;text-decoration:none}
+.nx2-cta__s2 a{color:var(--nx2-ink);font-size:1.7rem;font-weight:800;text-decoration:none}
+@media(max-width:960px){.nx2-cta__row{grid-template-columns:1fr}}
