@@ -395,7 +395,7 @@
 </section>
 
 <section class="nx2-sec nx2-who" id="nx2-who">
-  <img class="nx2-person" src="{{ asset('images/nx2/person-who.png') }}" alt="" loading="lazy">
+  <img class="nx2-person" src="{{ asset('images/nx2/s3.png') }}" alt="" loading="lazy">
   <div class="nx2-wrap">
     <div class="nx2-eyebrow">Who we are</div>
     <h2 class="nx2-h">Enterprise thinking. <span class="nx2-v">Entrepreneurial</span> execution.</h2>
@@ -410,7 +410,7 @@
 </section>
 
 <section class="nx2-sec nx2-cap" id="nx2-cap">
-  <img class="nx2-person" src="{{ asset('images/nx2/person-cap.png') }}" alt="" loading="lazy">
+  <img class="nx2-person" src="{{ asset('images/nx2/s4.png') }}" alt="" loading="lazy">
   <div class="nx2-wrap">
     <div class="nx2-eyebrow">Core capabilities</div>
     <h2 class="nx2-h">Consulting, AI and engineering,<br>connected by design</h2>
@@ -424,7 +424,7 @@
 </section>
 
 <section class="nx2-sec nx2-tk" id="nx2-tk">
-  <img class="nx2-person" src="{{ asset('images/nx2/person-toolkit.png') }}" alt="" loading="lazy">
+  <img class="nx2-person" src="{{ asset('images/nx2/s5.png') }}" alt="" loading="lazy">
   <div class="nx2-wrap">
     <div class="nx2-eyebrow">The Nexteck SME Strategy Toolkit</div>
     <h2 class="nx2-h">A practical framework for better business</h2>
@@ -443,7 +443,7 @@
 
 
 <section class="nx2-sec nx2-how" id="nx2-how">
-  <img class="nx2-person" src="{{ asset('images/nx2/person-how.png') }}" alt="" loading="lazy">
+  <img class="nx2-person" src="{{ asset('images/nx2/s6.png') }}" alt="" loading="lazy">
   <div class="nx2-wrap">
     <div class="nx2-eyebrow">How we work</div>
     <h2 class="nx2-h">From business challenge to working solution</h2>
