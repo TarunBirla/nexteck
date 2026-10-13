@@ -45,6 +45,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             --ink: #0C1B33;
@@ -63,9 +64,9 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.75; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-        h1, h2, h3, .serif { font-family: 'Fraunces', Georgia, serif; font-weight: 600; line-height: 1.12; letter-spacing: -.01em; }
+        h1, h2, h3, .serif { font-family: 'Fraunces', Georgia, serif; font-weight: 600; line-height: 1.15; letter-spacing: -.01em; }
         a { color: inherit; text-decoration: none; }
         .wrap { width: min(1180px, 92%); margin: 0 auto; }
 
@@ -88,35 +89,96 @@
         .burger { display: none; background: none; border: 0; font-size: 1.5rem; cursor: pointer; }
 
         .blog-detail-container { max-width: 820px; margin: 3rem auto 6rem; padding: 0 1.5rem; }
-        .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--gold); text-decoration: none; margin-bottom: 2rem; font-size: 0.92rem; }
-        .back-link:hover { text-decoration: underline; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; color: var(--gold); text-decoration: none; margin-bottom: 2rem; font-size: 0.92rem; transition: transform 0.2s; }
+        .back-link:hover { color: var(--ink); transform: translateX(-4px); }
 
         .blog-header { margin-bottom: 2rem; }
         .blog-meta { font-size: 0.85rem; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
-        .blog-title { font-family: 'Fraunces', serif; font-size: 2.5rem; color: var(--ink); line-height: 1.25; margin-bottom: 1.2rem; }
+        .blog-title { font-family: 'Fraunces', serif; font-size: 2.5rem; color: var(--ink); line-height: 1.22; margin-bottom: 1.2rem; }
 
-        .blog-cover { width: 100%; max-height: 420px; object-fit: cover; border-radius: var(--radius); margin-bottom: 2.5rem; border: 1px solid var(--line); }
+        .blog-cover { width: 100%; max-height: 420px; object-fit: cover; border-radius: var(--radius); margin-bottom: 2.5rem; border: 1px solid var(--line); box-shadow: var(--shadow); }
 
-        .blog-body { font-size: 1.08rem; color: #2C3E50; line-height: 1.8; }
-        .blog-body p { margin-bottom: 1.5rem; }
-        .blog-body h2, .blog-body h3 { font-family: 'Fraunces', serif; color: var(--ink); margin: 2rem 0 1rem; }
+        /* ---------- BLOG CONTENT STYLES WITH HIGHLIGHTING ---------- */
+        .blog-body { font-size: 1.1rem; color: #334155; line-height: 1.85; }
+        .blog-body p { margin-bottom: 1.6rem; }
+        .blog-body h2, .blog-body .blog-heading { font-family: 'Fraunces', serif; color: var(--ink); margin: 2.2rem 0 1rem; font-size: 1.7rem; line-height: 1.3; }
+        .blog-body h3 { font-family: 'Fraunces', serif; color: var(--ink); margin: 1.8rem 0 0.8rem; font-size: 1.35rem; }
+
+        /* Highlighted Word Styling */
+        .blog-body strong, .blog-body b, .highlight-word {
+            color: var(--ink);
+            font-weight: 700;
+            background: linear-gradient(120deg, rgba(217, 188, 122, 0.22) 0%, rgba(184, 147, 63, 0.26) 100%);
+            padding: 0.12rem 0.45rem;
+            border-radius: 4px;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .blog-body mark {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--ink);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Highlighted Tagline / Quote Box */
+        .blog-tagline, .blog-body blockquote {
+            background: linear-gradient(135deg, #FFFDF8 0%, #FBF6EB 100%);
+            border-left: 4px solid var(--gold);
+            padding: 1.3rem 1.8rem;
+            border-radius: 0 14px 14px 0;
+            margin: 2rem 0;
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.24rem;
+            font-style: italic;
+            color: var(--ink);
+            box-shadow: 0 6px 20px rgba(12, 27, 51, 0.04);
+            line-height: 1.6;
+        }
+
+        /* Clickable Highlighted Links with New Tab indicator */
+        .blog-body a, .blog-ext-link {
+            color: var(--gold) !important;
+            font-weight: 700 !important;
+            text-decoration: underline !important;
+            text-underline-offset: 4px !important;
+            text-decoration-thickness: 1.8px !important;
+            transition: all 0.2s ease !important;
+            padding: 0.1rem 0.3rem !important;
+            border-radius: 4px !important;
+            background: rgba(184, 147, 63, 0.08) !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.25rem !important;
+            word-break: break-all;
+        }
+        .blog-body a:hover, .blog-ext-link:hover {
+            color: #fff !important;
+            background: var(--gold) !important;
+            text-decoration: none !important;
+            box-shadow: 0 4px 12px rgba(184, 147, 63, 0.35) !important;
+            transform: translateY(-1px) !important;
+        }
+
+        /* Lists */
+        .blog-body ul.blog-list, .blog-body ol.blog-list {
+            margin: 1.2rem 0 1.8rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+        .blog-body ul.blog-list li, .blog-body ol.blog-list li {
+            padding-left: 0.3rem;
+            color: #334155;
+        }
 
         .cta-banner { background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius); padding: 2.5rem; margin-top: 4rem; text-align: center; }
         .cta-banner h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--ink); margin-bottom: 0.8rem; }
         .cta-banner p { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.98rem; }
 
-        footer { background: var(--ink); color: #fff; padding: 4rem 0 2rem; }
-        .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 2rem; margin-bottom: 3rem; }
-        .foot-grid h4 { color: #fff; margin-bottom: 1.2rem; font-size: 1rem; }
-        .foot-links { display: flex; flex-direction: column; gap: 0.6rem; }
-        .foot-links a { color: #8E99AD; text-decoration: none; font-size: 0.88rem; transition: color .2s; }
-        .foot-links a:hover { color: #fff; }
-        .foot-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.8rem; display: flex; justify-content: space-between; font-size: 0.82rem; color: #8E99AD; }
-        .sticky-cta { position: fixed; bottom: 1.2rem; right: 1.5rem; z-index: 90; background: var(--ink); color: #fff; padding: 0.6rem 1.2rem; border-radius: 50px; display: flex; align-items: center; gap: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.3); border: 1px solid rgba(255,255,255,.1); }
-
         @media (max-width: 768px) {
             .blog-title { font-size: 1.9rem; }
-            .foot-grid { grid-template-columns: 1fr; }
             .burger { display: block; }
             .nav-links { display: none; }
         }
@@ -139,7 +201,7 @@
             @endif
 
             <div class="blog-body">
-                {!! nl2br(e($blog->description)) !!}
+                {!! $blog->rendered_content !!}
             </div>
 
             <div class="cta-banner">
@@ -151,5 +213,16 @@
     </main>
 
     @include('partials.footer')
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Ensure every link in the blog body opens in a new tab with noopener
+            const links = document.querySelectorAll('.blog-body a');
+            links.forEach(function (link) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            });
+        });
+    </script>
 </body>
 </html>

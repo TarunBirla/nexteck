@@ -32,6 +32,7 @@
         <div class="form-group">
             <label for="description">Content / Description *</label>
             <textarea id="description" name="description" class="form-control" rows="8" required>{{ old('description', $blog->description) }}</textarea>
+            <small style="color: var(--muted); display: block; margin-top: 0.4rem;">✨ <strong>Formatting &amp; Link Highlights:</strong> URLs like <code>https://example.com</code> or <code>&lt;a href="..."&gt;Link&lt;/a&gt;</code> automatically open in a new tab. Taglines like <code>&gt; Your Tagline</code> and <code>**words**</code> are highlighted automatically on the blog page.</small>
         </div>
 
         <div class="form-group">
