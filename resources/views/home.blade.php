@@ -395,7 +395,7 @@
 </section>
 
 <section class="nx2-sec nx2-who" id="nx2-who">
-  <img class="nx2-person" src="{{ asset('images/nx2/s3.png') }}" alt="" loading="lazy">
+  <!-- <img class="nx2-person" src="{{ asset('images/nx2/s3.png') }}" alt="" loading="lazy"> -->
   <div class="nx2-wrap">
     <div class="nx2-eyebrow">Who we are</div>
     <h2 class="nx2-h">Enterprise thinking. <span class="nx2-v">Entrepreneurial</span> execution.</h2>

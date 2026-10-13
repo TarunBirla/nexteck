@@ -47,7 +47,7 @@
     font-size: 0.78rem;
     letter-spacing: 0.32em;
     text-transform: uppercase;
-    margin-bottom: 18px;
+    margin-bottom: 48px;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 .nx2-h {
@@ -55,7 +55,7 @@
     letter-spacing: -0.02em;
     line-height: 1.1;
     font-size: clamp(1.8rem, 3.6vw, 2.8rem);
-    margin: 0 0 18px;
+    margin: 0 0 48px;
     color: var(--nx2-text);
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
 }
@@ -68,6 +68,8 @@
     max-width: 640px;
     margin: 0 0 30px;
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 48px;
+
 }
 .nx2-btn {
     display: inline-block;
@@ -289,6 +291,7 @@
 }
 .nx2-who__stats {
     max-width: 760px;
+    margin-top: 48px;
 }
 .nx2-who__num {
     font-size: 3rem;
