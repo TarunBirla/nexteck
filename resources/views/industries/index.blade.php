@@ -247,16 +247,6 @@
         </div>
     </main>
 
-    <footer>
-        <div class="wrap foot-bottom">
-            <div>&copy; {{ date('Y') }} Nexteck Consulting &amp; Engineering Supply. All Rights Reserved.</div>
-            <div>
-                <a href="{{ route('home') }}" style="margin-right: 1.2rem;">Home</a>
-                <a href="{{ route('industries.index') }}" style="margin-right: 1.2rem;">Industries</a>
-                <a href="{{ route('toolkit.index') }}" style="margin-right: 1.2rem;">SME Toolkit</a>
-                <a href="{{ route('landing') }}#book">Book Strategy Call</a>
-            </div>
-        </div>
-    </footer>
+    @include('partials.footer')
 </body>
 </html>

@@ -752,16 +752,7 @@
         </form>
     </main>
 
-    <footer>
-        <div class="wrap foot-bottom">
-            <div>&copy; {{ date('Y') }} Nexteck Consulting. SME Strategy, AI &amp; IT Roadmaps.</div>
-            <div>
-                <a href="{{ route('home') }}" style="margin-right: 1.2rem;">Home</a>
-                <a href="{{ route('blogs.index') }}" style="margin-right: 1.2rem;">Blogs</a>
-                <a href="{{ route('landing') }}#book">Book Strategy Call</a>
-            </div>
-        </div>
-    </footer>
+    @include('partials.footer')
 
     <script>
         function switchTab(tabId, btn) {

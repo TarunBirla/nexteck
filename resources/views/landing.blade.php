@@ -1461,6 +1461,9 @@
             }
         }
     </style>
+</head>
+<body>
+    @include('partials.header')
 
     <header class="lp-hero">
         <div class="kb"></div>
