@@ -21,7 +21,7 @@
 
 @section('content')
 <div style="margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
-    <a href="{{ route('admin.toolkits.index') }}" class="btn-sm btn-secondary">&larr; Back to All Toolkits</a>
+    <a href="{{ route('admin.toolkits.index') }}" class="btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i> Back to All Toolkits</a>
     <span style="font-size: 0.85rem; color: var(--muted);">Submitted on {{ $toolkit->created_at->format('M d, Y H:i') }}</span>
 </div>
 
@@ -32,7 +32,7 @@
     <div class="card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
             <h3 style="font-size: 1.1rem; font-weight: 700;">Client &amp; Engagement Details</h3>
-            <button type="submit" class="btn-sm btn-primary" style="padding: .6rem 1.2rem; font-size: .88rem;">💾 Save Changes</button>
+            <button type="submit" class="btn-sm btn-primary" style="padding: .6rem 1.2rem; font-size: .88rem;"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">

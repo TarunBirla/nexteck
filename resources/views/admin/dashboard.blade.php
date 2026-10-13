@@ -18,7 +18,7 @@
             <div class="stat-number">{{ $totalBlogs }}</div>
             <div class="stat-label">Total Blogs</div>
         </div>
-        <div class="stat-icon">📝</div>
+        <div class="stat-icon"><i class="fa-solid fa-newspaper"></i></div>
     </div>
 
     <div class="stat-card">
@@ -26,7 +26,7 @@
             <div class="stat-number">{{ $totalLeads }}</div>
             <div class="stat-label">Total Lead Forms</div>
         </div>
-        <div class="stat-icon">📬</div>
+        <div class="stat-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
     </div>
 
     <div class="stat-card">
@@ -34,7 +34,7 @@
             <div class="stat-number">{{ $totalToolkits ?? 0 }}</div>
             <div class="stat-label">SME Toolkits Saved</div>
         </div>
-        <div class="stat-icon">🧰</div>
+        <div class="stat-icon"><i class="fa-solid fa-toolbox"></i></div>
     </div>
 
     <a href="{{ route('admin.analytics.index') }}" class="stat-card" style="text-decoration: none; color: inherit;">
@@ -42,7 +42,7 @@
             <div class="stat-number">{{ $totalVisitors ?? 0 }}</div>
             <div class="stat-label">Unique Visitors (IP)</div>
         </div>
-        <div class="stat-icon">📈</div>
+        <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
     </a>
 </div>
 

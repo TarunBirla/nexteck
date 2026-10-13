@@ -6,7 +6,7 @@
 @section('content')
 <div class="card">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <h2 style="font-size: 1.2rem; font-weight: 700;">Submitted Lead Forms</h2>
+        <h2 style="font-size: 1.2rem; font-weight: 700;"><i class="fa-solid fa-envelope-open-text" style="color: var(--primary); margin-right: 0.4rem;"></i> Submitted Lead Forms</h2>
         <span style="font-size: 0.9rem; color: var(--muted);">Total: {{ $leads->total() }} submissions</span>
     </div>
 

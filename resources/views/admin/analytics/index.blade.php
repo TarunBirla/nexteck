@@ -45,7 +45,7 @@
             <div class="stat-label">Unique Visitors (1 per IP)</div>
             <div class="stat-sub">Repeat visits merged into 1 user</div>
         </div>
-        <div class="stat-icon">🌍</div>
+        <div class="stat-icon"><i class="fa-solid fa-earth-americas"></i></div>
     </div>
 
     <div class="stat-card">
@@ -54,7 +54,7 @@
             <div class="stat-label">Active Visitors Today</div>
             <div class="stat-sub">Based on latest visit time</div>
         </div>
-        <div class="stat-icon">⚡</div>
+        <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
     </div>
 
     <div class="stat-card">
@@ -63,7 +63,7 @@
             <div class="stat-label">Total Page Hits</div>
             <div class="stat-sub">Across all unique visitors</div>
         </div>
-        <div class="stat-icon">📄</div>
+        <div class="stat-icon"><i class="fa-regular fa-file-lines"></i></div>
     </div>
 
     <div class="stat-card">
@@ -72,21 +72,21 @@
             <div class="stat-label">Forms Submitted</div>
             <div class="stat-sub">Strategy Call &amp; SME Toolkits</div>
         </div>
-        <div class="stat-icon">✅</div>
+        <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
     </div>
 </div>
 
 <!-- Charts Row 1 -->
 <div class="charts-grid">
     <div class="card" style="margin-bottom: 0;">
-        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem;">📈 Unique Visitors Active (Last 7 Days)</h3>
+        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-chart-line" style="color:var(--primary); margin-right:6px;"></i> Unique Visitors Active (Last 7 Days)</h3>
         <div class="chart-box">
             <canvas id="visitorsLineChart"></canvas>
         </div>
     </div>
 
     <div class="card" style="margin-bottom: 0;">
-        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem;">🌐 Browser Breakdown</h3>
+        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-globe" style="color:var(--primary); margin-right:6px;"></i> Browser Breakdown</h3>
         <div class="chart-box">
             <canvas id="browserDoughnutChart"></canvas>
         </div>
@@ -96,14 +96,14 @@
 <!-- Charts Row 2 -->
 <div class="charts-grid-bottom">
     <div class="card" style="margin-bottom: 0;">
-        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem;">📍 Top Visitor Countries</h3>
+        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-location-dot" style="color:var(--primary); margin-right:6px;"></i> Top Visitor Countries</h3>
         <div class="chart-box">
             <canvas id="countryBarChart"></canvas>
         </div>
     </div>
 
     <div class="card" style="margin-bottom: 0;">
-        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem;">🔥 Most Visited Pages</h3>
+        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem;"><i class="fa-solid fa-fire" style="color:var(--primary); margin-right:6px;"></i> Most Visited Pages</h3>
         <div class="chart-box">
             <canvas id="pagesBarChart"></canvas>
         </div>

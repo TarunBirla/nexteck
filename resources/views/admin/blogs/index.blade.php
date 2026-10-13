@@ -49,12 +49,12 @@
                             </td>
                             <td>{{ $blog->created_at->format('M d, Y') }}</td>
                             <td style="text-align: right;">
-                                <a href="{{ route('blogs.show', $blog->slug) }}" target="_blank" class="btn-sm btn-secondary" style="margin-right: 0.3rem;">View</a>
-                                <a href="{{ route('admin.blogs.edit', $blog->id) }}" class="btn-sm btn-primary" style="margin-right: 0.3rem;">Edit</a>
+                                <a href="{{ route('blogs.show', $blog->slug) }}" target="_blank" class="btn-sm btn-secondary" style="margin-right: 0.3rem;"><i class="fa-solid fa-eye"></i> View</a>
+                                <a href="{{ route('admin.blogs.edit', $blog->id) }}" class="btn-sm btn-primary" style="margin-right: 0.3rem;"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
                                 <form action="{{ route('admin.blogs.destroy', $blog->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this blog post?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn-sm btn-danger">Delete</button>
+                                    <button type="submit" class="btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i> Delete</button>
                                 </form>
                             </td>
                         </tr>

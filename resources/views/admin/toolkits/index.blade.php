@@ -49,11 +49,11 @@
                             <td>{{ $tk->created_at->format('M d, Y H:i') }}</td>
                             <td>
                                 <div style="display: flex; gap: 0.4rem; align-items: center;">
-                                    <a href="{{ route('admin.toolkits.show', $tk->id) }}" class="btn-sm btn-primary">View / Edit</a>
+                                    <a href="{{ route('admin.toolkits.show', $tk->id) }}" class="btn-sm btn-primary"><i class="fa-solid fa-pen-to-square"></i> View / Edit</a>
                                     <form action="{{ route('admin.toolkits.destroy', $tk->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this toolkit submission?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn-sm btn-danger">Delete</button>
+                                        <button type="submit" class="btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i> Delete</button>
                                     </form>
                                 </div>
                             </td>

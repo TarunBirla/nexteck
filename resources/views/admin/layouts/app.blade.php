@@ -6,6 +6,8 @@
     <title>@yield('title', 'Admin Dashboard') — Nexteck Management</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
             --sidebar-bg: #0C1B33;
@@ -28,10 +30,12 @@
         .aside-header .logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: #fff; text-decoration: none; }
         .aside-header .logo span { color: var(--primary); }
         .aside-nav { padding: 1.5rem 0; flex-grow: 1; display: flex; flex-direction: column; gap: 0.3rem; }
-        .nav-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1.5rem; color: #94A3B8; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; }
+        .nav-item { display: flex; align-items: center; gap: 0.85rem; padding: 0.8rem 1.5rem; color: #94A3B8; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; }
+        .nav-item i { width: 20px; font-size: 1rem; text-align: center; color: #64748B; transition: color 0.2s; }
         .nav-item:hover, .nav-item.active { background: var(--sidebar-hover); color: #fff; border-left: 4px solid var(--primary); }
+        .nav-item:hover i, .nav-item.active i { color: var(--primary); }
         .aside-footer { padding: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); }
-        .btn-logout { width: 100%; padding: 0.6rem 1rem; background: rgba(239, 68, 68, 0.15); color: #FCA5A5; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .btn-logout { width: 100%; padding: 0.65rem 1rem; background: rgba(239, 68, 68, 0.15); color: #FCA5A5; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
         .btn-logout:hover { background: rgba(239, 68, 68, 0.3); }
 
         /* Main Content */
@@ -59,7 +63,7 @@
         .badge-success { background: #DEF7EC; color: #03543F; }
         .badge-secondary { background: #F3F4F6; color: #4B5563; }
 
-        .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.82rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; cursor: pointer; border: none; }
+        .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.82rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer; border: none; }
         .btn-primary { background: var(--primary); color: #fff; }
         .btn-primary:hover { background: var(--primary-dark); }
         .btn-danger { background: #EF4444; color: #fff; }
@@ -96,28 +100,28 @@
         </div>
         <nav class="aside-nav">
             <a href="{{ route('admin.dashboard') }}" class="nav-item {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
-                📊 Dashboard
+                <i class="fa-solid fa-chart-line"></i> Dashboard
             </a>
             <a href="{{ route('admin.blogs.index') }}" class="nav-item {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">
-                📝 Blogs
+                <i class="fa-solid fa-newspaper"></i> Blogs
             </a>
             <a href="{{ route('admin.leads.index') }}" class="nav-item {{ request()->routeIs('admin.leads.*') ? 'active' : '' }}">
-                📬 Lead Forms
+                <i class="fa-solid fa-envelope-open-text"></i> Lead Forms
             </a>
             <a href="{{ route('admin.toolkits.index') }}" class="nav-item {{ request()->routeIs('admin.toolkits.*') ? 'active' : '' }}">
-                🧰 SME Toolkits
+                <i class="fa-solid fa-toolbox"></i> SME Toolkits
             </a>
             <a href="{{ route('admin.analytics.index') }}" class="nav-item {{ request()->routeIs('admin.analytics.*') ? 'active' : '' }}">
-                📈 Visitor Analytics
+                <i class="fa-solid fa-chart-pie"></i> Visitor Analytics
             </a>
             <a href="{{ route('home') }}" target="_blank" class="nav-item">
-                🌐 Visit Website &rarr;
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Website
             </a>
         </nav>
         <div class="aside-footer">
             <form action="{{ route('admin.logout') }}" method="POST">
                 @csrf
-                <button type="submit" class="btn-logout">Logout</button>
+                <button type="submit" class="btn-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
             </form>
         </div>
     </aside>

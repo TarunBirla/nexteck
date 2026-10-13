@@ -7,7 +7,7 @@
 <div class="card" style="max-width: 800px; margin: 0 auto;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
         <h2 style="font-size: 1.2rem; font-weight: 700;">Blog Details</h2>
-        <a href="{{ route('admin.blogs.index') }}" class="btn-sm btn-secondary">&larr; Back to List</a>
+        <a href="{{ route('admin.blogs.index') }}" class="btn-sm btn-secondary"><i class="fa-solid fa-arrow-left"></i> Back to List</a>
     </div>
 
     @if($errors->any())
@@ -52,7 +52,7 @@
         </div>
 
         <div style="margin-top: 2rem; display: flex; gap: 1rem;">
-            <button type="submit" class="btn-sm btn-primary" style="padding: 0.75rem 1.8rem; font-size: 0.95rem;">Save &amp; Publish Blog</button>
+            <button type="submit" class="btn-sm btn-primary" style="padding: 0.75rem 1.8rem; font-size: 0.95rem;"><i class="fa-solid fa-cloud-arrow-up"></i> Save &amp; Publish Blog</button>
             <a href="{{ route('admin.blogs.index') }}" class="btn-sm btn-secondary" style="padding: 0.75rem 1.5rem; font-size: 0.95rem;">Cancel</a>
         </div>
     </form>

@@ -1,3 +1,25 @@
+<style>
+    footer { background: #0C1B33 !important; color: #fff !important; padding: 4.5rem 0 2.2rem !important; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'Inter', system-ui, sans-serif !important; }
+    footer .wrap { width: min(1180px, 92%) !important; margin: 0 auto !important; }
+    .foot-grid { display: grid !important; grid-template-columns: 2fr 1fr 1fr 1.2fr !important; gap: 2.5rem !important; margin-bottom: 3.2rem !important; }
+    .foot-grid h4 { color: #fff !important; margin-bottom: 1.2rem !important; font-size: 1rem !important; font-family: 'Fraunces', Georgia, serif !important; font-weight: 600 !important; letter-spacing: normal !important; text-transform: none !important; }
+    .foot-links { display: flex !important; flex-direction: column !important; gap: 0.65rem !important; }
+    .foot-links a { color: #8E99AD !important; text-decoration: none !important; font-size: 0.88rem !important; transition: color .2s ease !important; line-height: 1.5 !important; }
+    .foot-links a:hover { color: #fff !important; }
+    .foot-bottom { border-top: 1px solid rgba(255,255,255,.1) !important; padding-top: 1.8rem !important; display: flex !important; justify-content: space-between !important; align-items: center !important; flex-wrap: wrap !important; gap: 1rem !important; font-size: 0.82rem !important; color: #8E99AD !important; }
+    .sticky-cta { position: fixed; bottom: 1.2rem; right: 1.5rem; z-index: 90; background: #0C1B33; color: #fff; padding: 0.6rem 1.2rem; border-radius: 50px; display: flex; align-items: center; gap: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.3); border: 1px solid rgba(255,255,255,.12); font-size: 0.9rem; }
+    .sticky-cta .btn-gold { background: #B8933F; color: #fff; padding: 0.6rem 1.2rem; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: 0.2s; box-shadow: 0 8px 20px -6px rgba(184,147,63,0.5); }
+    .sticky-cta .btn-gold:hover { background: #000; transform: translateY(-2px); }
+
+    @media (max-width: 900px) {
+        .foot-grid { grid-template-columns: 1fr 1fr !important; gap: 2rem !important; }
+    }
+    @media (max-width: 600px) {
+        .foot-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+        .foot-bottom { flex-direction: column; text-align: center; gap: 0.6rem; }
+        .sticky-cta { display: none; }
+    }
+</style>
 <footer>
     <div class="wrap">
         <div class="foot-grid">
