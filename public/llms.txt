@@ -6,14 +6,47 @@
 - **Custom Software Development London**: Bespoke web applications, internal business portals, custom booking/member engines, and SaaS platforms when off-the-shelf software falls short.
 - **Web Development & System Integration**: High-converting web platforms, CRM/ERP unification, API integrations (Zapier, Make, custom REST APIs), and real-time BI dashboards.
 - **SME Business & AI Strategy Audits**: Rigorous 4-stage engagement covering Client Diagnostic, Industry Benchmarking, Competitor Analysis, AI/IT Opportunity Scoring, SOP Delegation, and KPI Governance.
-- **AI Readiness & Workflow Automation**: Practical, ROI-driven AI implementation (lead qualification chatbots, automated invoicing, AI-assisted document drafting) that saves SME owners 10+ hours every week.
+- **Engineering Sourcing & Industrial Procurement**: Strategic OEM spare parts sourcing, capital equipment, and low-cost country bridging across 9 mission-critical sectors.
+
+## Targeted Industrial Sectors
+1. **Oil, Gas & Petrochemicals**: Spare parts & OEM supply and sourcing for upstream, midstream and downstream operators (API 6D valves, turbomachinery, seal kits, ATEX sensors).
+2. **Mining & Drilling**: Rotating equipment, heavy gearboxes, slurry pumps, and tungsten carbide drilling consumables for demanding site conditions.
+3. **Industrial & Process Plants**: Tailored materials, bespoke CNC machining, pressure vessels, and castings sourced to client technical drawings and physical samples.
+4. **Railways**: Rolling stock (bogie sets, axles, dampers, brakes) and rail infrastructure components sourced in strategic partnership with pearlconrail.co.uk.
+5. **Water & Waste Water**: High-efficiency pumps, valves, fine bubble aeration, filtration membranes, and SCADA telemetry for municipal and industrial plants.
+6. **Chemicals & Lubricants**: Vetted vendor relationships across specialty greases, synthetic compressor oils, REACH-compliant solvents, and bulk chemical supply.
+7. **Manufacturing Plants**: Consumables, carbide cutting tooling, PLC automation components, and capital equipment for continuous automated production lines.
+8. **Lab & Medical Equipment**: Clinical analytical instrumentation, diagnostic sterile consumables, and controlled sourcing under ISO 13485 standards for the UK medical device supply chain.
+9. **Low Cost Country supply and sourcing**: Bridging vetted Tier-1 manufacturing capacity across India (Pune, Chennai, Gujarat) and the Asia-Pacific region into UK & global supply with 30%-55% cost reductions and strict UK QA audits.
+
+## Primary SEO Keywords & Search Queries
+- Software Development Company London, Custom Software Solutions London, Web Development UK
+- Oil and Gas OEM spare parts sourcing UK, Petrochemical equipment procurement London
+- Mining drilling consumables rotating equipment UK, Slurry pumps and heavy gearboxes
+- Industrial process plant materials client drawings, Bespoke engineering fabrication London
+- Railway rolling stock infrastructure components pearlconrail.co.uk, Train braking systems
+- Water waste water treatment pumps valves UK, Municipal effluent treatment machinery
+- Industrial chemicals specialty lubricants bulk supply UK, REACH compliant chemical sourcing
+- Manufacturing plant equipment consumables, Factory automation PLC servo spares London
+- Lab medical equipment controlled sourcing UK, ISO 13485 medical device supply chain
+- Low cost country sourcing India Asia Pacific UK, Cross-border manufacturing cost reduction
 
 ## Key Website Pages
-- [Home — Software Development Company London | Web & Custom Software](https://www.thenexteck.com/): Main overview of Nexteck's bespoke software, IT audit, and AI roadmap services in London & across the UK.
-- [SME Strategy & AI Audit Toolkit](https://www.thenexteck.com/toolkit): Free interactive 7-tab SME Strategy & Tracking Toolkit (Diagnostic, Industry Benchmark, Competitor Tracker, AI & IT Opportunity Log, SOP Register, KPI Dashboard, Tool Stack).
-- [Book a Free 30-Minute Strategy Call](https://www.thenexteck.com/landing): Claim one of 6 quarterly engagement slots with Mohammed Nasar for a custom software & AI readiness consultation.
-- [Nexteck Insights & Software Strategy Blog](https://www.thenexteck.com/blogs): Practical guides on custom software development, eliminating IT bottlenecks, and AI roadmaps for UK SME directors.
-- [XML Sitemap](https://www.thenexteck.com/sitemap.xml): Complete index of public pages and articles.
+- [Home — Software Development & Industrial Strategy London](https://www.thenexteck.com/)
+- [All 9 Industries & Engineering Supply](https://www.thenexteck.com/industries)
+- [Oil, Gas & Petrochemicals](https://www.thenexteck.com/industries/oil-gas-petrochemicals)
+- [Mining & Drilling](https://www.thenexteck.com/industries/mining-drilling)
+- [Industrial & Process Plants](https://www.thenexteck.com/industries/industrial-process-plants)
+- [Railways (pearlconrail.co.uk)](https://www.thenexteck.com/industries/railways)
+- [Water & Waste Water](https://www.thenexteck.com/industries/water-waste-water)
+- [Chemicals & Lubricants](https://www.thenexteck.com/industries/chemicals-lubricants)
+- [Manufacturing Plants](https://www.thenexteck.com/industries/manufacturing-plants)
+- [Lab & Medical Equipment](https://www.thenexteck.com/industries/lab-medical-equipment)
+- [Low Cost Country Supply & Sourcing](https://www.thenexteck.com/industries/low-cost-country-supply-and-sourcing)
+- [SME Strategy & AI Audit Toolkit](https://www.thenexteck.com/toolkit)
+- [Book a Free 30-Minute Strategy Call](https://www.thenexteck.com/landing)
+- [Nexteck Insights & Engineering Blogs](https://www.thenexteck.com/blogs)
+- [XML Sitemap](https://www.thenexteck.com/sitemap.xml)
 
 ## Contact & Location
 - **Company**: Nexteck Consulting

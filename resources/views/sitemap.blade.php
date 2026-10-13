@@ -16,6 +16,22 @@
     </url>
 
     <url>
+        <loc>{{ url('/industries') }}</loc>
+        <lastmod>{{ now()->utc()->toAtomString() }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    @foreach(['oil-gas-petrochemicals', 'mining-drilling', 'industrial-process-plants', 'railways', 'water-waste-water', 'chemicals-lubricants', 'manufacturing-plants', 'lab-medical-equipment', 'low-cost-country-supply-and-sourcing', 'banking-fintech', 'insurance', 'manufacturing', 'education', 'e-commerce', 'professional-services'] as $indSlug)
+    <url>
+        <loc>{{ url('/industries/' . $indSlug) }}</loc>
+        <lastmod>{{ now()->utc()->toAtomString() }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    @endforeach
+
+    <url>
         <loc>{{ url('/landing') }}</loc>
         <lastmod>{{ now()->utc()->toAtomString() }}</lastmod>
         <changefreq>weekly</changefreq>

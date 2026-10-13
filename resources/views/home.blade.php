@@ -1518,48 +1518,80 @@
     <section class="sec" style="background:var(--cream);border-block:1px solid var(--line)" id="industries">
         <div class="wrap">
             <div class="sec-head rv">
-                <span class="eyebrow">Sector depth</span>
-                <h2>Five industries. One standard: results.</h2>
-                <p>Enterprise-grade strategy isn't just for enterprises. Nexteck translates two and a half decades of
-                    sector experience into practical, affordable moves for growing businesses.</p>
+                <span class="eyebrow">Sector depth &amp; Enterprise IT</span>
+                <h2>Industry Experience. One Standard: Results.</h2>
+                <p>Enterprise-grade strategy isn't just for enterprises. Nexteck translates two and a half decades of sector experience into practical, affordable moves for growing businesses.</p>
             </div>
             <div class="grid g3">
-                <div class="card ind-card rv"><img src=".\images\A3.png" alt="Banking and fintech">
-                    <div class="ind-meta"><span class="tag">Banking &amp; Fintech</span>
-                        <h3>Secure, compliant, automated</h3>
-                        <p>Customer onboarding, fraud-aware workflows, reporting automation.</p>
+                <a href="{{ route('industries.show', 'banking-fintech') }}" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="card ind-card rv"><img src=".\images\A3.png" alt="Banking and fintech">
+                        <div class="ind-meta"><span class="tag">Banking &amp; Fintech</span>
+                            <h3>Secure, compliant, automated</h3>
+                            <p>Customer onboarding, fraud-aware workflows, reporting automation.</p>
+                            <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="card ind-card rv"><img src=".\images\A4.png" alt="Insurance advisory">
-                    <div class="ind-meta"><span class="tag">Insurance</span>
-                        <h3>From paper to pipeline</h3>
-                        <p>Claims triage, broker systems, document intelligence with AI.</p>
+                </a>
+
+                <a href="{{ route('industries.show', 'insurance') }}" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="card ind-card rv"><img src=".\images\A4.png" alt="Insurance advisory">
+                        <div class="ind-meta"><span class="tag">Insurance</span>
+                            <h3>From paper to pipeline</h3>
+                            <p>Claims triage, broker systems, document intelligence with AI.</p>
+                            <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="card ind-card rv"><img src=".\images\A5.png" alt="Manufacturing automation">
-                    <div class="ind-meta"><span class="tag">Manufacturing</span>
-                        <h3>Connected operations</h3>
-                        <p>Production data, inventory sync, quality tracking on one dashboard.</p>
+                </a>
+
+                <a href="{{ route('industries.show', 'manufacturing') }}" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="card ind-card rv"><img src=".\images\A5.png" alt="Manufacturing automation">
+                        <div class="ind-meta"><span class="tag">Manufacturing</span>
+                            <h3>Connected operations</h3>
+                            <p>Production data, inventory sync, quality tracking on one dashboard.</p>
+                            <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="card ind-card rv"><img src=".\images\A6.png" alt="Education campus">
-                    <div class="ind-meta"><span class="tag">Education</span>
-                        <h3>Learning that scales</h3>
-                        <p>Student journeys, admin automation, LMS and knowledge systems.</p>
+                </a>
+
+                <a href="{{ route('industries.show', 'education') }}" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="card ind-card rv"><img src=".\images\A6.png" alt="Education campus">
+                        <div class="ind-meta"><span class="tag">Education</span>
+                            <h3>Learning that scales</h3>
+                            <p>Student journeys, admin automation, LMS and knowledge systems.</p>
+                            <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="card ind-card rv"><img src=".\images\A7.png" alt="E-commerce fulfilment">
-                    <div class="ind-meta"><span class="tag">E-commerce</span>
-                        <h3>Fulfilment without chaos</h3>
-                        <p>Order-to-ledger automation, stock sync, customer service AI.</p>
+                </a>
+
+                <a href="{{ route('industries.show', 'e-commerce') }}" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="card ind-card rv"><img src=".\images\A7.png" alt="E-commerce fulfilment">
+                        <div class="ind-meta"><span class="tag">E-commerce</span>
+                            <h3>Fulfilment without chaos</h3>
+                            <p>Order-to-ledger automation, stock sync, customer service AI.</p>
+                            <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="card ind-card rv"><img src=".\images\A8.png" alt="Customer service team">
-                    <div class="ind-meta"><span class="tag">Professional Services</span>
-                        <h3>Clients served brilliantly</h3>
-                        <p>Response-time SLAs, AI-drafted replies, escalation-only inboxes.</p>
+                </a>
+
+                <a href="{{ route('industries.show', 'professional-services') }}" style="text-decoration:none; color:inherit; display:block;">
+                    <div class="card ind-card rv"><img src=".\images\A8.png" alt="Customer service team">
+                        <div class="ind-meta"><span class="tag">Professional Services</span>
+                            <h3>Clients served brilliantly</h3>
+                            <p>Response-time SLAs, AI-drafted replies, escalation-only inboxes.</p>
+                            <span style="color:var(--gold); font-size:.84rem; font-weight:700; margin-top:.4rem; display:inline-block;">View Details &rarr;</span>
+                        </div>
                     </div>
+                </a>
+            </div>
+
+            <!-- Engineering Sourcing & Supply Chain Sectors Banner -->
+            <div class="rv" style="margin-top:3.5rem; background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:2rem 2.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; box-shadow:var(--shadow);">
+                <div style="max-width:700px;">
+                    <span class="tag" style="margin-bottom:.5rem; display:inline-block;">Engineering Supply &amp; OEM Sourcing</span>
+                    <h3 style="font-family:'Fraunces',serif; font-size:1.45rem; color:var(--ink); margin-bottom:.4rem;">Looking for Industrial OEM Spares, Rail &amp; Plant Equipment?</h3>
+                    <p style="color:var(--muted); font-size:.92rem; margin:0;">Explore our 9 specialized engineering procurement sectors: Oil &amp; Gas, Mining, Rail (pearlconrail.co.uk), Water Treatment, Chemicals, Factory Machinery &amp; Low Cost Global Sourcing.</p>
                 </div>
+                <a href="{{ route('industries.index') }}" class="btn btn-gold" style="white-space:nowrap;">Explore 9 Sourcing Sectors &rarr;</a>
             </div>
         </div>
     </section>

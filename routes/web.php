@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ToolkitController;
+use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\AdminBlogController;
@@ -40,6 +41,10 @@ Route::post('/submit-strategy-call', [LeadController::class, 'submitStrategyCall
 // Frontend Blog Routes
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
+
+// Frontend Industry Routes
+Route::get('/industries', [IndustryController::class, 'index'])->name('industries.index');
+Route::get('/industries/{slug}', [IndustryController::class, 'show'])->name('industries.show');
 
 // Frontend SME Strategy & Tracking Toolkit Routes
 Route::get('/toolkit', [ToolkitController::class, 'index'])->name('toolkit.index');
@@ -123,29 +128,90 @@ Route::get('/setup-admin-blog', function () {
             ]
         );
 
-        // Create initial sample blog posts if empty
-        if (Blog::count() === 0) {
-            Blog::create([
-                'title'       => 'Why SME Directors Need Costed AI & IT Roadmaps in 2026',
-                'slug'        => 'why-sme-directors-need-costed-ai-it-roadmaps-in-2026',
-                'description' => "Most small and medium enterprises spend thousands of pounds on disconnected software tools without a clear strategic roadmap. 
-
-In this article, Mohammed Nasar outlines how a costed, 90-day IT and AI readiness audit helps business owners eliminate manual bottlenecks, scale operations, and compound response speed.",
-                'image'       => null,
+        // Seed or update the 5 high-ranking industry & software blogs with sort_order 1 to 5
+        $blogsToSeed = [
+            [
+                'title'       => 'Spare Parts & OEM Sourcing in Oil, Gas & Petrochemicals: Eliminating Plant Shutdowns',
+                'slug'        => 'spare-parts-oem-sourcing-oil-gas-petrochemicals',
                 'sort_order'  => 1,
                 'is_active'   => true,
-            ]);
+                'description' => "Unplanned downtime in upstream drilling rigs, midstream compressor stations, and downstream refineries costs operators thousands of pounds per hour. 
 
-            Blog::create([
-                'title'       => '5 Common IT Systems Bottlenecks Eating 10+ Owner Hours Weekly',
-                'slug'        => '5-common-it-systems-bottlenecks-eating-owner-hours',
-                'description' => "Re-keying customer data between CRM and ERP, manually tracking leads in spreadsheets, and un-integrated invoicing are silent profit killers.
+In this comprehensive guide, Nexteck explains how vetted OEM supply relationships, API 6A/6D compliance, and digital predictive inventory workflows eliminate critical spare parts bottlenecks across the UK and international energy sector.
 
-Discover the top 5 operational bottlenecks we uncover during Nexteck business audits and how simple integrations return 12+ hours to SME owners every week.",
-                'image'       => null,
+### Key Procurement Topics Covered:
+1. Sourcing API 6D pipeline valves, high-pressure actuators, and mechanical seals.
+2. Heat exchanger re-tubing bundles and turbomachinery rotor spares.
+3. Traceable EN 10204 3.1/3.2 mill test certifications and hazardous ATEX compliance.
+4. Integrating IoT and ERP alerts to order long-lead items 90 days before scheduled turnarounds.",
+            ],
+            [
+                'title'       => 'Rotating Equipment & Drilling Consumables: Maximising Uptime in Mining & Industrial Plants',
+                'slug'        => 'rotating-equipment-drilling-consumables-mining-industrial-plants',
                 'sort_order'  => 2,
                 'is_active'   => true,
-            ]);
+                'description' => "Demanding site conditions in mining, quarrying, and continuous processing plants put extreme mechanical stress on rotating equipment and consumables. 
+
+Discover how Nexteck sources abrasion-resistant manganese liners, tungsten carbide drill bits, slurry pumps, and bespoke machined components fabricated to exact client engineering drawings and CAD samples.
+
+### Strategic Sourcing Highlights:
+- Slurry pumps, gearboxes, and heavy conveyor drive systems for abrasive open-pit environments.
+- Bespoke CNC machining from customer drawings when off-the-shelf catalog spares are discontinued.
+- Reverse engineering legacy equipment using 3D coordinate measuring machines (CMM).
+- Digital re-order thresholds that keep maintenance teams fully stocked without capital bloat.",
+            ],
+            [
+                'title'       => 'UK Railway Rolling Stock & Track Sourcing: The pearlconrail.co.uk Supply Advantage',
+                'slug'        => 'railway-rolling-stock-track-sourcing-pearlconrail-advantage',
+                'sort_order'  => 3,
+                'is_active'   => true,
+                'description' => "Railway operations demand flawless safety compliance, EN 45545 fire integrity, and rigorous audit standards. 
+
+In strategic partnership with pearlconrail.co.uk, Nexteck provides UK train operators, rolling stock leasing companies (ROSCOs), and track renewal contractors with direct access to vetted European and global rail component manufacturers.
+
+### Core Rail Engineering Scope:
+- Bogie assemblies, wheelsets, solid forged axles, and hydraulic suspension dampers.
+- High-performance brake calipers, composite brake pads, and pneumatic compressor spares.
+- Track fasteners, rail fishplates, catenary overhead wiring, and signalling hardware.
+- Real-time rolling stock condition monitoring and predictive maintenance software.",
+            ],
+            [
+                'title'       => 'Low-Cost Country Sourcing: Bridging India & Asia-Pacific Manufacturing into UK Supply Chains',
+                'slug'        => 'low-cost-country-sourcing-india-asia-pacific-manufacturing',
+                'sort_order'  => 4,
+                'is_active'   => true,
+                'description' => "Western SMEs are caught between rising domestic fabrication costs and the logistical risks of overseas procurement. 
+
+Bridging vetted Tier-1 manufacturing capacity across India (Pune, Chennai, Gujarat) and Southeast Asia into the UK delivers 30% to 55% direct cost savings while upholding British engineering tolerances.
+
+### How Nexteck De-Risks Global Procurement:
+1. Strict bilateral NDAs, IP protection, and UK-enforceable commercial contracts.
+2. Independent on-site factory inspections (Pre-production, In-Process DUPRO, and Final Random PSI).
+3. Landed cost calculations including freight, import duties, and port customs clearance.
+4. Vendor consolidation: replacing multiple fragmented suppliers with one audited UK bridge.",
+            ],
+            [
+                'title'       => 'Smart Factory & Clean Water Automation: Pumps, Valves, Chemicals & Industry 4.0',
+                'slug'        => 'smart-factory-clean-water-automation-pumps-valves-chemicals',
+                'sort_order'  => 5,
+                'is_active'   => true,
+                'description' => "Continuous manufacturing plants, municipal clean water works, and effluent treatment facilities are accelerating the convergence of physical engineering and digital automation. 
+
+Learn how combining high-efficiency pumps, resilient gate valves, REACH-compliant industrial chemicals, and custom SCADA telemetry returns over 10+ hours of operational capacity to plant managers every week.
+
+### Practical Implementation Scope:
+- Centrifugal and progressive cavity wastewater pumps with variable frequency drives (VFD).
+- Specialty greases, synthetic compressor oils, and industrial solvents from audited formulators.
+- PLC automation modules, servo robotics, and automated conveyor lines.
+- End-to-end Nexteck SME IT Audit: eliminating manual re-keying and spreadsheet bottlenecks.",
+            ],
+        ];
+
+        foreach ($blogsToSeed as $bData) {
+            Blog::updateOrCreate(
+                ['slug' => $bData['slug']],
+                $bData
+            );
         }
 
         return response()->json([

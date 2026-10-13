@@ -9,7 +9,7 @@
             <a href="{{ route('home') }}#audit">The Audit</a>
             <a href="{{ route('home') }}#method">Methodology</a>
             <a href="{{ route('home') }}#nasar">About Nasar</a>
-            <a href="{{ route('home') }}#industries">Industries</a>
+            <a href="{{ route('industries.index') }}" style="{{ request()->routeIs('industries.*') ? 'color: var(--gold); font-weight: 700;' : '' }}">Industries</a>
             <a href="{{ route('toolkit.index') }}" style="{{ request()->routeIs('toolkit.*') ? 'color: var(--gold); font-weight: 700;' : '' }}">SME Toolkit</a>
             <a href="{{ route('blogs.index') }}" style="{{ request()->routeIs('blogs.*') ? 'color: var(--gold); font-weight: 700;' : '' }}">Blogs</a>
             @if(Route::currentRouteName() === 'home')
