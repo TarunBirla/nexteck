@@ -394,6 +394,136 @@
   </div>
 </section>
 
+<section class="nx2-sec nx2-who" id="nx2-who">
+  <img class="nx2-person" src="{{ asset('images/nx2/person-who.png') }}" alt="" loading="lazy">
+  <div class="nx2-wrap">
+    <div class="nx2-eyebrow">Who we are</div>
+    <h2 class="nx2-h">Enterprise thinking. <span class="nx2-v">Entrepreneurial</span> execution.</h2>
+    <p class="nx2-lead">A UK technology consulting and digital solutions company connecting business ambition with practical execution.</p>
+    <div class="nx2-grid nx2-g3 nx2-who__stats">
+      <div class="nx2-card"><div class="nx2-who__num">25+</div><span>years of IT strategy experience</span></div>
+      <div class="nx2-card"><div class="nx2-who__num">5</div><span>industries served</span></div>
+      <div class="nx2-card"><div class="nx2-who__num">30+</div><span>digital platforms built and run</span></div>
+    </div>
+    <p class="nx2-foot">Banking and Insurance | Manufacturing | Education | Ecommerce | Professional Services</p>
+  </div>
+</section>
+
+<section class="nx2-sec nx2-cap" id="nx2-cap">
+  <img class="nx2-person" src="{{ asset('images/nx2/person-cap.png') }}" alt="" loading="lazy">
+  <div class="nx2-wrap">
+    <div class="nx2-eyebrow">Core capabilities</div>
+    <h2 class="nx2-h">Consulting, AI and engineering,<br>connected by design</h2>
+    <div class="nx2-grid nx2-g2 nx2-cap__grid">
+      <div class="nx2-card nx2-card--w"><h3>Enterprise Technology Consulting</h3><ul><li>Enterprise architecture</li><li>Transformation roadmaps</li><li>KPI frameworks</li></ul></div>
+      <div class="nx2-card nx2-card--w"><h3>AI and Intelligent Automation</h3><ul><li>AI readiness assessments</li><li>AI agents and workflows</li><li>Document intelligence</li></ul></div>
+      <div class="nx2-card nx2-card--w"><h3>Custom Software &amp; Apps, and Cloud Management</h3><ul><li>Web and mobile apps</li><li>Portals and marketplaces</li><li>APIs and payments</li></ul></div>
+      <div class="nx2-card nx2-card--w"><h3>Digital Growth</h3><ul><li>AI-era brand visibility</li><li>Generative engine optimisation</li><li>Conversion-led web</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="nx2-sec nx2-tk" id="nx2-tk">
+  <img class="nx2-person" src="{{ asset('images/nx2/person-toolkit.png') }}" alt="" loading="lazy">
+  <div class="nx2-wrap">
+    <div class="nx2-eyebrow">The Nexteck SME Strategy Toolkit</div>
+    <h2 class="nx2-h">A practical framework for better business</h2>
+    <div class="nx2-grid nx2-g2 nx2-tk__grid">
+      <div class="nx2-card nx2-card--w"><h3>Industry Benchmarking</h3><p>Compare against industry leaders</p></div>
+      <div class="nx2-card nx2-card--w"><h3>Competitor Intelligence</h3><p>Find whitespace to differentiate</p></div>
+      <div class="nx2-card nx2-card--w"><h3>KPI and Performance Governance</h3><p>Targets, owners, regular reviews</p></div>
+      <div class="nx2-card nx2-card--w"><h3>SOP and Delegation Register</h3><p>Document and delegate repeatable work</p></div>
+      <div class="nx2-card nx2-card--w"><h3>AI and IT Opportunity Planning</h3><p>Score by impact and urgency</p></div>
+      <div class="nx2-card nx2-card--w"><h3>Technology Roadmap</h3><p>Phased plan with costs and next steps</p></div>
+    </div>
+    <p class="nx2-tk__line">Every recommendation connects to a business need, an owner and a measurable objective.</p>
+    <a class="nx2-btn" href="{{ url('/toolkit') }}">Open the SME Toolkit</a>
+  </div>
+</section>
+
+
+<section class="nx2-sec nx2-how" id="nx2-how">
+  <img class="nx2-person" src="{{ asset('images/nx2/person-how.png') }}" alt="" loading="lazy">
+  <div class="nx2-wrap">
+    <div class="nx2-eyebrow">How we work</div>
+    <h2 class="nx2-h">From business challenge to working solution</h2>
+    <div class="nx2-grid nx2-g3 nx2-how__steps">
+      <div><div class="nx2-how__n">01</div><h3>Discover</h3><p>Objectives, constraints, current systems</p></div>
+      <div><div class="nx2-how__n">02</div><h3>Diagnose</h3><p>Processes, data and operating model</p></div>
+      <div><div class="nx2-how__n">03</div><h3>Design</h3><p>Architecture, roadmap, cost and risk</p></div>
+      <div><div class="nx2-how__n">04</div><h3>Build</h3><p>Develop and integrate with testing</p></div>
+      <div><div class="nx2-how__n">05</div><h3>Improve</h3><p>Measure outcomes and adapt</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="nx2-sec nx2-prod" id="nx2-prod">
+  <div class="nx2-wrap">
+    <div class="nx2-eyebrow">Digital products</div>
+    <h2 class="nx2-h">We don't just advise. We build and run products.</h2>
+    <div class="nx2-grid nx2-g4 nx2-prod__grid">
+      <div class="nx2-card nx2-card--w"><h3>HYST</h3><p>Zero-commission food ordering with payments and delivery integration</p><a href="https://hyst.uk" target="_blank" rel="noopener">hyst.uk</a></div>
+      <div class="nx2-card nx2-card--w"><h3>BRNDS</h3><p>AI-era brand visibility and generative engine optimisation</p><a href="https://brnds.co.uk" target="_blank" rel="noopener">brnds.co.uk</a></div>
+      <div class="nx2-card nx2-card--w"><h3>Boltix</h3><p>OEM service platform with live video support and SLA tracking</p><a href="https://boltix.aideepseek.uk" target="_blank" rel="noopener">boltix.aideepseek.uk</a></div>
+      <div class="nx2-card nx2-card--w"><h3>AI University</h3><p>Practical agentic AI learning with institutional partnerships</p><a href="https://aiuniversity.live" target="_blank" rel="noopener">aiuniversity.live</a></div>
+    </div>
+  </div>
+</section>
+
+@php
+$nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.aideepseek.uk','smplyrefer','bimanager','marianhouse','yodoc.co.uk','annexdoc.com','postcodeservices.uk','infostore-news.com','wowherbs.co.uk','pearlcon.com','sparelyx.com','lightasair.co.uk','siaprofessionals.com','eb4u.uk','maxmarkbuilders.com','frwrdtutors.com','salesflow360','sofinish.co.uk','sofin.co.uk','mychoicetutor.com','britishlingua.com','virnixworldwide.com','aiyman.uz','bookdriving.co.uk','desifoods.uk','globetrottersltd.com','jaysbeauty.co.uk','markly.live','redxteam.com','thegmauk.org','thehalalfoods.co.uk','Jakpa Market','ERP System','CRM System','UK Charity Management System','Ticket Management & IT Support'];
+@endphp
+<section class="nx2-sec nx2-port" id="nx2-port">
+  <div class="nx2-wrap">
+    <div class="nx2-eyebrow">Portfolio</div>
+    <h2 class="nx2-h">A growing portfolio of live platforms</h2>
+    <div class="nx2-port__grid">
+      @foreach($nx2Sites as $s)
+        @if(str_contains($s,'.') && !str_contains($s,' '))
+          <a class="nx2-port__pill" href="https://{{ $s }}" target="_blank" rel="noopener">{{ $s }}</a>
+        @else
+          <span class="nx2-port__pill">{{ $s }}</span>
+        @endif
+      @endforeach
+    </div>
+  </div>
+</section>
+
+<section class="nx2-sec nx2-why" id="nx2-why">
+  <img class="nx2-person" src="{{ asset('images/nx2/person-why.png') }}" alt="" loading="lazy">
+  <div class="nx2-wrap">
+    <div class="nx2-eyebrow">Why Nexteck</div>
+    <h2 class="nx2-h">Strategic clarity. Technical depth.</h2>
+    <div class="nx2-grid nx2-g2 nx2-why__grid">
+      <div class="nx2-card nx2-card--w"><h3>Business before technology</h3><p>We start with your commercial goals, then pick the tools.</p></div>
+      <div class="nx2-card nx2-card--w"><h3>Architecture with practical execution</h3><p>Designs that get built, tested and run.</p></div>
+      <div class="nx2-card nx2-card--w"><h3>Entrepreneurial product perspective</h3><p>We run our own products, so we know what ships.</p></div>
+      <div class="nx2-card nx2-card--w"><h3>Designed around your organisation</h3><p>Fits your team, budget and way of working.</p></div>
+      <div class="nx2-card nx2-card--w"><h3>Consulting and engineering under one roof</h3><p>The people who plan it also build it.</p></div>
+      <div class="nx2-card nx2-card--w"><h3>Ownership and transparency</h3><p>You own every asset. No lock-in. Costs agreed up front.</p></div>
+    </div>
+    <p class="nx2-why__vision">Our vision: make intelligent technology useful to every ambitious business.</p>
+  </div>
+</section>
+
+<section class="nx2-sec nx2-contact" id="nx2-contact">
+  <img class="nx2-person" src="{{ asset('images/nx2/person-contact.png') }}" alt="" loading="lazy">
+  <div class="nx2-wrap">
+    <div class="nx2-eyebrow">Nexteck</div>
+    <h2 class="nx2-contact__title">Start a <span class="nx2-v">conversation</span></h2>
+    <p class="nx2-lead">Strategy for the decisions that matter.<br>Intelligence for the work that can improve.<br>Technology for the future you want to build.</p>
+    <div class="nx2-contact__links">
+      <a href="https://www.thenexteck.com">thenexteck.com</a>
+      <a href="mailto:nasar@nexteck.co.uk">nasar@nexteck.co.uk</a>
+      <a href="tel:+447879175585">+44 7879 175585</a>
+    </div>
+    <a class="nx2-btn" href="{{ route('landing') }}#book">Book Discovery Call</a>
+  </div>
+</section>
+
+
+
     <!-- STATS LEDGER -->
     <section class="stats-ledger">
         <div class="ledger-cell">

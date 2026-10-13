@@ -183,3 +183,48 @@ background-image:linear-gradient(90deg,rgba(5,7,12,.85),rgba(5,7,12,.45)),url('/
 .nx2-cta__s1 a{color:var(--nx2-teal);font-weight:700;text-decoration:none}
 .nx2-cta__s2 a{color:var(--nx2-ink);font-size:1.7rem;font-weight:800;text-decoration:none}
 @media(max-width:960px){.nx2-cta__row{grid-template-columns:1fr}}
+
+.nx2-who{background-image:linear-gradient(135deg,#0a0e1a,#0a0e1a)}
+.nx2-who__stats{max-width:760px}
+.nx2-who__num{font-size:3rem;font-weight:800;color:var(--nx2-teal);line-height:1;margin-bottom:10px}
+.nx2-who .nx2-card span{color:var(--nx2-text)}
+
+.nx2-cap{background-image:linear-gradient(90deg,rgba(2,10,24,.75),rgba(2,10,24,.3)),url('/images/nx2/cap-binary-bg.jpg')}
+.nx2-cap__grid{max-width:740px;margin-top:34px}
+
+
+.nx2-tk{background-image:linear-gradient(90deg,rgba(2,14,28,.6),rgba(2,14,28,.2)),url('/images/nx2/toolkit-streak-bg.jpg')}
+.nx2-tk__grid{max-width:780px;margin-top:34px}
+.nx2-tk .nx2-card--w h3{color:var(--nx2-ink);font-size:1.2rem}
+.nx2-tk__line{font-weight:700;font-size:1.15rem;margin:34px 0 22px;max-width:640px}
+
+.nx2-how{background-color:#000;background-image:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.2)),url('/images/nx2/how-curves-bg.jpg')}
+.nx2-how__steps{max-width:820px;margin-top:40px;gap:44px 28px}
+.nx2-how__n{font-size:2.6rem;font-weight:800;color:var(--nx2-teal);line-height:1;margin-bottom:10px}
+.nx2-how h3{font-size:1.3rem;font-weight:800;margin:0 0 6px;color:#fff}
+.nx2-how p{color:var(--nx2-muted);margin:0}
+
+.nx2-prod{background-image:linear-gradient(180deg,rgba(4,8,14,.55),rgba(4,8,14,.75)),url('/images/nx2/products-track-bg.jpg')}
+.nx2-prod__grid{margin-top:34px}
+.nx2-prod .nx2-card--w{display:flex;flex-direction:column}
+.nx2-prod .nx2-card--w a{margin-top:auto;padding-top:14px;font-weight:700;color:var(--nx2-ink);text-decoration:none}
+.nx2-prod .nx2-card--w a:hover{color:var(--nx2-violet)}
+
+
+.nx2-port{background-image:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.55)),url('/images/nx2/portfolio-seedling-bg.jpg')}
+.nx2-port__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:30px}
+.nx2-port__pill{display:block;background:rgba(17,23,50,.92);border:1px solid rgba(255,255,255,.08);padding:10px 16px;border-radius:999px;font-size:.9rem;color:var(--nx2-text);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+a.nx2-port__pill:hover{border-color:var(--nx2-teal);color:var(--nx2-teal)}
+@media(max-width:960px){.nx2-port__grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.nx2-port__grid{grid-template-columns:1fr}}
+
+.nx2-why{background-image:linear-gradient(90deg,rgba(6,24,28,.7),rgba(6,24,28,.35)),url('/images/nx2/why-teal-bg.jpg')}
+.nx2-why__grid{max-width:780px;margin-top:34px}
+.nx2-why .nx2-card--w h3{color:var(--nx2-ink);font-size:1.1rem}
+.nx2-why__vision{font-weight:700;font-size:1.2rem;margin:34px 0 0;max-width:640px}
+
+.nx2-contact{min-height:80vh;display:flex;align-items:center;background-image:linear-gradient(90deg,rgba(10,5,2,.88),rgba(10,5,2,.35)),url('/images/nx2/contact-bridge-bg.jpg')}
+.nx2-contact__title{font-size:clamp(2.2rem,5vw,4rem);font-weight:800;line-height:1.1;margin:0 0 20px;color:#fff}
+.nx2-contact__links{margin:0 0 30px}
+.nx2-contact__links a{display:block;color:var(--nx2-text);font-size:1.15rem;margin:6px 0;text-decoration:none}
+.nx2-contact__links a:hover{color:var(--nx2-teal)}
