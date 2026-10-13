@@ -179,7 +179,7 @@ background-image:linear-gradient(90deg,rgba(5,7,12,.85),rgba(5,7,12,.45)),url('/
 .nx2-cta__s2{background:var(--nx2-violet);color:var(--nx2-ink);margin-top:16px}
 .nx2-cta__steps small{display:block;letter-spacing:.3em;font-weight:700;font-size:.75rem}
 .nx2-cta__s1 small{color:var(--nx2-violet)}
-.nx2-cta__steps h3{font-size:1.4rem;font-weight:800;margin:8px 0}
+.nx2-cta__steps h3{font-size:1.4rem;font-weight:800;margin:8px 0;color:#fff;}
 .nx2-cta__s1 a{color:var(--nx2-teal);font-weight:700;text-decoration:none}
 .nx2-cta__s2 a{color:var(--nx2-ink);font-size:1.7rem;font-weight:800;text-decoration:none}
 @media(max-width:960px){.nx2-cta__row{grid-template-columns:1fr}}
