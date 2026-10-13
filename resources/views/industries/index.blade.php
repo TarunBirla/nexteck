@@ -231,7 +231,7 @@
             </div>
 
             <!-- SEO Keywords Cloud Section for High Organic Reach -->
-            <div class="seo-keywords-card">
+            <!-- <div class="seo-keywords-card">
                 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:.8rem;">
                     <h3>Industrial Procurement &amp; Technology Keywords</h3>
                     <span style="font-size:.82rem; color:var(--muted);">Global Procurement · OEM Parts · AI Strategy · UK Standards</span>
@@ -243,7 +243,7 @@
                         @endforeach
                     @endforeach
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
 

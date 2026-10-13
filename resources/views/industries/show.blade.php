@@ -212,14 +212,14 @@
                         <a href="{{ route('landing') }}#book" class="btn btn-gold" style="width:100%; justify-content:center;">Book Discovery Call &rarr;</a>
                     </div>
 
-                    <div class="sidebar-card">
+                    <!-- <div class="sidebar-card">
                         <h3>Verified SEO Keywords</h3>
                         <div class="kw-list">
                             @foreach($industry['keywords'] as $kw)
                                 <div class="kw-item">🔍 {{ $kw }}</div>
                             @endforeach
                         </div>
-                    </div>
+                    </div> -->
                 </aside>
             </div>
         </div>
