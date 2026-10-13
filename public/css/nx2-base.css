@@ -28,7 +28,7 @@
     content: "";
     position: absolute;
     top: 0;
-    left: max(24px, calc(50% - 566px));
+    left: max(24px, calc(50% - 610px));
     width: 72px;
     height: 5px;
     background: var(--nx2-teal);

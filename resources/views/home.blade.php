@@ -525,7 +525,7 @@ $nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.a
 
 
     <!-- STATS LEDGER -->
-    <section class="stats-ledger">
+    <!-- <section class="stats-ledger">
         <div class="ledger-cell">
             <div class="ledger-val">25<sup>+</sup></div>
             <div class="ledger-label">Years directing IT architecture, enterprise strategy &amp; software roadmaps</div>
@@ -542,10 +542,10 @@ $nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.a
             <div class="ledger-val">60<sup>%</sup></div>
             <div class="ledger-label">Average reduction in manual admin overhead within the initial 90 days</div>
         </div>
-    </section>
+    </section> -->
 
     <!-- PAIN POINTS: EDITORIAL NUMBERED LIST -->
-    <section class="sec" id="audit">
+    <!-- <section class="sec" id="audit">
         <div class="wrap">
             <div style="max-width: 720px; margin-bottom: 2.5rem;">
                 <span class="eyebrow">The Diagnostic Assessment</span>
@@ -646,10 +646,10 @@ $nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.a
                 <a class="btn btn-primary" href="{{ route('landing') }}#book">Request Diagnostic Call</a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- METHODOLOGY: 4-STAGE TIMELINE -->
-    <section class="sec sec-dark" id="method">
+    <!-- <section class="sec sec-dark" id="method">
         <div class="wrap">
             <div style="max-width: 720px; margin-bottom: 2.5rem;">
                 <span class="eyebrow" style="color: #9D9688;">The Nexteck Framework</span>
@@ -717,10 +717,10 @@ $nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.a
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- SAMPLE OUTPUT: ROADMAP LEDGER TABLE -->
-    <section class="sec sec-warm">
+    <!-- <section class="sec sec-warm">
         <div class="wrap">
             <div style="max-width: 760px; margin-bottom: 2.2rem;">
                 <span class="eyebrow">Exemplar Deliverable</span>
@@ -800,10 +800,10 @@ $nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.a
                 Every roadmap includes the complete SOP register, governance dashboard, and tool stack specifications.
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- PRINCIPAL: MOHAMMED NASAR -->
-    <section class="sec" id="nasar">
+    <!-- <section class="sec" id="nasar">
         <div class="wrap">
             <div class="grid-12" style="align-items: center;">
                 <div class="col-5">
@@ -841,10 +841,10 @@ $nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.a
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- SECTOR DEPTH & INDUSTRIES -->
-    <section class="sec sec-warm" id="industries">
+    <!-- <section class="sec sec-warm" id="industries">
         <div class="wrap">
             <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.8rem;">
                 <div style="max-width: 680px;">
@@ -953,7 +953,6 @@ $nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.a
                 @endif
             </div>
 
-            <!-- Engineering Sourcing Docket Box -->
             <div style="margin-top: 2.5rem; padding: 2rem 2.2rem; border: 1px solid var(--line); background-color: var(--paper-card); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
                 <div style="max-width: 720px;">
                     <div class="stamp-badge accent" style="margin-bottom: 0.6rem;">Specialist Practice</div>
@@ -967,10 +966,10 @@ $nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.a
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- RISK REVERSAL & COMMITMENTS -->
-    <section class="sec">
+    <!-- <section class="sec">
         <div class="wrap">
             <div style="max-width: 700px; margin-bottom: 2.8rem;">
                 <span class="eyebrow">Risk Governance</span>
@@ -1013,10 +1012,10 @@ $nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.a
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CALM ADVISORY CLOSING -->
-    <section class="sec sec-dark" id="urgency" style="border-top: 1px solid #2D2B26;">
+    <!-- <section class="sec sec-dark" id="urgency" style="border-top: 1px solid #2D2B26;">
         <div class="wrap">
             <div class="grid-12" style="align-items: center;">
                 <div class="col-7">
@@ -1053,8 +1052,8 @@ $nx2Sites=['hyst.uk','brnds.co.uk','bizconn.co.uk','aiuniversity.live','boltix.a
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    @include('partials.footer')
+    <!-- @include('partials.footer') -->
 </body>
 </html>
