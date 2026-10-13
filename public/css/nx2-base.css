@@ -184,7 +184,7 @@ background-image:linear-gradient(90deg,rgba(5,7,12,.85),rgba(5,7,12,.45)),url('/
 .nx2-cta__s2 a{color:var(--nx2-ink);font-size:1.7rem;font-weight:800;text-decoration:none}
 @media(max-width:960px){.nx2-cta__row{grid-template-columns:1fr}}
 
-.nx2-who{background-image:linear-gradient(135deg,#0a0e1a,#0a0e1a)}
+.nx2-who{background-image:linear-gradient(135deg,#0a0e1a,#0a0e1a),url('/images/nx2/s3.png')}
 .nx2-who__stats{max-width:760px}
 .nx2-who__num{font-size:3rem;font-weight:800;color:var(--nx2-teal);line-height:1;margin-bottom:10px}
 .nx2-who .nx2-card span{color:var(--nx2-text)}
