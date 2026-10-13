@@ -28,7 +28,7 @@
     content: "";
     position: absolute;
     top: 0;
-    left: max(24px, calc(50% - 610px));
+    left: max(24px, calc(50% - 590px));
     width: 72px;
     height: 5px;
     background: var(--nx2-teal);
@@ -488,4 +488,100 @@ a.nx2-port__pill:hover {
 }
 .nx2-contact__links a:hover {
     color: var(--nx2-teal);
+}
+
+/* =====================================================
+   HOME PAGE FIX: sab 10 sections same size + proper BG
+   (paste at END of file)
+   ===================================================== */
+
+/* 1. Sab sections ek jaisi height (full screen) */
+.nx2-sec {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;          /* content vertically center */
+    padding: 90px 0;
+    background-color: var(--nx2-bg);
+    background-size: cover;       /* image poori cover kare */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* 2. Wrap hamesha full width le, taaki flex me content sikude nahi */
+.nx2-sec > .nx2-wrap {
+    width: 100%;
+}
+
+/* 3. BG image ke upar halka overlay (image dikhegi, text readable rahega) */
+.nx2-sec::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        rgba(8, 11, 20, 0.55) 0%,
+        rgba(8, 11, 20, 0.25) 55%,
+        rgba(8, 11, 20, 0) 100%
+    );
+}
+.nx2-person { z-index: 1; }
+.nx2-wrap   { z-index: 2; }
+
+/* 4. Sab sections me same spacing system */
+.nx2-eyebrow { margin-bottom: 24px; }
+.nx2-h       { margin: 0 0 28px; }
+.nx2-lead    { margin: 0 0 28px; }
+
+/* grids ke upar ka extra margin uniform */
+.nx2-cap__grid,
+.nx2-tk__grid,
+.nx2-why__grid,
+.nx2-prod__grid,
+.nx2-port__grid,
+.nx2-who__stats,
+.nx2-how__steps {
+    margin-top: 0;
+}
+.nx2-how__steps { gap: 32px 28px; }
+
+/* 5. White cards ek barabar height ke */
+.nx2-card--w {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.nx2-card--w h3 { line-height: 1.25; }
+
+/* Hero / Contact ka alag min-height hata diya (upar common hai) */
+.nx2-hero,
+.nx2-contact {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+/* Portfolio pills thode compact taaki 40 items bhi screen me aa jayein */
+.nx2-port__pill { padding: 8px 14px; font-size: 0.85rem; }
+
+/* 6. Tablet */
+@media (max-width: 960px) {
+    .nx2-sec { padding: 70px 0; }
+    .nx2-sec::after {
+        background: rgba(8, 11, 20, 0.5);
+    }
+}
+
+/* 7. Mobile: fixed 100vh ki jagah content ke hisaab se height */
+@media (max-width: 640px) {
+    .nx2-sec {
+        min-height: auto;
+        padding: 64px 0;
+        background-position: 70% center;
+    }
+    .nx2-hero,
+    .nx2-contact { min-height: 100svh; }
+    .nx2-eyebrow { margin-bottom: 18px; }
+    .nx2-h       { margin-bottom: 22px; }
 }
