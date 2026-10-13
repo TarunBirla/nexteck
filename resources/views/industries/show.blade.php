@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $industry['seo_title'] }}</title>
-    <meta name="description" content="{{ $industry['meta_desc'] }}">
-    <meta name="keywords" content="{{ implode(', ', $industry['keywords']) }}, Nexteck London, UK Engineering Supply">
+    <title>{{ $industry->seo_title ?? ($industry['seo_title'] ?? $industry->title) }}</title>
+    <meta name="description" content="{{ $industry->meta_desc ?? ($industry['meta_desc'] ?? $industry->short_desc) }}">
+    @php
+        $kwList = $industry->keywords ?? ($industry['keywords'] ?? []);
+        if (is_string($kwList)) { $kwList = explode(',', $kwList); }
+    @endphp
+    <meta name="keywords" content="{{ is_array($kwList) ? implode(', ', $kwList) : $kwList }}, Nexteck London, UK Engineering Supply">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <link rel="canonical" href="{{ url('/industries/' . $industry['slug']) }}">
+    <link rel="canonical" href="{{ url('/industries/' . ($industry->slug ?? $industry['slug'])) }}">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Nexteck">
-    <meta property="og:title" content="{{ $industry['seo_title'] }}">
-    <meta property="og:description" content="{{ $industry['meta_desc'] }}">
-    <meta property="og:image" content="{{ $industry['image'] }}">
-    <meta property="og:url" content="{{ url('/industries/' . $industry['slug']) }}">
+    <meta property="og:title" content="{{ $industry->seo_title ?? $industry['seo_title'] }}">
+    <meta property="og:description" content="{{ $industry->meta_desc ?? $industry['meta_desc'] }}">
+    <meta property="og:image" content="{{ $industry->image_url ?? $industry['image'] }}">
+    <meta property="og:url" content="{{ url('/industries/' . ($industry->slug ?? $industry['slug'])) }}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $industry['seo_title'] }}">
-    <meta name="twitter:description" content="{{ $industry['meta_desc'] }}">
-    <meta name="twitter:image" content="{{ $industry['image'] }}">
+    <meta name="twitter:title" content="{{ $industry->seo_title ?? $industry['seo_title'] }}">
+    <meta name="twitter:description" content="{{ $industry->meta_desc ?? $industry['meta_desc'] }}">
+    <meta name="twitter:image" content="{{ $industry->image_url ?? $industry['image'] }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -27,7 +31,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "{{ $industry['title'] }} — Supply & Technology Solutions",
+      "name": "{{ $industry->title ?? ($industry['title'] ?? '') }} — Supply & Technology Solutions",
       "serviceType": "Industrial Sourcing & Technology Consulting",
       "provider": {
         "@type": "ProfessionalService",
@@ -40,7 +44,7 @@
         }
       },
       "areaServed": ["United Kingdom", "London", "Global"],
-      "description": "{{ $industry['meta_desc'] }}"
+      "description": "{{ $industry->meta_desc ?? ($industry['meta_desc'] ?? '') }}"
     }
     </script>
     <style>
@@ -106,6 +110,67 @@
         .article-body h2 { font-size: 1.75rem; color: var(--ink); margin: 2rem 0 1rem; }
         .article-body p { font-size: 1.04rem; color: #334155; line-height: 1.7; margin-bottom: 1.4rem; }
 
+        /* Rich Text Formatting (Summernote & Markdown output) */
+        .rich-desc { font-size: 1.05rem; color: #334155; line-height: 1.8; margin-bottom: 2rem; }
+        .rich-desc p { margin-bottom: 1.4rem; }
+        .rich-desc h2, .rich-desc h3 { font-family: 'Fraunces', Georgia, serif; color: var(--ink); margin: 1.8rem 0 0.8rem; }
+        
+        /* Word Highlight */
+        .highlight-word, .rich-desc strong, .rich-desc b {
+            color: var(--ink);
+            font-weight: 700;
+            background: linear-gradient(120deg, rgba(217, 188, 122, 0.22) 0%, rgba(184, 147, 63, 0.26) 100%);
+            padding: 0.12rem 0.45rem;
+            border-radius: 4px;
+            border-bottom: 2px solid var(--gold);
+        }
+        .rich-desc mark {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--ink);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Tagline / Quote Box */
+        .blog-tagline, .rich-desc blockquote {
+            background: linear-gradient(135deg, #FFFDF8 0%, #FBF6EB 100%);
+            border-left: 4px solid var(--gold);
+            padding: 1.3rem 1.8rem;
+            border-radius: 0 14px 14px 0;
+            margin: 2rem 0;
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--ink);
+            box-shadow: 0 6px 20px rgba(12, 27, 51, 0.04);
+            line-height: 1.6;
+        }
+
+        /* External & highlighted links with new tab behavior */
+        .rich-desc a, .article-body a.blog-ext-link {
+            color: var(--gold) !important;
+            font-weight: 700 !important;
+            text-decoration: underline !important;
+            text-underline-offset: 4px !important;
+            text-decoration-thickness: 1.8px !important;
+            padding: 0.1rem 0.3rem !important;
+            border-radius: 4px !important;
+            background: rgba(184, 147, 63, 0.08) !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.25rem !important;
+            word-break: break-all;
+            transition: all 0.2s ease !important;
+        }
+        .rich-desc a:hover, .article-body a.blog-ext-link:hover {
+            color: #fff !important;
+            background: var(--gold) !important;
+            text-decoration: none !important;
+            box-shadow: 0 4px 12px rgba(184, 147, 63, 0.35) !important;
+            transform: translateY(-1px) !important;
+        }
+
         /* Specifications / Highlights */
         .specs-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2.5rem; }
         .specs-item { display: flex; align-items: flex-start; gap: 1rem; background: var(--cream); border: 1px solid var(--line); padding: 1.1rem 1.4rem; border-radius: 12px; font-size: .98rem; color: var(--ink); }
@@ -161,19 +226,19 @@
 
     <section class="detail-hero">
         <div class="detail-hero-bg">
-            <img src="{{ $industry['image'] }}" alt="{{ $industry['title'] }}">
+            <img src="{{ $industry->image_url ?? ($industry['image'] ?? '') }}" alt="{{ $industry->title ?? ($industry['title'] ?? '') }}">
         </div>
         <div class="wrap">
             <div class="breadcrumbs">
                 <a href="{{ route('home') }}">Home</a> &nbsp;/&nbsp;
                 <a href="{{ route('industries.index') }}">Industries</a> &nbsp;/&nbsp;
-                <span>{{ $industry['title'] }}</span>
+                <span>{{ $industry->title ?? ($industry['title'] ?? '') }}</span>
             </div>
             <div class="eyebrow">Sector Sourcing &amp; Engineering Solutions</div>
-            <h1>{{ $industry['title'] }}</h1>
-            <p class="tagline">{{ $industry['tagline'] }}</p>
+            <h1>{{ $industry->title ?? ($industry['title'] ?? '') }}</h1>
+            <p class="tagline">{{ $industry->tagline ?? ($industry['tagline'] ?? '') }}</p>
             <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-                <a href="{{ route('landing') }}#book" class="btn btn-gold">Inquire for {{ $industry['title'] }} Sourcing &rarr;</a>
+                <a href="{{ route('landing') }}#book" class="btn btn-gold">Inquire for {{ $industry->title ?? ($industry['title'] ?? '') }} Sourcing &rarr;</a>
                 <a href="{{ route('toolkit.index') }}" class="btn btn-outline" style="background:rgba(255,255,255,.1); color:#fff; border-color:rgba(255,255,255,.3);">Assess in SME Toolkit</a>
             </div>
         </div>
@@ -185,28 +250,52 @@
                 <!-- Main Body -->
                 <article class="article-body">
                     <div class="featured-img-wrap">
-                        <img src="{{ $industry['image'] }}" alt="{{ $industry['title'] }} procurement and technology supply">
+                        <img src="{{ $industry->image_url ?? ($industry['image'] ?? '') }}" alt="{{ $industry->title ?? ($industry['title'] ?? '') }} procurement and technology supply">
                     </div>
 
-                    <h2>Strategic Sourcing &amp; Operational Excellence in {{ $industry['title'] }}</h2>
-                    <p>{{ $industry['short_desc'] }}</p>
+                    <h2>Strategic Sourcing &amp; Operational Excellence in {{ $industry->title ?? ($industry['title'] ?? '') }}</h2>
+                    
+                    @if(!empty($industry->rendered_content))
+                        <div class="rich-desc">
+                            {!! $industry->rendered_content !!}
+                        </div>
+                    @elseif(!empty($industry->description))
+                        <div class="rich-desc">
+                            {!! $industry->description !!}
+                        </div>
+                    @else
+                        <p>{{ $industry->short_desc ?? ($industry['short_desc'] ?? '') }}</p>
+                    @endif
 
-                    <h2>Key Supply Scope &amp; Engineering Specifications</h2>
-                    <ul class="specs-list">
-                        @foreach($industry['highlights'] as $hl)
-                            <li class="specs-item">
-                                <span class="specs-item-icon">✓</span>
-                                <div>{{ $hl }}</div>
-                            </li>
-                        @endforeach
-                    </ul>
+                    @php
+                        $hlList = $industry->highlights ?? ($industry['highlights'] ?? []);
+                        if (is_string($hlList)) {
+                            $hlList = array_filter(array_map('trim', explode("\n", $hlList)));
+                        }
+                    @endphp
+                    @if(!empty($hlList))
+                        <h2>Key Supply Scope &amp; Engineering Specifications</h2>
+                        <ul class="specs-list">
+                            @foreach($hlList as $hl)
+                                <li class="specs-item">
+                                    <span class="specs-item-icon">✓</span>
+                                    <div>{{ $hl }}</div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
 
-                    <div class="why-box">
-                        <h3>⭐ The Nexteck Advantage</h3>
-                        <p>{{ $industry['why_nexteck'] }}</p>
-                    </div>
+                    @php
+                        $whyText = $industry->why_nexteck ?? ($industry['why_nexteck'] ?? null);
+                    @endphp
+                    @if(!empty($whyText))
+                        <div class="why-box">
+                            <h3>⭐ The Nexteck Advantage</h3>
+                            <p>{{ $whyText }}</p>
+                        </div>
+                    @endif
 
-                    @if($industry['slug'] === 'railways')
+                    @if(($industry->slug ?? ($industry['slug'] ?? '')) === 'railways')
                         <div style="background:#0C1B33; color:#fff; padding:1.8rem 2rem; border-radius:14px; margin-top:2rem;">
                             <h3 style="color:var(--gold-2); margin-bottom:.6rem;">Verified Partner: pearlconrail.co.uk</h3>
                             <p style="color:#CBD5E1; font-size:.95rem; margin-bottom:1rem;">All railway rolling stock, braking systems, and infrastructure components are supplied in coordination with verified specialist networks at <a href="https://pearlconrail.co.uk" target="_blank" style="color:var(--gold-2); text-decoration:underline; font-weight:700;">pearlconrail.co.uk</a>.</p>
@@ -219,18 +308,9 @@
                 <aside>
                     <div class="sidebar-card">
                         <h3>Book a Sector Audit Call</h3>
-                        <p>Need costed spare parts sourcing, custom fabrication, or digital supply chain automation for {{ $industry['title'] }}? Speak directly with principal consultant Mohammed Nasar.</p>
+                        <p>Need costed spare parts sourcing, custom fabrication, or digital supply chain automation for {{ $industry->title ?? ($industry['title'] ?? '') }}? Speak directly with principal consultant Mohammed Nasar.</p>
                         <a href="{{ route('landing') }}#book" class="btn btn-gold" style="width:100%; justify-content:center;">Book Discovery Call &rarr;</a>
                     </div>
-
-                    <!-- <div class="sidebar-card">
-                        <h3>Verified SEO Keywords</h3>
-                        <div class="kw-list">
-                            @foreach($industry['keywords'] as $kw)
-                                <div class="kw-item">🔍 {{ $kw }}</div>
-                            @endforeach
-                        </div>
-                    </div> -->
                 </aside>
             </div>
         </div>
@@ -242,12 +322,18 @@
             <h2>Explore Other Sectors</h2>
             <div class="related-grid">
                 @foreach($related as $rel)
+                    @php
+                        $relTitle = $rel->title ?? ($rel['title'] ?? '');
+                        $relSlug = $rel->slug ?? ($rel['slug'] ?? '');
+                        $relTagline = $rel->tagline ?? ($rel['tagline'] ?? '');
+                        $relImg = is_object($rel) ? $rel->image_url : ($rel['image'] ?? '');
+                    @endphp
                     <article class="rel-card">
-                        <img src="{{ $rel['image'] }}" alt="{{ $rel['title'] }}" class="rel-img">
+                        <img src="{{ $relImg }}" alt="{{ $relTitle }}" class="rel-img">
                         <div class="rel-body">
-                            <h3 class="rel-title"><a href="{{ route('industries.show', $rel['slug']) }}">{{ $rel['title'] }}</a></h3>
-                            <p class="rel-tagline">{{ Str::limit($rel['tagline'], 75) }}</p>
-                            <a href="{{ route('industries.show', $rel['slug']) }}" style="color:var(--gold); font-weight:700; font-size:.88rem; margin-top:auto;">
+                            <h3 class="rel-title"><a href="{{ route('industries.show', $relSlug) }}">{{ $relTitle }}</a></h3>
+                            <p class="rel-tagline">{{ Str::limit($relTagline, 75) }}</p>
+                            <a href="{{ route('industries.show', $relSlug) }}" style="color:var(--gold); font-weight:700; font-size:.88rem; margin-top:auto;">
                                 Read More &rarr;
                             </a>
                         </div>

@@ -10,10 +10,13 @@ use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\AdminBlogController;
+use App\Http\Controllers\Admin\AdminIndustryController;
 use App\Http\Controllers\Admin\AdminToolkitController;
 use App\Http\Controllers\Admin\AdminAnalyticsController;
 use App\Models\User;
 use App\Models\Blog;
+use App\Models\Industry;
+use Illuminate\Support\Facades\Schema;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +24,19 @@ use App\Models\Blog;
 |--------------------------------------------------------------------------
 */
 
-// Home Page Route
+// Home Page Route (Shows Top 6 Industries by sort_order)
 Route::get('/', function () {
-    return view('home');
+    if (Schema::hasTable('industries') && Industry::count() === 0) {
+        (new \Database\Seeders\IndustrySeeder())->run();
+    }
+    $homeIndustries = Schema::hasTable('industries')
+        ? Industry::where('is_active', true)->orderBy('sort_order', 'asc')->orderBy('id', 'asc')->take(6)->get()
+        : collect();
+    return view('home', compact('homeIndustries'));
 })->name('home');
 
 Route::get('/home', function () {
-    return view('home');
+    return redirect()->route('home');
 });
 
 // Landing Page Route
@@ -66,6 +75,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/blogs/{id}/edit', [AdminBlogController::class, 'edit'])->name('blogs.edit');
     Route::put('/blogs/{id}', [AdminBlogController::class, 'update'])->name('blogs.update');
     Route::delete('/blogs/{id}', [AdminBlogController::class, 'destroy'])->name('blogs.destroy');
+
+    // Dynamic Industries (Sectors) Management (10 per page)
+    Route::resource('industries', AdminIndustryController::class);
 
     // Lead Form Submissions
     Route::get('/leads', [AdminDashboardController::class, 'leads'])->name('leads.index');
@@ -110,6 +122,23 @@ Route::get('/run-migrations', function () {
         return response()->json([
             'status'  => 'error',
             'message' => 'Migration failed: ' . $e->getMessage()
+        ], 500);
+    }
+});
+
+Route::get('/setup-industries-table', function () {
+    try {
+        Artisan::call('migrate', ['--force' => true]);
+        (new \Database\Seeders\IndustrySeeder())->run();
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'Industries table created and all 15 sectors seeded successfully!',
+            'count'   => \App\Models\Industry::count()
+        ]);
+    } catch (\Throwable $e) {
+        return response()->json([
+            'status'  => 'error',
+            'message' => 'Failed: ' . $e->getMessage()
         ], 500);
     }
 });

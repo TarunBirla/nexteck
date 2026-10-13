@@ -105,6 +105,9 @@
             <a href="{{ route('admin.blogs.index') }}" class="nav-item {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">
                 <i class="fa-solid fa-newspaper"></i> Blogs
             </a>
+            <a href="{{ route('admin.industries.index') }}" class="nav-item {{ request()->routeIs('admin.industries.*') ? 'active' : '' }}">
+                <i class="fa-solid fa-industry"></i> Industries (Sectors)
+            </a>
             <a href="{{ route('admin.leads.index') }}" class="nav-item {{ request()->routeIs('admin.leads.*') ? 'active' : '' }}">
                 <i class="fa-solid fa-envelope-open-text"></i> Lead Forms
             </a>

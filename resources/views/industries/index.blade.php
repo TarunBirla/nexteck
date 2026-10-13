@@ -185,6 +185,16 @@
             border-color: var(--gold);
         }
 
+        /* CUSTOM PAGINATION STYLES */
+        .pagination-wrap { margin-top: 3.5rem; }
+        .custom-pagination { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+        .pagination-info { font-size: 0.9rem; color: var(--muted); }
+        .pagination-list { display: flex; gap: 0.4rem; list-style: none; padding: 0; margin: 0; align-items: center; }
+        .page-item .page-link { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 38px; padding: 0 0.8rem; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 0.9rem; font-weight: 600; background: #fff; transition: all 0.2s; }
+        .page-item .page-link:hover { border-color: var(--gold); color: var(--gold); }
+        .page-item.active .page-link { background: var(--gold); color: #fff; border-color: var(--gold); }
+        .page-item.disabled .page-link { opacity: 0.5; cursor: not-allowed; background: #F7F5F0; border-color: var(--line); color: var(--muted); }
+
         footer { background: var(--ink); color: #fff; padding: 4rem 0 2rem; }
         .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 2rem; margin-bottom: 3rem; }
         .foot-grid h4 { color: #fff; margin-bottom: 1.2rem; font-size: 1rem; }
@@ -221,38 +231,31 @@
     <main class="ind-section">
         <div class="wrap">
             <div class="ind-grid">
-                @foreach($industries as $item)
+                @forelse($industries as $item)
                     <article class="ind-card">
                         <div class="ind-img-wrap">
-                            <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" loading="lazy">
+                            <img src="{{ $item->image_url ?? (is_array($item) ? $item['image'] : $item->image) }}" alt="{{ $item->title ?? $item['title'] }}" loading="lazy">
                         </div>
                         <div class="ind-body">
                             <span class="ind-badge">Sector Solutions</span>
-                            <h2 class="ind-title"><a href="{{ route('industries.show', $item['slug']) }}">{{ $item['title'] }}</a></h2>
-                            <div class="ind-tagline">{{ $item['tagline'] }}</div>
-                            <p class="ind-desc">{{ $item['short_desc'] }}</p>
-                            <a href="{{ route('industries.show', $item['slug']) }}" class="ind-link">
+                            <h2 class="ind-title"><a href="{{ route('industries.show', $item->slug ?? $item['slug']) }}">{{ $item->title ?? $item['title'] }}</a></h2>
+                            <div class="ind-tagline">{{ $item->tagline ?? $item['tagline'] }}</div>
+                            <p class="ind-desc">{{ $item->short_desc ?? $item['short_desc'] }}</p>
+                            <a href="{{ route('industries.show', $item->slug ?? $item['slug']) }}" class="ind-link">
                                 Explore Sourcing &amp; Tech Details &rarr;
                             </a>
                         </div>
                     </article>
-                @endforeach
+                @empty
+                    <p style="grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 3rem 0;">No active industry sectors available at the moment.</p>
+                @endforelse
             </div>
 
-            <!-- SEO Keywords Cloud Section for High Organic Reach -->
-            <!-- <div class="seo-keywords-card">
-                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:.8rem;">
-                    <h3>Industrial Procurement &amp; Technology Keywords</h3>
-                    <span style="font-size:.82rem; color:var(--muted);">Global Procurement · OEM Parts · AI Strategy · UK Standards</span>
+            @if(method_exists($industries, 'links'))
+                <div class="pagination-wrap">
+                    {{ $industries->links('partials.pagination') }}
                 </div>
-                <div class="keywords-wrap">
-                    @foreach($industries as $item)
-                        @foreach($item['keywords'] as $kw)
-                            <a href="{{ route('industries.show', $item['slug']) }}" class="kw-pill">{{ $kw }}</a>
-                        @endforeach
-                    @endforeach
-                </div>
-            </div> -->
+            @endif
         </div>
     </main>
 
