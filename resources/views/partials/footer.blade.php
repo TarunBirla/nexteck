@@ -20,7 +20,7 @@
                     <li><a href="{{ route('home') }}">Home Dossier</a></li>
                     <li><a href="{{ route('industries.index') }}">Sectors &amp; Industries</a></li>
                     <li><a href="{{ route('toolkit.index') }}">SME Strategy Toolkit</a></li>
-                    <li><a href="{{ route('blogs.index') }}">Journal &amp; Insights</a></li>
+                    <li><a href="{{ route('blogs.index') }}">Blogs &amp; Insights</a></li>
                     <li><a href="{{ route('home') }}#nasar">Principal Background</a></li>
                     <li><a href="{{ route('home') }}#method">4-Stage Methodology</a></li>
                 </ul>

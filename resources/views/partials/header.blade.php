@@ -10,12 +10,12 @@
         </a>
         
         <div class="nav-menu" id="primaryNav">
-            <a class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}#audit">The Audit</a>
+            <a class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}#audit">Home</a>
             <a class="nav-item" href="{{ route('home') }}#method">Methodology</a>
             <a class="nav-item" href="{{ route('home') }}#nasar">Principal</a>
             <a class="nav-item {{ request()->routeIs('industries.*') ? 'active' : '' }}" href="{{ route('industries.index') }}">Industries</a>
             <a class="nav-item {{ request()->routeIs('toolkit.*') ? 'active' : '' }}" href="{{ route('toolkit.index') }}">SME Toolkit</a>
-            <a class="nav-item {{ request()->routeIs('blogs.*') ? 'active' : '' }}" href="{{ route('blogs.index') }}">Journal</a>
+            <a class="nav-item {{ request()->routeIs('blogs.*') ? 'active' : '' }}" href="{{ route('blogs.index') }}">Blogs</a>
             <a class="btn btn-primary" href="{{ route('landing') }}#book" style="padding: 0.55rem 1.15rem; font-size: 0.86rem;">Book Discovery Call</a>
         </div>
 

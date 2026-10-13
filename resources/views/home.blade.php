@@ -212,7 +212,8 @@
         .ind-item-card {
             border: 1px solid var(--line);
             background-color: var(--paper-card);
-            padding: 1.6rem;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             transition: border-color 0.18s ease;
@@ -221,17 +222,42 @@
         .ind-item-card:hover {
             border-color: var(--ink);
         }
+        .ind-img-frame {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            background-color: var(--paper-warm);
+            border-bottom: 1px solid var(--line);
+            position: relative;
+        }
+        .ind-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.02);
+            transition: transform 0.35s ease;
+        }
+        .ind-item-card:hover .ind-img-frame img {
+            transform: scale(1.03);
+        }
+        .ind-card-body {
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
         .ind-item-badge {
             font-family: var(--font-mono);
             font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--accent);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
         .ind-item-card h3 {
             font-size: 1.25rem;
             margin-bottom: 0.6rem;
+            line-height: 1.25;
         }
         .ind-item-card p {
             font-size: 0.9rem;
@@ -677,56 +703,91 @@
                     @foreach($homeIndustries as $ind)
                         <article class="ind-item-card">
                             <span class="crosshair crosshair-tr">+</span>
-                            <div class="ind-item-badge">{{ $ind->title }}</div>
-                            <h3>{{ Str::limit($ind->tagline ?: $ind->title, 48) }}</h3>
-                            <p>{{ Str::limit($ind->short_desc ?: strip_tags($ind->description), 110) }}</p>
-                            <a href="{{ route('industries.show', $ind->slug) }}" class="btn-link">
-                                Sector Briefing &rarr;
-                            </a>
+                            <div class="ind-img-frame">
+                                <img src="{{ $ind->image_url }}" alt="{{ $ind->title }}" loading="lazy">
+                            </div>
+                            <div class="ind-card-body">
+                                <div class="ind-item-badge">{{ $ind->title }}</div>
+                                <h3>{{ Str::limit($ind->tagline ?: $ind->title, 48) }}</h3>
+                                <p>{{ Str::limit($ind->short_desc ?: strip_tags($ind->description), 110) }}</p>
+                                <a href="{{ route('industries.show', $ind->slug) }}" class="btn-link" style="margin-top: auto;">
+                                    Sector Briefing &rarr;
+                                </a>
+                            </div>
                         </article>
                     @endforeach
                 @else
                     <article class="ind-item-card">
                         <span class="crosshair crosshair-tr">+</span>
-                        <div class="ind-item-badge">Banking &amp; Fintech</div>
-                        <h3>Secure, compliant, automated</h3>
-                        <p>Customer onboarding, fraud-aware workflows, compliance triage, and automated regulatory reporting.</p>
-                        <a href="{{ route('industries.show', 'banking-fintech') }}" class="btn-link">Sector Briefing &rarr;</a>
+                        <div class="ind-img-frame">
+                            <img src="{{ asset('images/A3.png') }}" alt="Banking and fintech" loading="lazy">
+                        </div>
+                        <div class="ind-card-body">
+                            <div class="ind-item-badge">Banking &amp; Fintech</div>
+                            <h3>Secure, compliant, automated</h3>
+                            <p>Customer onboarding, fraud-aware workflows, compliance triage, and automated regulatory reporting.</p>
+                            <a href="{{ route('industries.show', 'banking-fintech') }}" class="btn-link" style="margin-top: auto;">Sector Briefing &rarr;</a>
+                        </div>
                     </article>
                     <article class="ind-item-card">
                         <span class="crosshair crosshair-tr">+</span>
-                        <div class="ind-item-badge">Insurance</div>
-                        <h3>From paper documents to digital pipeline</h3>
-                        <p>Claims intake automation, broker portal synchronization, and automated policy documentation.</p>
-                        <a href="{{ route('industries.show', 'insurance') }}" class="btn-link">Sector Briefing &rarr;</a>
+                        <div class="ind-img-frame">
+                            <img src="{{ asset('images/A4.png') }}" alt="Insurance advisory" loading="lazy">
+                        </div>
+                        <div class="ind-card-body">
+                            <div class="ind-item-badge">Insurance</div>
+                            <h3>From paper documents to digital pipeline</h3>
+                            <p>Claims intake automation, broker portal synchronization, and automated policy documentation.</p>
+                            <a href="{{ route('industries.show', 'insurance') }}" class="btn-link" style="margin-top: auto;">Sector Briefing &rarr;</a>
+                        </div>
                     </article>
                     <article class="ind-item-card">
                         <span class="crosshair crosshair-tr">+</span>
-                        <div class="ind-item-badge">Manufacturing</div>
-                        <h3>Synchronised factory operations</h3>
-                        <p>Real-time machine throughput, automated inventory tracking, and unified production dashboards.</p>
-                        <a href="{{ route('industries.show', 'manufacturing') }}" class="btn-link">Sector Briefing &rarr;</a>
+                        <div class="ind-img-frame">
+                            <img src="{{ asset('images/A5.png') }}" alt="Manufacturing automation" loading="lazy">
+                        </div>
+                        <div class="ind-card-body">
+                            <div class="ind-item-badge">Manufacturing</div>
+                            <h3>Synchronised factory operations</h3>
+                            <p>Real-time machine throughput, automated inventory tracking, and unified production dashboards.</p>
+                            <a href="{{ route('industries.show', 'manufacturing') }}" class="btn-link" style="margin-top: auto;">Sector Briefing &rarr;</a>
+                        </div>
                     </article>
                     <article class="ind-item-card">
                         <span class="crosshair crosshair-tr">+</span>
-                        <div class="ind-item-badge">Education</div>
-                        <h3>Scalable digital learning systems</h3>
-                        <p>Automated admissions workflows, LMS integration, and automated student feedback loops.</p>
-                        <a href="{{ route('industries.show', 'education') }}" class="btn-link">Sector Briefing &rarr;</a>
+                        <div class="ind-img-frame">
+                            <img src="{{ asset('images/A6.png') }}" alt="Education campus" loading="lazy">
+                        </div>
+                        <div class="ind-card-body">
+                            <div class="ind-item-badge">Education</div>
+                            <h3>Scalable digital learning systems</h3>
+                            <p>Automated admissions workflows, LMS integration, and automated student feedback loops.</p>
+                            <a href="{{ route('industries.show', 'education') }}" class="btn-link" style="margin-top: auto;">Sector Briefing &rarr;</a>
+                        </div>
                     </article>
                     <article class="ind-item-card">
                         <span class="crosshair crosshair-tr">+</span>
-                        <div class="ind-item-badge">E-commerce</div>
-                        <h3>Fulfillment without operational chaos</h3>
-                        <p>Omnichannel stock sync, automated customer service routing, and order-to-ledger automation.</p>
-                        <a href="{{ route('industries.show', 'e-commerce') }}" class="btn-link">Sector Briefing &rarr;</a>
+                        <div class="ind-img-frame">
+                            <img src="{{ asset('images/A7.png') }}" alt="E-commerce fulfilment" loading="lazy">
+                        </div>
+                        <div class="ind-card-body">
+                            <div class="ind-item-badge">E-commerce</div>
+                            <h3>Fulfillment without operational chaos</h3>
+                            <p>Omnichannel stock sync, automated customer service routing, and order-to-ledger automation.</p>
+                            <a href="{{ route('industries.show', 'e-commerce') }}" class="btn-link" style="margin-top: auto;">Sector Briefing &rarr;</a>
+                        </div>
                     </article>
                     <article class="ind-item-card">
                         <span class="crosshair crosshair-tr">+</span>
-                        <div class="ind-item-badge">Professional Services</div>
-                        <h3>Client delivery with guaranteed SLAs</h3>
-                        <p>Automated billing sequences, executive time-tracking, and priority inbox triage.</p>
-                        <a href="{{ route('industries.show', 'professional-services') }}" class="btn-link">Sector Briefing &rarr;</a>
+                        <div class="ind-img-frame">
+                            <img src="{{ asset('images/A8.png') }}" alt="Customer service team" loading="lazy">
+                        </div>
+                        <div class="ind-card-body">
+                            <div class="ind-item-badge">Professional Services</div>
+                            <h3>Client delivery with guaranteed SLAs</h3>
+                            <p>Automated billing sequences, executive time-tracking, and priority inbox triage.</p>
+                            <a href="{{ route('industries.show', 'professional-services') }}" class="btn-link" style="margin-top: auto;">Sector Briefing &rarr;</a>
+                        </div>
                     </article>
                 @endif
             </div>
