@@ -1,3 +1,4 @@
+/* ===================== BASE ===================== */
 .nx2-sec {
     --nx2-bg: #080b14;
     --nx2-card: #111732;
@@ -8,14 +9,15 @@
     --nx2-ink: #0b1020;
     position: relative;
     overflow: hidden;
-    padding: 96px 0;
+    padding: 80px 0;
     color: var(--nx2-text);
     font-family: "Inter", Arial, Helvetica, sans-serif;
     line-height: 1.55;
     background-color: var(--nx2-bg);
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
+    width: 100%;
 }
 .nx2-sec *,
 .nx2-sec *::before,
@@ -46,6 +48,7 @@
     letter-spacing: 0.32em;
     text-transform: uppercase;
     margin-bottom: 18px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 .nx2-h {
     font-weight: 800;
@@ -54,15 +57,17 @@
     font-size: clamp(1.8rem, 3.6vw, 2.8rem);
     margin: 0 0 18px;
     color: var(--nx2-text);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
 }
 .nx2-v {
     color: var(--nx2-violet);
 }
 .nx2-lead {
-    color: var(--nx2-muted);
+    color: #dfe3ff;
     font-size: 1.1rem;
     max-width: 640px;
     margin: 0 0 30px;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
 }
 .nx2-btn {
     display: inline-block;
@@ -119,6 +124,7 @@
 .nx2-card--w li {
     color: #2a3150;
     margin: 0;
+    text-shadow: none;
 }
 .nx2-card--w ul {
     list-style: none;
@@ -142,7 +148,8 @@
 .nx2-foot {
     margin-top: 50px;
     font-size: 0.85rem;
-    color: var(--nx2-muted);
+    color: #dfe3ff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
 }
 @media (max-width: 960px) {
     .nx2-g3,
@@ -164,67 +171,316 @@
     }
 }
 
-.nx2-hero{min-height:90vh;display:flex;align-items:center;
-background-image:linear-gradient(90deg,rgba(5,7,12,.85),rgba(5,7,12,.45)),url('/images/nx2/s1.png')}
-.nx2-hero__word{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;color:var(--nx2-teal);letter-spacing:.3em;margin-bottom:24px}
-.nx2-hero__title{font-size:clamp(2.2rem,5.2vw,4.2rem);font-weight:800;line-height:1.1;margin:0 0 22px;color:var(--nx2-text)}
-.nx2-hero__tag{color:var(--nx2-teal);margin:0}
-.nx2-hero__logo{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:min(34vw,420px);z-index:1}
-@media(max-width:960px){.nx2-hero__logo{opacity:.15;width:70vw}}
+/* ===================== 1. HERO (text LEFT) ===================== */
+.nx2-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("/images/nx2/s1.png");
+    background-size: cover;
+    background-position: center center;
+}
+.nx2-hero .nx2-wrap {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1180px;
+}
+.nx2-hero .nx2-wrap > * {
+    max-width: 620px;
+    margin-left: 0;
+    margin-right: auto;
+}
+.nx2-hero__word {
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    font-weight: 800;
+    color: var(--nx2-teal);
+    letter-spacing: 0.3em;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+.nx2-hero__title {
+    font-size: clamp(2.2rem, 5.2vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 22px;
+    color: var(--nx2-text);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.65);
+}
+.nx2-hero__tag {
+    color: var(--nx2-teal);
+    margin: 0;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+.nx2-hero__logo {
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(34vw, 420px);
+    z-index: 1;
+}
+@media (max-width: 960px) {
+    .nx2-hero__logo {
+        opacity: 0.15;
+        width: 70vw;
+    }
+}
 
-.nx2-cta{background-image:linear-gradient(90deg,rgba(4,8,20,.9),rgba(4,8,20,.35)),url('/images/nx2/s2.png')}
-.nx2-cta__row{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.nx2-cta__steps{max-width:480px}
-.nx2-cta__s1,.nx2-cta__s2{border-radius:18px;padding:26px 28px}
-.nx2-cta__s2{background:var(--nx2-violet);color:var(--nx2-ink);margin-top:16px}
-.nx2-cta__steps small{display:block;letter-spacing:.3em;font-weight:700;font-size:.75rem}
-.nx2-cta__s1 small{color:var(--nx2-violet)}
-.nx2-cta__steps h3{font-size:1.4rem;font-weight:800;margin:8px 0;color:#fff;}
-.nx2-cta__s1 a{color:var(--nx2-teal);font-weight:700;text-decoration:none}
-.nx2-cta__s2 a{color:var(--nx2-ink);font-size:1.7rem;font-weight:800;text-decoration:none}
-@media(max-width:960px){.nx2-cta__row{grid-template-columns:1fr}}
+/* ===================== 2. CTA ===================== */
+.nx2-cta {
+    background-image: url("/images/nx2/s2.png");
+}
+.nx2-cta__row {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+}
+.nx2-cta__steps {
+    max-width: 480px;
+}
+.nx2-cta__s1,
+.nx2-cta__s2 {
+    border-radius: 18px;
+    padding: 26px 28px;
+}
+.nx2-cta__s2 {
+    background: var(--nx2-violet);
+    color: var(--nx2-ink);
+    margin-top: 16px;
+}
+.nx2-cta__steps small {
+    display: block;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+.nx2-cta__s1 small {
+    color: var(--nx2-violet);
+}
+.nx2-cta__steps h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 8px 0;
+    color: #fff;
+}
+.nx2-cta__s1 a {
+    color: var(--nx2-teal);
+    font-weight: 700;
+    text-decoration: none;
+}
+.nx2-cta__s2 a {
+    color: var(--nx2-ink);
+    font-size: 1.7rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+@media (max-width: 960px) {
+    .nx2-cta__row {
+        grid-template-columns: 1fr;
+    }
+}
 
-.nx2-who{background-image:linear-gradient(135deg,#0a0e1a,#0a0e1a),url('/images/nx2/s3.png')}
-.nx2-who__stats{max-width:760px}
-.nx2-who__num{font-size:3rem;font-weight:800;color:var(--nx2-teal);line-height:1;margin-bottom:10px}
-.nx2-who .nx2-card span{color:var(--nx2-text)}
+/* ===================== 3. WHO ===================== */
+.nx2-who {
+    background-image: url("/images/nx2/s3.png");
+}
+.nx2-who__stats {
+    max-width: 760px;
+}
+.nx2-who__num {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--nx2-teal);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+.nx2-who .nx2-card span {
+    color: var(--nx2-text);
+}
 
-.nx2-cap{background-image:linear-gradient(90deg,rgba(2,10,24,.75),rgba(2,10,24,.3)),url('/images/nx2/s4.png')}
-.nx2-cap__grid{max-width:740px;margin-top:34px}
+/* ===================== 4. CAPABILITIES ===================== */
+.nx2-cap {
+    background-image: url("/images/nx2/s4.png");
+}
+.nx2-cap__grid {
+    max-width: 740px;
+    margin-top: 34px;
+}
 
+/* ===================== 5. TOOLKIT ===================== */
+.nx2-tk {
+    background-image: url("/images/nx2/s5.png");
+}
+.nx2-tk__grid {
+    max-width: 780px;
+    margin-top: 34px;
+}
+.nx2-tk .nx2-card--w h3 {
+    color: var(--nx2-ink);
+    font-size: 1.2rem;
+}
+.nx2-tk__line {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin: 34px 0 22px;
+    max-width: 640px;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
 
-.nx2-tk{background-image:linear-gradient(90deg,rgba(2,14,28,.6),rgba(2,14,28,.2)),url('/images/nx2/s5.png')}
-.nx2-tk__grid{max-width:780px;margin-top:34px}
-.nx2-tk .nx2-card--w h3{color:var(--nx2-ink);font-size:1.2rem}
-.nx2-tk__line{font-weight:700;font-size:1.15rem;margin:34px 0 22px;max-width:640px}
+/* ===================== 6. HOW WE WORK ===================== */
+.nx2-how {
+    background-color: #000;
+    background-image: url("/images/nx2/s6.png");
+}
+.nx2-how__steps {
+    max-width: 820px;
+    margin-top: 40px;
+    gap: 44px 28px;
+}
+.nx2-how__n {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--nx2-teal);
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+.nx2-how h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0 0 6px;
+    color: #fff;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+.nx2-how p {
+    color: #dfe3ff;
+    margin: 0;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
 
-.nx2-how{background-color:#000;background-image:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.2)),url('/images/nx2/s6.png')}
-.nx2-how__steps{max-width:820px;margin-top:40px;gap:44px 28px}
-.nx2-how__n{font-size:2.6rem;font-weight:800;color:var(--nx2-teal);line-height:1;margin-bottom:10px}
-.nx2-how h3{font-size:1.3rem;font-weight:800;margin:0 0 6px;color:#fff}
-.nx2-how p{color:var(--nx2-muted);margin:0}
+/* ===================== 7. PRODUCTS ===================== */
+.nx2-prod {
+    background-image: url("/images/nx2/s7.png");
+}
+.nx2-prod__grid {
+    margin-top: 34px;
+}
+.nx2-prod .nx2-card--w {
+    display: flex;
+    flex-direction: column;
+}
+.nx2-prod .nx2-card--w a {
+    margin-top: auto;
+    padding-top: 14px;
+    font-weight: 700;
+    color: var(--nx2-ink);
+    text-decoration: none;
+}
+.nx2-prod .nx2-card--w a:hover {
+    color: var(--nx2-violet);
+}
 
-.nx2-prod{background-image:linear-gradient(180deg,rgba(4,8,14,.55),rgba(4,8,14,.75)),url('/images/nx2/s7.png')}
-.nx2-prod__grid{margin-top:34px}
-.nx2-prod .nx2-card--w{display:flex;flex-direction:column}
-.nx2-prod .nx2-card--w a{margin-top:auto;padding-top:14px;font-weight:700;color:var(--nx2-ink);text-decoration:none}
-.nx2-prod .nx2-card--w a:hover{color:var(--nx2-violet)}
+/* ===================== 8. PORTFOLIO ===================== */
+.nx2-port {
+    background-image: url("/images/nx2/s8.png");
+}
+.nx2-port__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 30px;
+}
+.nx2-port__pill {
+    display: block;
+    background: rgba(17, 23, 50, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: var(--nx2-text);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+a.nx2-port__pill:hover {
+    border-color: var(--nx2-teal);
+    color: var(--nx2-teal);
+}
+@media (max-width: 960px) {
+    .nx2-port__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 560px) {
+    .nx2-port__grid {
+        grid-template-columns: 1fr;
+    }
+}
 
+/* ===================== 9. WHY ===================== */
+.nx2-why {
+    background-image: url("/images/nx2/s9.png");
+}
+.nx2-why__grid {
+    max-width: 780px;
+    margin-top: 34px;
+}
+.nx2-why .nx2-card--w h3 {
+    color: var(--nx2-ink);
+    font-size: 1.1rem;
+}
+.nx2-why__vision {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 34px 0 0;
+    max-width: 640px;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
 
-.nx2-port{background-image:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.55)),url('/images/nx2/s8.png')}
-.nx2-port__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:30px}
-.nx2-port__pill{display:block;background:rgba(17,23,50,.92);border:1px solid rgba(255,255,255,.08);padding:10px 16px;border-radius:999px;font-size:.9rem;color:var(--nx2-text);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-a.nx2-port__pill:hover{border-color:var(--nx2-teal);color:var(--nx2-teal)}
-@media(max-width:960px){.nx2-port__grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.nx2-port__grid{grid-template-columns:1fr}}
-
-.nx2-why{background-image:linear-gradient(90deg,rgba(6,24,28,.7),rgba(6,24,28,.35)),url('/images/nx2/s9.png')}
-.nx2-why__grid{max-width:780px;margin-top:34px}
-.nx2-why .nx2-card--w h3{color:var(--nx2-ink);font-size:1.1rem}
-.nx2-why__vision{font-weight:700;font-size:1.2rem;margin:34px 0 0;max-width:640px}
-
-.nx2-contact{min-height:80vh;display:flex;align-items:center;background-image:linear-gradient(90deg,rgba(10,5,2,.88),rgba(10,5,2,.35)),url('/images/nx2/s10.png')}
-.nx2-contact__title{font-size:clamp(2.2rem,5vw,4rem);font-weight:800;line-height:1.1;margin:0 0 20px;color:#fff}
-.nx2-contact__links{margin:0 0 30px}
-.nx2-contact__links a{display:block;color:var(--nx2-text);font-size:1.15rem;margin:6px 0;text-decoration:none}
-.nx2-contact__links a:hover{color:var(--nx2-teal)}
+/* ===================== 10. CONTACT (text LEFT) ===================== */
+.nx2-contact {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("/images/nx2/s10.png");
+    background-size: cover;
+    background-position: center center;
+}
+.nx2-contact .nx2-wrap {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1180px;
+}
+.nx2-contact .nx2-wrap > * {
+    max-width: 620px;
+    margin-left: 0;
+    margin-right: auto;
+}
+.nx2-contact__title {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 20px;
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.65);
+}
+.nx2-contact__links {
+    margin: 0 0 30px;
+}
+.nx2-contact__links a {
+    display: block;
+    color: var(--nx2-text);
+    font-size: 1.15rem;
+    margin: 6px 0;
+    text-decoration: none;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+.nx2-contact__links a:hover {
+    color: var(--nx2-teal);
+}
